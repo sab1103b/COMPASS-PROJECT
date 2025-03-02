@@ -1,0 +1,134 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F5F5F5;
+}
+
+/* Pie de página */
+footer {
+    background-color: #231815;
+    padding: 40px 0;
+    text-align: center;
+    border-radius: 40px 40px 0 0;
+    color: white;
+    position: relative;
+}
+
+/* Contenedor principal */
+.contine {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Contenedor flexible */
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Menú de navegación */
+.menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu ul li {
+    margin: 10px 0;
+}
+
+/* Corregir enlaces */
+.menu ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    display: inline-block;
+}
+
+/* Logo */
+.img figure {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img img {
+    width: 150px;
+    opacity: 0.2;
+}
+
+/* Línea separadora */
+.linea-separadora {
+    width: 90%;
+    height: 1px;
+    background-color: #D1D1D1;
+    margin: 20px auto;
+}
+
+/* Contenedor de redes sociales alineado a la derecha */
+.redes-sociales {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 5%;
+    gap: 10px;
+}
+
+/* Cuadrados blancos de los íconos */
+.redes-sociales a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: white;
+    color: #231815;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+}
+
+.redes-sociales a:hover {
+    background: #C29C99;
+    color: white;
+}
+
+/* RESPONSIVE PARA CELULARES */
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column;  /* Elementos en columna */
+        align-items: center;  
+        text-align: center;
+    }
+
+    .menu ul li a {
+        font-size: 10px;  /* Texto más pequeño */
+    }
+
+    .img img {
+        width: 120px;  /* Logo más pequeño */
+    }
+
+    .linea-separadora {
+        width: 80%; /*  Reduce la línea en móviles */
+    }
+
+    .redes-sociales {
+        justify-content: center;  /* Íconos centrados en móviles */
+        padding: 10px 0;
+    }
+
+    .redes-sociales a {
+        width: 30px;  /*  Íconos más pequeños */
+        height: 30px;
+        font-size: 16px;
+    }
+}
