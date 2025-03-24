@@ -1,66 +1,118 @@
 /* Estilos generales */
-body {
-    font-family: Arial, sans-serif;
+* {
     margin: 0;
     padding: 0;
-    background: #f8f5f0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inknut Antiqua', serif;
+    background-color: #f5f5f5;
     color: #3d2c2c;
 }
 
-/* Barra superior */
-.top-bar {
-    background: #d1c4b2;
-    text-align: center;
-    padding: 5px;
-    font-size: 14px;
+/* Barra de navegación */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #2c2421;
+    padding: 10px 20px;
+    border-radius: 10px;
 }
 
-/* Navegación */
-nav {
+.logo img {
+    height: 40px;
+}
+
+.buttons {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #3d2c2c;
-    padding: 10px 20px;
+    gap: 10px;
+}
+
+.btn {
+    background-color: #d9d9d9;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
 }
 
 .nav-links {
-    list-style: none;
     display: flex;
     gap: 15px;
 }
 
-.nav-links li a {
-    color: white;
+.nav-links li {
+    list-style: none;
+    background-color: #3b2f2a;
+    padding: 8px 12px;
+    border-radius: 15px;
+}
+
+.nav-links a {
     text-decoration: none;
+    color: white;
     font-weight: bold;
 }
 
-/* Sección hero */
-.hero {
+.nav-links a:hover {
+    color: #d9d9d9;
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 900px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.title {
     text-align: center;
-    padding: 50px 20px;
+    font-size: 2.5rem;
+    font-weight: bold;
 }
 
-.hero h1 {
-    font-size: 36px;
+.subtitle {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: -10px;
 }
 
-.hero h2 {
-    font-size: 20px;
-    color: #6b4f4f;
+.line {
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    margin: 10px 0;
 }
 
-.hero-content {
+.content {
     display: flex;
-    justify-content: center;
+    background-color: #886F6F;
+    padding: 20px;
     align-items: center;
-    gap: 20px;
 }
 
-.hero-content img {
-    width: 200px;
-    border-radius: 10px;
+.image {
+    width: 50%;
+    padding-right: 10px;
+}
+
+.image img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.text {
+    width: 50%;
+    color: #23170A;
+    font-family: 'Beiruti', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
 }
 
 /* Sección aventura */
