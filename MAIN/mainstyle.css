@@ -1,0 +1,122 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f8f5f0;
+    color: #3d2c2c;
+}
+
+/* Barra superior */
+.top-bar {
+    background: #d1c4b2;
+    text-align: center;
+    padding: 5px;
+    font-size: 14px;
+}
+
+/* Navegación */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #3d2c2c;
+    padding: 10px 20px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Sección hero */
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.hero h1 {
+    font-size: 36px;
+}
+
+.hero h2 {
+    font-size: 20px;
+    color: #6b4f4f;
+}
+
+.hero-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.hero-content img {
+    width: 200px;
+    border-radius: 10px;
+}
+
+/* Sección aventura */
+.adventure {
+    background: #6b4f4f;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.adventure button {
+    background: white;
+    color: #6b4f4f;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Sección mapa */
+.map {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.map-container img, .cafeterias img {
+    width: 100%;
+    max-width: 600px;
+}
+
+/* Sección únete */
+.join {
+    background: #d1c4b2;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.join button {
+    background: #3d2c2c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Footer */
+footer {
+    background: #3d2c2c;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+.socials a {
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+}
