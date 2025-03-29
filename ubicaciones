@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compass - Siéntete en Casa</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>COMPASS</h1>
+        <h2>SIÉNTETE EN CASA ☕</h2>
+    </header>
+    
+    <section class="zone">
+        <h3>ZONA NORTE</h3>
+        <div class="cafes">
+            <div class="cafe">
+                <h4>Café González</h4>
+                <p>📍 Av Cra 19 #123 - 60</p>
+                <p>📍 Calle 80 #12 - 55</p>
+            </div>
+            <div class="cafe">
+                <h4>Niebla</h4>
+                <p>📍 Cra 8 #41 - 38</p>
+            </div>
+            <div class="cafe">
+                <h4>Café Racer</h4>
+                <p>📍 Cra 45a #137 - 39</p>
+                <p>📍 Calle 140a #16 - 27</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="zone">
+        <h3>ZONA CHAPINERO</h3>
+        <div class="cafes">
+            <div class="cafe">
+                <h4>Craneo Sacral</h4>
+                <p>📍 Cra 8 #41 - 38</p>
+            </div>
+            <div class="cafe">
+                <h4>La Tintorería</h4>
+                <p>📍 Cll 54a #40a - 71, Piso 2</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="zone">
+        <h3>ZONA TEUSAQUILLO</h3>
+        <div class="cafes">
+            <div class="cafe">
+                <h4>Coffee Stylers</h4>
+                <p>📍 Cll 57 #19 - 35</p>
+            </div>
+            <div class="cafe">
+                <h4>Enamorados Café</h4>
+                <p>📍 Cra 18 #40a - 71</p>
+            </div>
+            <div class="cafe">
+                <h4>Quipile Coffee</h4>
+                <p>📍 Av Cra 24 #42 - 71</p>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Compass - Cafés Especiales</p>
+        <div class="social-links">
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+            <a href="#">TikTok</a>
+        </div>
+    </footer>
+</body>
+</html>
