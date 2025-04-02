@@ -19,24 +19,34 @@ body {
     background-color: #2c2421;
     padding: 10px 20px;
     border-radius: 0 0 20px 20px; /* Solo las esquinas inferiores redondeadas */
+    position: relative;
 }
 
-/* Estilo de los botones en la barra de navegación */
-nav button {
+.nav-buttons {
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    bottom: -36px; /* Ajusta la posición de los botones debajo del navbar */
+    right: 20px
+}
+
+.nav-buttons button {
     background-color: #3b2f2a;
     color: white;
     border: none;
     padding: 8px 15px;
-    border-radius: 20px; /* Ajusta la forma */
+    border-radius: 0 0 20px 20px; /* Borde redondeado solo abajo */
     font-weight: bold;
     cursor: pointer;
     transition: background 0.3s ease;
+    margin: 5px; /* Espaciado entre botones */
 }
 
-nav button:hover {
+.nav-buttons button:hover {
     background-color: #d9d9d9;
     color: #2c2421;
 }
+
 
 .logo img {
     height: 40px;
