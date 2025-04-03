@@ -162,6 +162,7 @@ h2{
     padding: 0;
     width: 100%;
     margin-top: -20px;
+    margin-bottom: 40px;
 }
 
 .contenedor-pasos {
@@ -170,7 +171,7 @@ h2{
     align-items: center; 
     background-color: #CCC9BF;
     border-radius: 0 0 90px 90px;
-    width: 45%;
+    width: 50%;
     height: auto; /* Se ajusta según el contenido */
     max-width: 900px;
     padding-bottom: 20px;
@@ -205,8 +206,8 @@ h2{
 }
 
 .paso .imagen {
-    width: 140px;
-    height: 140px;
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
     overflow: hidden;
     display: flex;
@@ -223,25 +224,26 @@ h2{
 }
 
 .paso:nth-child(1) {
-    background-color: #f5e6cc; /* Beige */
+    background-color: #DAD1BF; /* Beige */
     height: 300px;
-    border-radius: 0 0 90px 90px;
+    border-radius: 0 0 100px 100px;
 }
 
 .paso:nth-child(2) {
-    background-color: #8b5e3b; /* Café */
-    border-radius: 0 0 90px 90px;
+    background-color: #A69985; /* Café */
+    border-radius: 0 0 100px 100px;
     height: 350px;
 }
 
 .paso:nth-child(3) {
-    background-color: #ffcc40; /* Amarillo */
+    background-color: #C7AD76; /* Amarillo */
     height: 400px;
-    border-radius: 0 0 90px 90px;
+    border-radius: 0 0 100px 100px;
 }
 
 .paso p {
-    font-size: 12px;
+    width: 90%;
+    font-size: 13px;
     font-weight: bold;
     margin-top: 5px;
     color: #3d2c2c;
@@ -249,15 +251,16 @@ h2{
 
 /* Nota y aclaración ocupando todo el ancho */
 .info-adicional {
-    width: 100%;
+    width: 68%;
     text-align: center;
     padding: 15px;
     background-color: #CCC9BF;
     border-radius: 0 0 90px 90px;
+    margin-top: 70px;
 }
 
 .nota, .aclaracion {
-    font-size: 12px;
+    font-size: 13px;
     color: #5a4a42;
     margin: 5px 0;
 }
