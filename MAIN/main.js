@@ -1,4 +1,14 @@
 document.addEventListener("DOMContentLoaded", function () {
+    
+    // Seleccionar los botones de ingresar y registrar
+    const btnIngresar = document.querySelector(".auth-buttons .btn:nth-child(1)");
+    const btnRegistrarse = document.querySelector(".auth-buttons .btn:nth-child(2)");
+
+    // Seleccionar las secciones correspondientes
+    const seccionIngresar = "SEC_ingresar";
+    const seccionRegistro = "SEC_registro";
+    const seccionPrincipal = document.getElementById("principal");
+
     function mostrarSeccion(seccionId) {
         // Ocultar todas las secciones
         document.querySelectorAll("main section").forEach(seccion => {
@@ -11,6 +21,14 @@ document.addEventListener("DOMContentLoaded", function () {
             seccionMostrada.style.display = "block";
         }
     }
+
+    btnIngresar.addEventListener("click", function () {
+        mostrarSeccion(seccionIngresar);
+    });
+
+    btnRegistrarse.addEventListener("click", function () {
+        mostrarSeccion(seccionRegistro);
+    });
 
     // Mostrar la sección principal al inicio
     mostrarSeccion("principal");

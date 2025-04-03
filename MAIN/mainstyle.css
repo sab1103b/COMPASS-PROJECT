@@ -403,7 +403,10 @@ h2{
     margin: 0 auto; /* Centrar horizontalmente */
     margin-top: 40px;
     margin-bottom: 40px;
-    
+}
+
+.negrilla {
+    font-weight: bold;
 }
 
 .unete h2 {
