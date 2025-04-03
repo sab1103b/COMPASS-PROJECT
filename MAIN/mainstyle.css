@@ -10,6 +10,7 @@
 body {
     background-color: #F0EFE8;
     color: #3d2c2c;
+    padding-top: 60px;
 }
 
 /* ------------------------------------------------------Barra de navegación */
@@ -19,8 +20,12 @@ body {
     justify-content: space-between;
     background-color: #2c2421;
     padding: 10px 20px;
-    border-radius: 0 0 20px 20px; /* Solo las esquinas inferiores redondeadas */
-    position: relative;
+    border-radius: 0 0 20px 20px;
+    position: fixed; /* Fija la barra de navegación */
+    top: 0; /* La mantiene en la parte superior */
+    left: 0;
+    width: 100%; /* Asegura que cubra todo el ancho */
+    z-index: 1000; /* Se asegura de que esté por encima del resto del contenido */
 }
 
 .nav-buttons {
@@ -380,19 +385,47 @@ h2{
 }
 
 /* ------------------------------------------------------------Sección únete */
-.join {
-    text-align: center;
-    padding: 30px 20px;
-    margin-top: 20px;
+.unete {
+    background: #ddd; /* Color de fondo similar al de la imagen */
+    padding: 40px 2%; /* Espaciado interno y margen lateral */
+    border-radius: 20px; /* Bordes redondeados */
+    text-align: center; /* Centrar contenido */
+    max-width: 60%; /* Ancho máximo */
+    margin: 0 auto; /* Centrar horizontalmente */
+    margin-top: 40px;
+    margin-bottom: 40px;
+    
 }
 
-.join button {
-    background: #3d2c2c;
-    color: white;
-    border: none;
-    padding: 10px 20px;
+.unete h2 {
+    font-family: 'Inknut Antiqua', serif;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.unete p {
+    width: 100%;
+    font-family: 'Beiruti Light', sans-serif;
     font-size: 16px;
-    cursor: pointer;
+    padding: 15px;
+    display: inline-block; /* Ajuste al contenido */
+    text-align: center;
+    border-radius: 10px;
+}
+
+.unete a.boton {
+    display: inline-block;
+    background: #8A6D6D; /* Color marrón del botón */
+    color: white;
+    padding: 12px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    margin-top: 15px;
+    transition: background 0.3s;
+}
+
+.unete a.boton:hover {
+    background: #6C5353;
 }
 
 /* ---------------------------------------------------------------Pie de página */
