@@ -150,6 +150,86 @@ h2{
     line-height: 1.5;
 }
 
+.pasos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #f5f1eb; /* Color de fondo */
+    padding: 40px 20px;
+    border-radius: 20px;
+    width: 80%;
+    margin: auto;
+    border: 2px solid #b39b8d; /* Borde */
+}
+
+.contenedor-pasos {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 900px; /* Ajusta según el ancho que necesites */
+}
+
+.paso {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    padding: 10px;
+}
+
+.paso .imagen {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+.paso .imagen img {
+    width: 100%;
+    height: auto;
+}
+
+.paso:nth-child(1) {
+    background-color: #f5e6cc; /* Beige */
+    border-radius: 0 0 20px 20px; /* Solo parte inferior redondeada */
+}
+
+.paso:nth-child(2) {
+    background-color: #8b5e3b; /* Café */
+    border-radius: 0 0 20px 20px;
+    color: white; /* Para mejorar la legibilidad */
+}
+
+.paso:nth-child(3) {
+    background-color: #ffcc40; /* Amarillo */
+    border-radius: 0 0 20px 20px;
+}
+
+.paso p {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #3d2c2c;
+}
+
+.nota {
+    font-size: 12px;
+    width: 80%;
+    margin-top: 15px;
+    color: #5a4a42;
+}
+
+.aclaracion {
+    font-size: 10px;
+    margin-top: 5px;
+    color: #7a6960;
+}
+
 /* Sección aventura */
 .adventure {
     background: #6b4f4f;
