@@ -19,5 +19,5 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("btn-compass").addEventListener("click", () => mostrarSeccion("principal"));
     document.getElementById("btn-cafes").addEventListener("click", () => mostrarSeccion("SEC_cafes"));
     document.getElementById("btn-locales").addEventListener("click", () => mostrarSeccion("SEC_locales"));
-    document.getElementById("btn-unete").addEventListener("click", () => mostrarSeccion("SEC_unete"));
+    document.getElementById("btn-nosotros").addEventListener("click", () => mostrarSeccion("SEC_nosotros"));
 });
