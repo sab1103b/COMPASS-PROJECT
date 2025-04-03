@@ -1,4 +1,4 @@
-/* Estilos generales */
+/* ---------------------------------------------------Estilos generales */
 * {
     margin: 0;
     padding: 0;
@@ -12,7 +12,7 @@ body {
     color: #3d2c2c;
 }
 
-/* Barra de navegación */
+/* ------------------------------------------------------Barra de navegación */
 .navbar {
     display: flex;
     align-items: center;
@@ -86,7 +86,7 @@ body {
     color: #d9d9d9;
 }
 
-/* Contenedor principal */
+/* ----------------------------------------------------- Contenedor principal */
 .container {
     max-width: none; /* Elimina la restricción de ancho */
     width: 100vw; /* Asegura que ocupe toda la pantalla */
@@ -150,23 +150,22 @@ h2{
     line-height: 1.5;
 }
 
+/* ----------------------------------------------------- Contenedor pasos */
 .pasos {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     background-color: #f5f1eb; /* Color de fondo */
-    padding: 40px 20px;
-    border-radius: 20px;
-    width: 80%;
-    margin: auto;
-    border: 2px solid #b39b8d; /* Borde */
+    padding: 0;
+    width: 100%;
+    margin-top: -20px;
 }
 
 .contenedor-pasos {
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    width: 50%;
     max-width: 900px; /* Ajusta según el ancho que necesites */
 }
 
@@ -174,8 +173,21 @@ h2{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-end; /* Empuja la imagen hacia abajo */
     flex: 1;
     padding: 10px;
+    position: relative;
+    height: 220px; /* Asegurar que tenga espacio suficiente */
+}
+
+.paso p {
+    font-size: 14px;
+    font-weight: bold;
+    color: #3d2c2c;
+    position: absolute;
+    bottom: -30px; /* Mueve el texto fuera del cuadro */
+    text-align: center;
+    width: 100%;
 }
 
 .paso .imagen {
@@ -187,6 +199,8 @@ h2{
     justify-content: center;
     align-items: center;
     background-color: white;
+    position: absolute;
+    bottom: 10px; /* Posiciona la imagen en la parte inferior */
 }
 
 .paso .imagen img {
@@ -196,31 +210,33 @@ h2{
 
 .paso:nth-child(1) {
     background-color: #f5e6cc; /* Beige */
-    border-radius: 0 0 20px 20px; /* Solo parte inferior redondeada */
+    height: 180px;
+    border-radius: 0 0 90px 90px;
 }
 
 .paso:nth-child(2) {
     background-color: #8b5e3b; /* Café */
-    border-radius: 0 0 20px 20px;
-    color: white; /* Para mejorar la legibilidad */
+    border-radius: 0 0 90px 90px;
+    height: 220px;
 }
 
 .paso:nth-child(3) {
     background-color: #ffcc40; /* Amarillo */
-    border-radius: 0 0 20px 20px;
+    height: 200px;
+    border-radius: 0 0 90px 90px;
 }
 
 .paso p {
     font-size: 14px;
     font-weight: bold;
-    margin-top: 10px;
+    margin-top: 5px;
     color: #3d2c2c;
 }
 
 .nota {
     font-size: 12px;
     width: 80%;
-    margin-top: 15px;
+    margin-top: 10px;
     color: #5a4a42;
 }
 
@@ -230,7 +246,7 @@ h2{
     color: #7a6960;
 }
 
-/* Sección aventura */
+/* ----------------------------------------------------Sección aventura */
 .adventure {
     background: #6b4f4f;
     color: white;
@@ -247,7 +263,7 @@ h2{
     cursor: pointer;
 }
 
-/* Sección mapa */
+/* ------------------------------------------------------Sección mapa */
 .map {
     text-align: center;
     padding: 50px 20px;
@@ -258,7 +274,7 @@ h2{
     max-width: 600px;
 }
 
-/* Sección únete */
+/* ------------------------------------------------------------Sección únete */
 .join {
     background: #d1c4b2;
     text-align: center;
@@ -274,7 +290,7 @@ h2{
     cursor: pointer;
 }
 
-/* Pie de página */
+/* ---------------------------------------------------------------Pie de página */
 .pie-de-pagina {
     background-color: #231815;
     padding: 40px 0;
