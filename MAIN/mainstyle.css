@@ -342,6 +342,14 @@ h2{
     max-width: 600px;
 }
 
+.map-container img {
+    width: 60%;
+    height: 60%;
+    border-radius: 50%; /* Hace que la imagen sea un círculo */
+    border: 4px solid #3d2c2c; /* Agrega un borde visible */
+    object-fit: cover; /* Asegura que la imagen se ajuste correctamente dentro del círculo */
+}
+
 /* ------------------------------------------------------------Sección únete */
 .join {
     background: #d1c4b2;
