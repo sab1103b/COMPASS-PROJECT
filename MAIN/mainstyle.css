@@ -113,10 +113,10 @@ body {
 }
 
 .line {
-    width: 100%;
-    height: 2px;
+    width: 90%;
+    height: 1px;
     background-color: black;
-    margin: 10px 0;
+    margin: 10px auto;
 }
 
 h2{
@@ -206,8 +206,8 @@ h2{
 }
 
 .paso .imagen {
-    width: 180px;
-    height: 180px;
+    width: 90%;
+    aspect-ratio: 1/1;
     border-radius: 50%;
     overflow: hidden;
     display: flex;
@@ -216,6 +216,7 @@ h2{
     background-color: white;
     position: absolute;
     bottom: 10px; /* Posiciona la imagen en la parte inferior */
+    
 }
 
 .paso .imagen img {
@@ -272,6 +273,7 @@ h2{
     display: flex;
     justify-content: center;
     padding: 30px 0;
+    margin-bottom: 40px;
 }
 
 .adventure-content {
@@ -332,29 +334,56 @@ h2{
 
 
 /* ------------------------------------------------------Sección mapa */
+
 .map {
     text-align: center;
     padding: 50px 20px;
 }
 
-.map-container img, .cafeterias img {
-    width: 100%;
-    max-width: 600px;
-}
-
 .map-container img {
-    width: 60%;
-    height: 60%;
+    width: 40%;
+    aspect-ratio: 1/1;
     border-radius: 50%; /* Hace que la imagen sea un círculo */
     border: 4px solid #3d2c2c; /* Agrega un borde visible */
     object-fit: cover; /* Asegura que la imagen se ajuste correctamente dentro del círculo */
 }
 
+.cafeterias {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Se ajusta automáticamente */
+    grid-auto-rows: auto; /* Las filas se adaptan según el contenido */
+    justify-content: center;
+    align-items: center;
+    height: 40%; /* Ocupa la mitad de la pantalla */
+    width: 70%;
+    gap: 5px; /* Espaciado entre imágenes */
+    margin: 0 auto;
+}
+
+.cafeterias a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.cafeterias img {
+    width: 100%;
+    max-width: 120px; /* Tamaño máximo */
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.cafeterias img:hover {
+    transform: scale(1.1);
+}
+
 /* ------------------------------------------------------------Sección únete */
 .join {
-    background: #d1c4b2;
     text-align: center;
     padding: 30px 20px;
+    margin-top: 20px;
 }
 
 .join button {
