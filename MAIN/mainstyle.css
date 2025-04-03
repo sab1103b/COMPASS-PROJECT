@@ -8,7 +8,7 @@
 }
 
 body {
-    background-color: #f5f5f5;
+    background-color: #F0EFE8;
     color: #3d2c2c;
 }
 
@@ -27,19 +27,19 @@ body {
     display: flex;
     justify-content: flex-end;
     position: absolute;
-    bottom: -36px; /* Ajusta la posición de los botones debajo del navbar */
-    right: 20px
+    bottom: -36px;
+    right: 20px;
 }
 
 .nav-buttons button {
     background-color: #3b2f2a;
     color: white;
     border: none;
-    padding: 8px 15px;
-    border-radius: 0 0 20px 20px; /* Borde redondeado solo abajo */
+    padding: 11px 15px;
+    border-radius: 0 0 30px 30px; /* Borde redondeado solo abajo */
     cursor: pointer;
     transition: background 0.3s ease;
-    margin: 5px; /* Espaciado entre botones */
+    width: 120px;
 }
 
 .nav-buttons button:hover {
@@ -61,8 +61,10 @@ body {
     background-color: #d9d9d9;
     border: none;
     padding: 8px 15px;
-    border-radius: 5px;
+    border-radius: 12px;
     cursor: pointer;
+    width: 150px;
+    height: 30px;
 }
 
 .nav-links {
@@ -146,7 +148,7 @@ h2{
     height: 100%;
     width: 30%;
     color: #23170A;
-    font-size: 1rem;
+    font-size: 0.9rem;
     line-height: 1.5;
 }
 
@@ -164,20 +166,31 @@ h2{
 
 .contenedor-pasos {
     display: flex;
+    flex-direction: column; /* Apila los elementos */
+    align-items: center; 
+    background-color: #CCC9BF;
+    border-radius: 0 0 90px 90px;
+    width: 45%;
+    height: auto; /* Se ajusta según el contenido */
+    max-width: 900px;
+    padding-bottom: 20px;
+}
+
+.fila-pasos {
+    display: flex;
     justify-content: space-between;
-    width: 50%;
-    max-width: 900px; /* Ajusta según el ancho que necesites */
+    width: 100%; /* Hace que los .paso ocupen todo el ancho */
 }
 
 .paso {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-end; /* Empuja la imagen hacia abajo */
+    justify-content: flex-end;
     flex: 1;
     padding: 10px;
     position: relative;
-    height: 220px; /* Asegurar que tenga espacio suficiente */
+    height: 220px;
 }
 
 .paso p {
@@ -188,11 +201,12 @@ h2{
     bottom: -30px; /* Mueve el texto fuera del cuadro */
     text-align: center;
     width: 100%;
+    top: calc(100% + 10px); /* Lo coloca debajo con un espacio de 10px */
 }
 
 .paso .imagen {
-    width: 120px;
-    height: 120px;
+    width: 140px;
+    height: 140px;
     border-radius: 50%;
     overflow: hidden;
     display: flex;
@@ -210,40 +224,42 @@ h2{
 
 .paso:nth-child(1) {
     background-color: #f5e6cc; /* Beige */
-    height: 180px;
+    height: 300px;
     border-radius: 0 0 90px 90px;
 }
 
 .paso:nth-child(2) {
     background-color: #8b5e3b; /* Café */
     border-radius: 0 0 90px 90px;
-    height: 220px;
+    height: 350px;
 }
 
 .paso:nth-child(3) {
     background-color: #ffcc40; /* Amarillo */
-    height: 200px;
+    height: 400px;
     border-radius: 0 0 90px 90px;
 }
 
 .paso p {
-    font-size: 14px;
+    font-size: 12px;
     font-weight: bold;
     margin-top: 5px;
     color: #3d2c2c;
 }
 
-.nota {
-    font-size: 12px;
-    width: 80%;
-    margin-top: 10px;
-    color: #5a4a42;
+/* Nota y aclaración ocupando todo el ancho */
+.info-adicional {
+    width: 100%;
+    text-align: center;
+    padding: 15px;
+    background-color: #CCC9BF;
+    border-radius: 0 0 90px 90px;
 }
 
-.aclaracion {
-    font-size: 10px;
-    margin-top: 5px;
-    color: #7a6960;
+.nota, .aclaracion {
+    font-size: 12px;
+    color: #5a4a42;
+    margin: 5px 0;
 }
 
 /* ----------------------------------------------------Sección aventura */
