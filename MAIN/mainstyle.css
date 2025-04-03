@@ -225,8 +225,8 @@ h2{
 }
 
 .paso .imagen img {
-    width: 100%;
-    height: auto;
+    height: 150%;
+    width: auto;
 }
 
 .paso:nth-child(1) {
