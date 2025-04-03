@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="mainstyle.css">
 </head>
 <body>
-
     <header>
         <!-- Barra de navegación -->
         <nav class="navbar">
@@ -18,124 +17,149 @@
                 <button class="btn">INGRESAR</button>
                 <button class="btn">REGISTRARSE</button>
             </div>
-            <div class="nav-buttons">
-                <button onclick="mostrarSeccion('compass')">COMPASS</button>
-                <button onclick="mostrarSeccion('cafes')">CAFÉS</button>
-                <button onclick="mostrarSeccion('locales')">LOCALES</button>
-                <button onclick="mostrarSeccion('unete')">ÚNETE</button>
+            <div id="nav-buttons" class="nav-buttons">
+                <div id="nav-buttons" class="nav-buttons">
+    <button id="btn-compass">COMPASS</button>
+    <button id="btn-cafes">CAFÉS</button>
+    <button id="btn-locales">LOCALES</button>
+    <button id="btn-unete">ÚNETE</button>
+</div>
             </div>
         </nav>
     </header>
 
-    <div class="container">
-        <h1 class="title">COMPASS</h1>
-        <h2 class="subtitle"> PASAPORTE DEL CAFÉ 
-            <img width="40" height="40" src="../imagenes/cafe.png" alt="Cafe">
-        </h2>
+    <main>
+        <section id="principal">
+            <!-- Contenedor principal -->
+        <div class="container">
+            <h1 class="title">COMPASS</h1>
+            <h2 class="subtitle"> PASAPORTE DEL CAFÉ 
+                <img width="40" height="40" src="../imagenes/cafe.png" alt="Cafe">
+            </h2>
+            <div class="line"></div>
+            <div class="content">
+                <div class="image">
+                    <img src="https://www.las2orillas.co/wp-content/uploads/2024/10/cafe-de-especialidad.jpg" alt="Pasaporte del Café">
+                </div>
+                <div class="text">
+                    <p>Descubre las mejores tiendas de café mediante un pasaporte que te ofrece una guía de los lugares en que puedes disfrutar de tu taza favorita.</p>
+                </br>
+                    <p>Siente la sensación de viajar alrededor del mundo del café al sellar tu pasaporte en cada visita y al completar la ruta tendrás una sorpresa especial.</p>
+                </div>
+            </div>
+        </div>
+            <!-- Contenedor principal -->
+        <div class="pasos">
+            <div class="contenedor-pasos">
+                <div class="fila-pasos">
+                    <div class="paso">
+                        <div class="imagen">
+                            <img src="../imagenes/circulo1.png" alt="Registro">
+                        </div>
+                        <p>REGÍSTRATE Y LLENA TU INFORMACIÓN</p>
+                    </div>
+                    <div class="paso">
+                        <div class="imagen">
+                            <img src="../imagenes/circulo2.jpg" alt="Visita">
+                        </div>
+                        <p>VE A LAS CAFETERÍAS SELECCIONADAS</p>
+                    </div>
+                    <div class="paso">
+                        <div class="imagen">
+                            <img src="../imagenes/circulo3.png" alt="Sellos">
+                        </div>
+                        <p>COMPLETA LOS 13 SELLOS DEL PASAPORTE PARA OBTENER PREMIOS</p>
+                    </div>
+                </div>
+            
+                <div class="info-adicional">
+                    <p class="nota">
+                        Cada cafetería tiene su sello participante, reclámalo una única vez hasta completar el pasaporte. Complétalo las veces que quieras con la oportunidad de ganar premios cada que lo llenas.
+                    </p>
+                </br>
+                    <p class="aclaracion">
+                        Los sellos de una misma marca no son acumulables.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="adventure">
+            <div class="adventure-content">
+                <div class="adventure-image">
+                    <img src="https://pymstatic.com/30549/conversions/tipos-de-cafe-small-16_9.jpg" alt="Cafés">
+                    <button>CAFÉS</button>
+                </div>
+                <div class="adventure-text">
+                    <h2>AVENTÚRATE A DEGUSTAR</h2>
+                </br>
+                    <p>Deja que tus ojos elijan por tu lengua y estomago, descubrirás diversas preparaciones y cocteles que te aseguramos no has provado hasta hoy, elige el café y atrevete a la aventura.</p>
+                </div>
+            </div>
+        </div>
+
         <div class="line"></div>
-        <div class="content">
-            <div class="image">
-                <img src="https://www.las2orillas.co/wp-content/uploads/2024/10/cafe-de-especialidad.jpg" alt="Pasaporte del Café">
-            </div>
-            <div class="text">
-                <p>Descubre las mejores tiendas de café mediante un pasaporte que te ofrece una guía de los lugares en que puedes disfrutar de tu taza favorita.</p>
-            </br>
-                <p>Siente la sensación de viajar alrededor del mundo del café al sellar tu pasaporte en cada visita y al completar la ruta tendrás una sorpresa especial.</p>
-            </div>
-        </div>
-    </div>
-
-    <section class="pasos">
-        <div class="contenedor-pasos">
-            <div class="fila-pasos">
-                <div class="paso">
-                    <div class="imagen">
-                        <img src="../imagenes\circulo1.png" alt="Registro">
-                    </div>
-                    <p>REGÍSTRATE Y LLENA TU INFORMACIÓN</p>
-                </div>
-                <div class="paso">
-                    <div class="imagen">
-                        <img src="../imagenes\circulo2.jpg" alt="Visita">
-                    </div>
-                    <p>VE A LAS CAFETERÍAS SELECCIONADAS</p>
-                </div>
-                <div class="paso">
-                    <div class="imagen">
-                        <img src="../imagenes\circulo3.png" alt="Sellos">
-                    </div>
-                    <p>COMPLETA LOS 13 SELLOS DEL PASAPORTE PARA OBTENER PREMIOS</p>
-                </div>
-            </div>
         
-            <div class="info-adicional">
-                <p class="nota">
-                    Cada cafetería tiene su sello participante, reclámalo una única vez hasta completar el pasaporte. Complétalo las veces que quieras con la oportunidad de ganar premios cada que lo llenas.
-                </p>
-            </br>
-                <p class="aclaracion">
-                    Los sellos de una misma marca no son acumulables.
-                </p>
+        <div class="map">
+            <h2>¿EN DÓNDE PUEDO PARTICIPAR?</h2>
+            <div class="map-container">
+                <a href="https://www.google.com/maps/d/u/0/viewer?fbclid=PAZXh0bgNhZW0CMTEAAaYWoefs7NP83rS9IEb0O4y9MEAhmv9BUY3-fkvUT3wGKas47TSZ5P0jk7E_aem_gjD4RlNcTHIgqzKC0K-7GA&mid=10z5EWBzSpJEdvwKYYRC2HcFAp0kupBA&ll=4.672577789231707%2C-74.06545013166138&z=11" target="_blank">
+                    <img src="../imagenes/mapa.png" alt="Mapa">
+                </a>
+            </div>
+
+            <div class="cafeterias">
+                <a href="https://www.instagram.com/cafeteria1" target="_blank"><img src="../imagenes/cafeteria1.png" alt="Cafetería 1"></a>
+                <a href="https://www.instagram.com/cafeteria2" target="_blank"><img src="../imagenes/cafeteria2.png" alt="Cafetería 2"></a>
+                <a href="https://www.instagram.com/cafeteria3" target="_blank"><img src="../imagenes/cafeteria3.png" alt="Cafetería 3"></a>
+                <a href="https://www.instagram.com/cafeteria4" target="_blank"><img src="../imagenes/cafeteria4.png" alt="Cafetería 4"></a>
+                <a href="https://www.instagram.com/cafeteria5" target="_blank"><img src="../imagenes/cafeteria5.png" alt="Cafetería 5"></a>
+                <a href="https://www.instagram.com/cafeteria6" target="_blank"><img src="../imagenes/cafeteria6.png" alt="Cafetería 6"></a>
+                <a href="https://www.instagram.com/cafeteria7" target="_blank"><img src="../imagenes/cafeteria7.png" alt="Cafetería 7"></a>
+                <a href="https://www.instagram.com/cafeteria8" target="_blank"><img src="../imagenes/cafeteria8.png" alt="Cafetería 8"></a>
+                <a href="https://www.instagram.com/cafeteria9" target="_blank"><img src="../imagenes/cafeteria9.png" alt="Cafetería 9"></a>
+                <a href="https://www.instagram.com/cafeteria10" target="_blank"><img src="../imagenes/cafeteria10.png" alt="Cafetería 10"></a>
+                <a href="https://www.instagram.com/cafeteria11" target="_blank"><img src="../imagenes/cafeteria11.png" alt="Cafetería 11"></a>
+                <a href="https://www.instagram.com/cafeteria12" target="_blank"><img src="../imagenes/cafeteria12.png" alt="Cafetería 12"></a>
+                <a href="https://www.instagram.com/cafeteria13" target="_blank"><img src="../imagenes/cafeteria13.png" alt="Cafetería 13"></a>
             </div>
         </div>
+
+        <div class="line"></div>
+
+        <div class="unete">
+        <h2>SÉ PARTE DE LAS CAFETERÍAS</h2>
+        <div class="line"></div>
+        <p>
+            Si tu cafetería tiene la creatividad y pasión por el buen café, 
+            <strong>¡es momento de unirte a nuestro Pasaporte del Café!</strong> 
+            Forma parte de esta experiencia única donde los amantes del café 
+            descubrirán y disfrutarán de tu propuesta. 
+            ¡No te quedes fuera y sé parte de nuestro recorrido cafetero!
+        </p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdhBOG_88SKSWrwjw1_HawO7j2HxhmKk8V4-ZizfrkVNj6w6A/viewform?fbclid=PAZXh0bgNhZW0CMTEAAabirmt4PpUoqlR3bQBwCx1opclC0QxLFgL4Bkcp-KoWGVfeGtugOcFOxa8_aem_OCv0T2of17M2_AKlebJWDQ" target="_blank" class="boton">REGISTRA TU CAFETERÍA</a>
+    </div>
     </section>
 
-    <section class="adventure">
-        <div class="adventure-content">
-            <div class="adventure-image">
-                <img src="https://pymstatic.com/30549/conversions/tipos-de-cafe-small-16_9.jpg" alt="Cafés">
-                <button>CAFÉS</button>
-            </div>
-            <div class="adventure-text">
-                <h2>AVENTÚRATE A DEGUSTAR</h2>
-            </br>
-                <p>Deja que tus ojos elijan por tu lengua y estomago, descubrirás diversas preparaciones y cocteles que te aseguramos no has provado hasta hoy, elige el café y atrevete a la aventura.</p>
-            </div>
-        </div>
+        <!-- Sección Cafés -->
+        <section id="SEC_cafes" class="contenido-oculto">
+            <h1>Cafés</h1>
+            <p>Explora los mejores cafés de la ciudad.</p>
     </section>
 
-    <div class="line"></div>
-    
-    <section class="map">
-        <h2>¿EN DÓNDE PUEDO PARTICIPAR?</h2>
-        <div class="map-container">
-            <a href="https://www.google.com/maps/d/u/0/viewer?fbclid=PAZXh0bgNhZW0CMTEAAaYWoefs7NP83rS9IEb0O4y9MEAhmv9BUY3-fkvUT3wGKas47TSZ5P0jk7E_aem_gjD4RlNcTHIgqzKC0K-7GA&mid=10z5EWBzSpJEdvwKYYRC2HcFAp0kupBA&ll=4.672577789231707%2C-74.06545013166138&z=11" target="_blank">
-                <img src="../imagenes/mapa.png" alt="Mapa">
-            </a>
-        </div>
-
-        <div class="cafeterias">
-            <a href="https://www.instagram.com/cafeteria1" target="_blank"><img src="../imagenes/cafeteria1.png" alt="Cafetería 1"></a>
-            <a href="https://www.instagram.com/cafeteria2" target="_blank"><img src="../imagenes/cafeteria2.png" alt="Cafetería 2"></a>
-            <a href="https://www.instagram.com/cafeteria3" target="_blank"><img src="../imagenes/cafeteria3.png" alt="Cafetería 3"></a>
-            <a href="https://www.instagram.com/cafeteria4" target="_blank"><img src="../imagenes/cafeteria4.png" alt="Cafetería 4"></a>
-            <a href="https://www.instagram.com/cafeteria5" target="_blank"><img src="../imagenes/cafeteria5.png" alt="Cafetería 5"></a>
-            <a href="https://www.instagram.com/cafeteria6" target="_blank"><img src="../imagenes/cafeteria6.png" alt="Cafetería 6"></a>
-            <a href="https://www.instagram.com/cafeteria7" target="_blank"><img src="../imagenes/cafeteria7.png" alt="Cafetería 7"></a>
-            <a href="https://www.instagram.com/cafeteria8" target="_blank"><img src="../imagenes/cafeteria8.png" alt="Cafetería 8"></a>
-            <a href="https://www.instagram.com/cafeteria9" target="_blank"><img src="../imagenes/cafeteria9.png" alt="Cafetería 9"></a>
-            <a href="https://www.instagram.com/cafeteria10" target="_blank"><img src="../imagenes/cafeteria10.png" alt="Cafetería 10"></a>
-            <a href="https://www.instagram.com/cafeteria11" target="_blank"><img src="../imagenes/cafeteria11.png" alt="Cafetería 11"></a>
-            <a href="https://www.instagram.com/cafeteria12" target="_blank"><img src="../imagenes/cafeteria12.png" alt="Cafetería 12"></a>
-            <a href="https://www.instagram.com/cafeteria13" target="_blank"><img src="../imagenes/cafeteria13.png" alt="Cafetería 13"></a>
-        </div>
+        <!-- Sección Locales -->
+        <section id="SEC_locales" class="contenido-oculto">
+            <h1>Locales</h1>
+            <p>Descub re locales recomendados.</p>
     </section>
 
-    <div class="line"></div>
+        <!-- Sección Únete -->
+        <section id="SEC_unete" class="contenido-oculto">
+            <h1>Únete</h1>
+            <p>Forma parte de nuestra comunidad.</p>
+    </section>
 
-    <section class="unete">
-    <h2>SÉ PARTE DE LAS CAFETERÍAS</h2>
-    <div class="line"></div>
-    <p>
-        Si tu cafetería tiene la creatividad y pasión por el buen café, 
-        <strong>¡es momento de unirte a nuestro Pasaporte del Café!</strong> 
-        Forma parte de esta experiencia única donde los amantes del café 
-        descubrirán y disfrutarán de tu propuesta. 
-        ¡No te quedes fuera y sé parte de nuestro recorrido cafetero!
-    </p>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdhBOG_88SKSWrwjw1_HawO7j2HxhmKk8V4-ZizfrkVNj6w6A/viewform?fbclid=PAZXh0bgNhZW0CMTEAAabirmt4PpUoqlR3bQBwCx1opclC0QxLFgL4Bkcp-KoWGVfeGtugOcFOxa8_aem_OCv0T2of17M2_AKlebJWDQ" target="_blank" class="boton">REGISTRA TU CAFETERÍA</a>
-</section>
-
+</main>
     <footer class="pie-de-pagina">
         <div class="contine">
             <div class="row">
@@ -171,6 +195,6 @@
             </div>
         </div>
     </footer>
-
+    <script src="main.js"></script>
 </body>
 </html>

@@ -13,6 +13,15 @@ body {
     padding-top: 60px;
 }
 
+.contenido-oculto {
+    display: none;
+}
+
+#principal {
+    min-height: 100vh; /* Para asegurarte de que tenga suficiente espacio */
+    overflow: visible !important; /* Asegura que el contenido no se esconda */
+}
+
 /* ------------------------------------------------------Barra de navegación */
 .navbar {
     display: flex;
@@ -32,7 +41,7 @@ body {
     display: flex;
     justify-content: flex-end;
     position: absolute;
-    bottom: -36px;
+    bottom: -18px;
     right: 20px;
 }
 
