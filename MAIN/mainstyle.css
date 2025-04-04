@@ -439,6 +439,75 @@ h2{
 .unete a.boton:hover {
     background: #6C5353;
 }
+/*--------registro*/
+.registro-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background-color: #b2968c;
+    padding: 80px;
+    border-radius: 0px;
+}
+
+.registro-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 45%;
+}
+
+.registro-form input {
+    padding: 12px;
+    border: none;
+    border-radius: 20px;
+    background-color: #f6e8e3;
+    font-size: 14px;
+    color: #3d1c1a;
+}
+
+.btn-usuario {
+    background-color: #4a2f2b;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.registro-image {
+    width: 45%;
+    text-align: center;
+}
+
+.registro-image img {
+    width:50%;
+    border-radius: 15px;
+}
+
+.registro-admin {
+    background-color: #f6e8e3;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 10px;
+    
+}
+
+.registro-admin p {
+    font-size: 14px;
+    color: #3d1c1a;
+}
+
+.btn-admin {
+    background-color: #4a2f2b;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+}
 
 /* ---------------------------------------------------------------Pie de página */
 .pie-de-pagina {
