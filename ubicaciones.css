@@ -1,1 +1,229 @@
+body {
+    margin: 0;
+    font-family: 'Georgia', serif;
+    background-color: #f2f0e9;
+    color: #333;
+}
 
+header {
+    background-color: #2b2525;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.logo img {
+    height: 60px;
+}
+
+.user-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logout {
+    background-color: #d9d9d9;
+    border: none;
+    padding: 8px 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.user-icon {
+    background-color: #4a3a3a;
+    color: white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+/* HERO */
+.hero {
+    background-color: #f2f0e9;
+    color: #2b2525;
+    text-align: left; /* Alinea el texto dentro del contenedor */
+    padding: 4rem 2rem;
+}
+
+.hero h1 {
+    font-family: 'Inknut Antiqua', 'EB Garamond', 'Lora', 'Cormorant Garamond', serif;
+    text-align: left;
+    font-size: 5.0rem;
+    padding-left: 15%;
+    margin-top: 40px;
+    margin-bottom: 0;
+    letter-spacing: 2px;
+    color: #2b2525;
+}
+.hero h2 {
+    font-family: 'Inknut Antiqua', 'EB Garamond', 'Lora', 'Cormorant Garamond', serif;
+    text-align: left;
+    font-size: 2.0rem;
+    padding-left: 15%;
+    margin-top: -10px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: normal;
+}
+.hero-divider {
+    border-top: 2.5px solid #4a3a3a;
+    width: 80%;
+    margin: 3rem auto 0 auto; 
+}
+.coffee-icon {
+    width: 30px;
+    margin-left: 10px;
+}
+/* CAFÉS */
+.zone {
+    border-top: 1px solid #4a3a3a;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-top: 3rem;
+    padding: 4rem 1rem;
+}
+
+.zone h3 {
+    font-size: 2.5rem; 
+    margin-bottom: 2rem;
+    margin-top: 0;    
+    padding-top: 1rem;  
+}
+
+.cafes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.cafe {
+    width: 250px;
+    text-align: center;
+}
+
+.cafe img {
+    width: 150px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+footer {
+    background-color: #231815;
+    padding: 60px 0 40px 0;
+    text-align: center;
+    border-radius: 40px 40px 0 0;
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .footer-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 350px; 
+    position: relative;
+    z-index: 2;
+  }
+  
+  .footer-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* Espacio entre los links */
+  }
+  
+  .footer-nav a {
+    color: rgba(255, 255, 255, 0.7); /* Un poco más opaco */
+    text-decoration: none;
+    font-size: 1.3rem; /* Más pequeña (antes 1.5rem) */
+    font-weight: 300;
+    font-family: 'Helvetica Neue', sans-serif;
+    letter-spacing: 0.4px;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-nav a:hover {
+    color: rgba(255, 255, 255, 1); /* Color más brillante al pasar el cursor */
+  }
+  
+  .footer-logo {
+    position: absolute;
+    top: 60%;
+    left: 51%;
+    transform: translate(-50%, -50%);
+    opacity: 0.06;
+    z-index: 1;
+    width: 310px; /* Tamaño del logo */
+    max-width: 90%;
+  }
+  
+  .footer-divider {
+    border: none;
+    border-top: 2px solid #dcdcd1;
+    width: 90%;
+    margin: 5rem auto 1.5rem auto;
+    z-index: 2;
+    position: relative;
+  }
+  
+  .footer-social {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    padding-right: 2rem;
+    z-index: 2;
+    position: relative;
+  }
+  
+  .footer-social img {
+    width: 32px;
+    height: 32px;
+    background-color: white;
+    border-radius: 8px;
+    padding: 5px;
+    transition: transform 0.2s ease;
+  }
+  
+  .footer-social img:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .footer-nav {
+      flex-direction: column;
+      gap: 2rem;
+    }
+  
+    .footer-logo {
+      width: 320px;
+    }
+  
+    .footer-nav a {
+      font-size: 1.2rem;
+    }
+  
+    .footer-social {
+      justify-content: center;
+      padding: 1rem 0;
+    }
+  }
