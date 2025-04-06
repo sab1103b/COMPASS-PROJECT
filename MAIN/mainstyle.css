@@ -740,6 +740,7 @@ h2{
   }
   
   .btn-usuario {
+    width: 70%;
     background-color: #3d2b29;
     color: white;
     padding: 12px;
