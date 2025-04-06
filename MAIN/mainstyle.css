@@ -848,9 +848,11 @@ h2{
     background-color: #D9D1BF;
     padding: 20px;
     border-radius: 10px;
-    max-width: 800px;
+    max-width: 700px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    
 }
 
 .passport-image {
@@ -860,13 +862,20 @@ h2{
 }
 
 .passport-text {
+    font-family: 'Beiruti', 'Nunito', 'Arial', sans-serif; /* Beiruti como principal, Nunito y Arial como respaldo */
+    font-size: 0.9rem; /* Ajusta el tamaño de la fuente según sea necesario */
+    line-height: 1.6; /* Mejora la legibilidad */
+    color: #3d2c2c; 
     width: 60%;
+    
 }
 
 .passport-title {
-    font-size: 1.8rem;
+    
+    font-size: 1.2rem;
     font-weight: bold;
     margin-bottom: 10px;
+    line-height: 1.1;
 }
 
 /* Estilos para invertir la posición de la imagen y el texto en la segunda y cuarta sección */
