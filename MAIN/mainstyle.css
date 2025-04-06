@@ -591,6 +591,39 @@ h2{
     color: white;
 }
 
+/* --------------------------------------------------------------- Seccion locales*/
+.zone {
+    border-top: 1px solid #4a3a3a;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-top: 3rem;
+    padding: 4rem 1rem;
+}
+
+.zone h3 {
+    font-size: 2.5rem; 
+    margin-bottom: 2rem;
+    margin-top: 0;    
+    padding-top: 1rem;  
+}
+
+.cafes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.cafe {
+    width: 250px;
+    text-align: center;
+}
+
+.cafe img {
+    width: 150px;
+    height: auto;
+    margin-bottom: 10px;
+}
 /* Responsivo */
 @media (max-width: 768px) {
     .row {
