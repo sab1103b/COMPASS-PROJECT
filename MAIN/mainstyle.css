@@ -546,17 +546,24 @@ h2{
 
 /* ---------------------------------------------------------------Pie de página */
 .pie-de-pagina {
-    background-color: #231815;
-    padding: 40px 0;
-    text-align: center;
-    border-radius: 40px 40px 0 0;
-    color: white;
+    background-color: #2c2421; /* Fondo oscuro elegante */
+    color: #ffffff; /* Texto blanco para contraste */
+    padding: 20px 10px; /* Espaciado interno */
+    text-align: center; /* Centra el contenido */
+    border-radius: 20px 20px 0 0; /* Bordes redondeados en la parte superior */
     position: relative;
+    box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.2); /* Sombra para darle profundidad */
+    margin-top: 20px;
 }
 
-.contine {
-    width: 80%;
-    margin: 0 auto;
+.pie-de-pagina .contine {
+    max-width: 1200px; /* Limita el ancho máximo */
+    margin: 0 auto; /* Centra el contenido */
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en pantallas pequeñas */
+    justify-content: space-between; /* Espacia los elementos */
+    align-items: center;
+    gap: 20px; /* Espaciado entre elementos */
 }
 
 .row {
@@ -566,20 +573,36 @@ h2{
     flex-wrap: wrap;
 }
 
-.menu ul {
-    list-style: none;
+.pie-de-pagina .menu ul {
+    list-style: none; /* Elimina los puntos de la lista */
     padding: 0;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Espaciado entre enlaces */
+    flex-wrap: wrap; /* Ajusta los enlaces en pantallas pequeñas */
+    align-items: center;
 }
 
-.menu ul li {
-    margin: 10px 0;
+
+.pie-de-pagina .menu ul li {
+    margin: 0;
 }
 
-.menu ul li a {
-    text-decoration: none;
-    color: white;
-    font-size: 16px;
-    display: inline-block;
+.pie-de-pagina .menu ul li a {
+    text-decoration: none; /* Elimina el subrayado */
+    color: #ffffff; /* Texto blanco */
+    font-size: 14px; /* Tamaño de fuente más pequeño */
+    padding: 10px 20px; /* Espaciado interno */
+    border-radius: 20px; /* Bordes redondeados */
+    background-color: #3b2f2a; /* Fondo para los enlaces */
+    transition: background-color 0.3s ease; /* Transición suave */
+    display: inline-block; /* Asegura que los botones se comporten como bloques */
+    text-align: center; /
+}
+
+.pie-de-pagina .menu ul li a:hover {
+    background-color: #886F6F; /* Cambia el color al pasar el mouse */
 }
 
 .img figure {
@@ -588,24 +611,30 @@ h2{
     align-items: center;
 }
 
-.img img {
-    width: 150px;
-    opacity: 0.8;
+.pie-de-pagina .img img {
+    width: 100px; /* Reduce el tamaño de la imagen */
+    height: auto; /* Mantiene la proporción */
+    margin: 0 auto; /* Centra la imagen */
+    display: block; /* Asegura que esté centrada */
 }
 
-.linea-separadora {
-    width: 90%;
+.pie-de-pagina .linea-separadora {
+    width: 80%;
     height: 1px;
     background-color: #D1D1D1;
-    margin: 20px auto;
+    margin: 5px auto;
+    opacity: 0.5; /* Línea más sutil */
 }
 
-.redes-sociales {
+.pie-de-pagina .redes-sociales {
     display: flex;
-    justify-content: center;
-    gap: 10px;
+    justify-content: flex-end;
+    gap: 10px; /* Espaciado entre íconos */
+    margin-top: 5px; /* Espaciado respecto a la línea */
+    flex-wrap: wrap; /* Permite que los íconos se ajusten si no hay espacio */
+    width: 100%; /* Asegura que ocupe todo el ancho disponible */
+    text-align: right; /* Centra los íconos */
 }
-
 .redes-sociales a {
     display: flex;
     align-items: center;
@@ -621,9 +650,21 @@ h2{
     transition: 0.3s;
 }
 
+.pie-de-pagina .redes-sociales a:hover {
+    background: #886F6F; /* Cambia el color al pasar el mouse */
+    color: #ffffff; /* Cambia el color del ícono */
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño */
+}
+
 .redes-sociales a:hover {
     background: #C29C99;
     color: white;
+}
+
+.pie-de-pagina p {
+    font-size: 12px; /* Tamaño de fuente más pequeño */
+    margin-top: 10px;
+    color: #D1D1D1; /* Texto gris claro */
 }
 
 /* --------------------------------------------------------------- Seccion locales*/
