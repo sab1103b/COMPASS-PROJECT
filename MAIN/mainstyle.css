@@ -138,20 +138,17 @@ h2{
 }
 
 .content {
-    width: 100vw;
-    margin-left: calc(-50vw + 50%);
+    width: 100vw; /* Asegura que ocupe todo el ancho de la pantalla */
+    margin-left: calc(-50vw + 50%); /* Centra la expansión del contenido */
     background-color: #886F6F;
-    padding: 40px 20px;
+    padding: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-wrap: wrap; /* Permite mejor adaptación en pantallas pequeñas */
-    gap: 2rem;
 }
 
 .image {
-    width: 35%;
-    min-width: 280px;
+    width: 40%;
     padding-right: 10px;
 }
 
@@ -162,20 +159,11 @@ h2{
 }
 
 .text {
-    width: 40%;
-    max-width: 500px; /* Evita que el texto se alargue demasiado */
-    min-width: 280px;
-    color: #e6ded6;
-    font-size: 1.25rem;
-    line-height: 1.6;
-    text-align: justify;
-}
-
-@media screen and (max-width: 650px) {
-    .text {
-        font-size: 1rem;
-        text-align: center;
-    }
+    height: 100%;
+    width: 30%;
+    color: #23170A;
+    font-size: 0.9rem;
+    line-height: 1.5;
 }
 
 /* ----------------------------------------------------- Contenedor pasos */
@@ -309,12 +297,6 @@ h2{
     max-width: 900px;
 }
 
-@media screen and (max-width: 650px) {
-    .adventure-content  {
-        width: 80%;
-    }
-}
-
 .adventure-image {
     display: flex;
     flex-direction: column;
@@ -353,12 +335,6 @@ h2{
     text-align: center; 
 }
 
-@media screen and (max-width: 650px) {
-    .adventure-text  {
-        width: 60%;
-    }
-}
-
 .adventure-text h2 {
     font-family: 'Inknut Antiqua', 'EB Garamond', 'Lora', 'Cormorant Garamond', serif;
     font-size: 1.8rem;
@@ -368,13 +344,6 @@ h2{
     font-size: 18px;
     line-height: 1.5;
     width: 70%;
-}
-
-@media screen and (max-width: 650px) {
-    .adventure-text p {
-        font-size: 0.8rem;
-        text-align: center;
-    }
 }
 
 
@@ -508,17 +477,13 @@ h2{
 }
 
 .registro-image {
-    width: 40%;
+    width: 45%;
     text-align: center;
 }
 
 .registro-image img {
-    width:100%;
-    height: auto;
-    aspect-ratio: 11/7; /* Ancho mayor que alto */
-    object-fit: cover;
+    width:50%;
     border-radius: 15px;
-    display: block;
 }
 
 .registro-admin {
@@ -670,14 +635,13 @@ h2{
 /* --------------------------------------------------------------- Seccion locales*/
 .zone {
     border-top: 1px solid #4a3a3a;
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0 auto;
     padding-top: 3rem;
     padding: 4rem 1rem;
 }
 
 .zone h3 {
-    font-family: 'Inknut Antiqua', 'EB Garamond', 'Lora', 'Cormorant Garamond', serif;
     font-size: 2.5rem; 
     margin-bottom: 2rem;
     margin-top: 0;    
@@ -701,10 +665,38 @@ h2{
     height: auto;
     margin-bottom: 10px;
 }
-/* --------------------------------------------------------------- Seccion ingreso*/
-.ingreso-container {
-    display: flex;
-    flex-wrap: wrap;
+/* Responsivo */
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .menu ul li a {
+        font-size: 14px;
+    }
+
+    .img img {
+        width: 120px;
+    }
+
+    .linea-separadora {
+        width: 80%;
+    }
+
+    .redes-sociales {
+        justify-content: center;
+        padding: 10px 0;
+    }
+
+    .redes-sociales a {
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+    }
+     /* --------------------------------------------- seccion ingreso */
+  .ingreso-container {
     width: 100vw; /* Ocupa todo el ancho */
     min-height: 500px; 
     background-color: #b2968c;
@@ -714,7 +706,7 @@ h2{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 60px;
     box-sizing: border-box;
   }
   
@@ -783,8 +775,6 @@ h2{
   }
   
   .btn-usuario {
-    max-width: 300px;
-    width: 70%;
     background-color: #3d2b29;
     color: white;
     padding: 12px;
@@ -793,15 +783,8 @@ h2{
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    margin: 0 auto;
   }
-
-  @media (min-width: 1200px) {
-    .btn-usuario {
-        width: 50%; /* Reduce el ancho en pantallas grandes */
-    }
-}
-
+  
   .btn-usuario:hover {
     background-color: #5a3f3c;
   }
@@ -823,57 +806,4 @@ h2{
     width: 90%;
     margin: 20px 0 5px 0;
   }
-/* Responsivo */
-@media (max-width: 768px) {
-    .ingreso-container {
-        flex-direction: column-reverse; /* Apila los elementos verticalmente */
-        gap: 10px; /* Reduce el espacio entre elementos */
-    }
-    
-    .ingreso-image {
-        width: 80%; /* Aumenta el ancho de la imagen en pantallas pequeñas */
-        display: flex;
-        justify-content: center;
-    }
-    
-    .ingreso-image img {
-        width: 90%; /* Reduce el tamaño de la imagen */
-        height: auto; /* Mantiene la proporción */
-        aspect-ratio: 16/9; /* Hace que sea más ancha que alta */
-        border-radius: 15px; /* Mantiene bordes redondeados */
-        object-fit: cover; /* Ajusta la imagen para que se vea bien */
-    }
-
-    .ingreso-form {
-        width: 90%; /* Asegura que el formulario ocupe más espacio */
-    }
-
-    .row {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .menu ul li a {
-        font-size: 14px;
-    }
-
-    .img img {
-        width: 120px;
-    }
-
-    .linea-separadora {
-        width: 80%;
-    }
-
-    .redes-sociales {
-        justify-content: center;
-        padding: 10px 0;
-    }
-
-    .redes-sociales a {
-        width: 30px;
-        height: 30px;
-        font-size: 16px;
-    }
 }
