@@ -152,9 +152,9 @@ footer {
   }
   
   .footer-nav a {
-    color: rgba(255, 255, 255, 0.7); /* Un poco más opaco */
+    color: rgba(255, 255, 255, 0.7); /* más opaco */
     text-decoration: none;
-    font-size: 1.3rem; /* Más pequeña (antes 1.5rem) */
+    font-size: 1.3rem; 
     font-weight: 300;
     font-family: 'Helvetica Neue', sans-serif;
     letter-spacing: 0.4px;
