@@ -508,13 +508,17 @@ h2{
 }
 
 .registro-image {
-    width: 45%;
+    width: 40%;
     text-align: center;
 }
 
 .registro-image img {
-    width:50%;
+    width:100%;
+    height: auto;
+    aspect-ratio: 11/7; /* Ancho mayor que alto */
+    object-fit: cover;
     border-radius: 15px;
+    display: block;
 }
 
 .registro-admin {
@@ -625,13 +629,14 @@ h2{
 /* --------------------------------------------------------------- Seccion locales*/
 .zone {
     border-top: 1px solid #4a3a3a;
-    max-width: 1000px;
+    max-width: 900px;
     margin: 0 auto;
     padding-top: 3rem;
     padding: 4rem 1rem;
 }
 
 .zone h3 {
+    font-family: 'Inknut Antiqua', 'EB Garamond', 'Lora', 'Cormorant Garamond', serif;
     font-size: 2.5rem; 
     margin-bottom: 2rem;
     margin-top: 0;    
