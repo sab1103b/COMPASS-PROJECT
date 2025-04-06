@@ -662,6 +662,8 @@ h2{
 }
 /* --------------------------------------------------------------- Seccion ingreso*/
 .ingreso-container {
+    display: flex;
+    flex-wrap: wrap;
     width: 100vw; /* Ocupa todo el ancho */
     min-height: 500px; 
     background-color: #b2968c;
@@ -671,7 +673,7 @@ h2{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 60px;
+    gap: 20px;
     box-sizing: border-box;
   }
   
@@ -740,6 +742,7 @@ h2{
   }
   
   .btn-usuario {
+    max-width: 300px;
     width: 70%;
     background-color: #3d2b29;
     color: white;
@@ -749,8 +752,15 @@ h2{
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    margin: 0 auto;
   }
-  
+
+  @media (min-width: 1200px) {
+    .btn-usuario {
+        width: 50%; /* Reduce el ancho en pantallas grandes */
+    }
+}
+
   .btn-usuario:hover {
     background-color: #5a3f3c;
   }
@@ -774,6 +784,29 @@ h2{
   }
 /* Responsivo */
 @media (max-width: 768px) {
+    .ingreso-container {
+        flex-direction: column-reverse; /* Apila los elementos verticalmente */
+        gap: 10px; /* Reduce el espacio entre elementos */
+    }
+    
+    .ingreso-image {
+        width: 80%; /* Aumenta el ancho de la imagen en pantallas pequeñas */
+        display: flex;
+        justify-content: center;
+    }
+    
+    .ingreso-image img {
+        width: 90%; /* Reduce el tamaño de la imagen */
+        height: auto; /* Mantiene la proporción */
+        aspect-ratio: 16/9; /* Hace que sea más ancha que alta */
+        border-radius: 15px; /* Mantiene bordes redondeados */
+        object-fit: cover; /* Ajusta la imagen para que se vea bien */
+    }
+
+    .ingreso-form {
+        width: 90%; /* Asegura que el formulario ocupe más espacio */
+    }
+
     .row {
         flex-direction: column;
         align-items: center;
