@@ -804,6 +804,83 @@ h2{
     margin: 20px 0 5px 0;
   }
 
+/* Seccioón cafés */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    background-color: #D9D1BF;
+    border-radius: 20px;
+    padding: 15px;
+    width: 350px;
+    text-align: left;
+    font-family: 'Beiruti', sans-serif;
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.card-content {
+    margin-top: 10px;
+}
+
+.code {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+
+
+
+/* Seccion nosotros */ 
+
+.passport-section {
+    display: flex;
+    align-items: center;
+    font-family: 'Beiruti', sans-serif;
+    background-color: #D9D1BF;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 800px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.passport-image {
+    width: 40%;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.passport-text {
+    width: 60%;
+}
+
+.passport-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Estilos para invertir la posición de la imagen y el texto en la segunda y cuarta sección */
+.reverse {
+    flex-direction: row-reverse;
+}
+
+.reverse .passport-image {
+    margin-left: 20px;
+    margin-right: 0;
+}
+
+
+
 /* Responsivo */
 @media (max-width: 768px) {
     .ingreso-container {
