@@ -1,36 +1,4 @@
-body {
-    margin: 0;
-    font-family: 'Josefin Sans', sans-serif;
-    background-color: #f1eee6;
-  }
-  
-  /* ---------------- HEADER ----------------- */
-  header {
-    padding-top: 80px; /* Baja el encabezado */
-    text-align: center;
-    background-color: #edeae2;
-  }
-  
-  header h1 {
-    font-size: 60px;
-    margin-bottom: 5px; /* Más cerca del subtítulo */
-  }
-  
-  header h2 {
-    font-size: 30px;
-    margin-top: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  /* línea más abajo */
-  header hr {
-    margin: 80px auto 0 auto; /* La empuja más cerca del fondo */
-    width: 90%;
-  }
-  
+
   /* ---------------- INGRESO ----------------- */
   .ingreso-container {
     width: 100vw; /* Ocupa todo el ancho */
