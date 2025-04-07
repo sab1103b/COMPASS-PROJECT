@@ -1150,7 +1150,76 @@ h2{
     color: #3d2c2c;
     text-align: center;
 }
+/* --------------------------------------------------------------------------------- perfil administrador */
 
+/* Layout en dos columnas */
+.perfil-info {
+    display: flex;
+    flex-direction: row; /* ← Esto pone los hijos en fila, o sea, en columnas si hay dos elementos */
+    justify-content: center;
+    align-items:center;
+    gap: 80px;
+  }
+  .perfil-admin {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* ← esto centra los botones horizontalmente */
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  /* Datos de perfil */
+  .perfil-datos p {
+    background-color: #4d2c2c;
+    color: #fff;
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+  }
+  
+  .perfil-datos strong {
+    display: block;
+    font-size: 0.85rem;
+    color: #d4b0b0;
+  }
+  
+  /* Botones */
+  .perfil-admin button {
+    display: block;
+    width: 600px;
+    margin-bottom: 10px;
+    
+    padding: 12px;
+    gap: 100px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border: none;
+    border-radius: 10px;
+    color: #4d2c2c;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .perfil-admin button:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+  @media (max-width: 768px) {
+    .perfil-info {
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+    }
+  
+    .perfil-datos p {
+      width: 100%;
+      max-width: 300px;
+    }
+  
+    .perfil-admin button {
+      width: 100%;
+      max-width: 300px;
+    }
+  }
 /* --------------------------------------------------------------------------------- Cambio de Contraseña */
 .cambio-contrasena-container {
     display: flex;
