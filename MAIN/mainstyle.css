@@ -801,7 +801,7 @@ h2{
     box-sizing: border-box;
   }
   
-  /* 👁️ Ajusta el ícono del ojo */
+  /* Ajusta el ícono del ojo */
   .toggle-password {
     position: absolute;
     top: 30%;  
@@ -867,7 +867,7 @@ h2{
     margin: 20px 0 5px 0;
   }
 
-/* -------------------------------------------------------------- Seccioón cafés */
+/* -------------------------------------------------------------- Sección cafés */
 .cards-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Ajusta automáticamente las columnas */
@@ -985,7 +985,7 @@ h2{
     margin-right: 0;
 }
 
-/* ----------------------------------------------------------------------------------------------------- Perfil - Información del usuario */
+/* ---------------------------------------------------------------------------------- Perfil - Información del usuario */
 /* Contenedor principal de perfil-info */
 .perfil-info {
     background-color: #AE9696; /* Fondo que se extiende hasta los extremos */
@@ -1152,14 +1152,14 @@ h2{
 /* --------------------------------------------------------------------------------- Cambio de Contraseña */
 .cambio-contrasena-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     gap: 20px;
-    background-color: #b2968c; /* Fondo similar al diseño */
-    padding: 30px;
-    border-radius: 15px;
+    background-color: #AE9696;
+    padding: 80px;
+    border-radius: 0px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Sombra */
-    color: #ffffff;
+    color: #f6e8e3;
 }
 
 .cambio-contrasena-text {
@@ -1170,17 +1170,17 @@ h2{
 }
 
 .cambio-contrasena-form {
-    flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 10px;
+    width: 45%;
 }
 
 .cambio-contrasena-form input {
     width: 100%;
     padding: 10px 15px;
     border: 1px solid #ddd;
-    border-radius: 10px;
+    border-radius: 20px;
     font-size: 1rem;
     color: #333;
 }
@@ -1191,7 +1191,7 @@ h2{
 
 .cambio-contrasena-form #btn-cambiar-contrasena {
     background-color: #6C5353;
-    color: white;
+    color: #f6e8e3;
     border: none;
     padding: 12px 20px;
     border-radius: 20px;
@@ -1217,28 +1217,28 @@ h2{
 /* Nueva Contraseña */
 .nueva-contrasena-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     gap: 20px;
-    background-color: #b2968c;
-    padding: 30px;
-    border-radius: 15px;
+    background-color: #AE9696;
+    padding: 80px;
+    border-radius: 0px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-    color: #ffffff;
+    color: #f6e8e3;
 }
 
 .nueva-contrasena-form {
-    flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 10px;
+    width: 45%;
 }
 
 .nueva-contrasena-form input {
     width: 100%;
     padding: 10px 15px;
     border: 1px solid #ddd;
-    border-radius: 10px;
+    border-radius: 20px;
     font-size: 1rem;
     color: #333;
 }
@@ -1249,7 +1249,7 @@ h2{
 
 .nueva-contrasena-form .btn-usuario {
     background-color: #6C5353;
-    color: white;
+    color: #f6e8e3;
     border: none;
     padding: 12px 20px;
     border-radius: 20px;
