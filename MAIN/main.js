@@ -1,8 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     
     const btnCafes = document.getElementById("btn-cafes-aventurate");
-    const btnIngresarAdmin = document.getElementById("btn-usuario_admin");
-    
+
     // Seleccionar los botones de cookies
     const cookieOverlay = document.getElementById("cookie-overlay");
     const acceptCookies = document.getElementById("accept-cookies");
@@ -12,11 +11,21 @@ document.addEventListener("DOMContentLoaded", function () {
     const btnIngresar = document.querySelector(".auth-buttons .btn:nth-child(1)");
     const btnRegistrarse = document.querySelector(".auth-buttons .btn:nth-child(2)");
 
+// Seleccionar los botones de ingresar y registrar admin y perfil
+    const btnIngresarAdmin = document.getElementById("btn-usuario_admin");
+    const btnIngresaPerfil = document.getElementById("btn-usuario");
+    const btnRegis = document.getElementById("btn-usuario_registro");
+    const btnRegisAdmin = document.getElementById("btn-usuario-registro-admin");
+    const btnIngresaPerfilAdmin = document.getElementById("btn-usuario-admin");
+
     // Seleccionar las secciones correspondientes
     const seccionIngresar = "SEC_ingresar";
     const seccionRegistro = "SEC_registro";
     const seccionCafes = "SEC_cafes";
     const seccionIngresarAdmin = "SEC_ingresar_admin";
+    const seccionPerfil = "SEC_perfil";
+    const seccionPerfilAdmin = "SEC_perfil_admin";
+    const seccionRegistroAdmin = "SEC_registro_admin";
     const seccionPrincipal = document.getElementById("principal");
 
     // Seleccionar los botones de navegación
@@ -60,7 +69,22 @@ document.addEventListener("DOMContentLoaded", function () {
         mostrarSeccion(seccionCafes);
     });
 
+    btnIngresaPerfil.addEventListener("click", function() {
+        mostrarSeccion(seccionPerfil);
+    });
 
+    btnRegis.addEventListener("click", function() {
+        mostrarSeccion(seccionRegistro);
+    });
+
+    btnRegisAdmin.addEventListener("click", function() {
+        mostrarSeccion(seccionRegistroAdmin);
+    });
+
+    btnIngresaPerfilAdmin.addEventListener("click", function() {
+        mostrarSeccion(seccionPerfilAdmin);
+    });
+    
     // Mostrar la sección principal al inicio
     mostrarSeccion("principal");
 

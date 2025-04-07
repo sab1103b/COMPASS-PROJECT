@@ -824,7 +824,7 @@ h2{
     color: #3d1c1a;
   }
   
-  #btn-usuario, #btn-usuario_admin, #btn-usuario_registro{
+  #btn-usuario, #btn-usuario_admin, #btn-usuario_registro, #btn-usuario-admin, #btn-usuario-registro-admin {
     max-width: 300px;
     width: 70%;
     background-color: #3d2b29;
@@ -839,12 +839,12 @@ h2{
   }
 
   @media (min-width: 1200px) {
-    #btn-usuario, #btn-usuario_admin, #btn-usuario_registro {
+    #btn-usuario, #btn-usuario_admin, #btn-usuario_registro, #btn-usuario-admin, #btn-usuario-registro-admin {
         width: 50%; /* Reduce el ancho en pantallas grandes */
     }
 }
   
-  #btn-usuario:hover, #btn-usuario_admin:hover, #btn-usuario_registro:hover {
+  #btn-usuario:hover, #btn-usuario_admin:hover, #btn-usuario_registro:hover, #btn-usuario-admin:hover, #btn-usuario-registro-admin:hover {
     background-color: #5a3f3c;
   }
   
