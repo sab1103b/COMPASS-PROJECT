@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     
+    const btnCafes = document.getElementById("btn-cafes-aventurate");
+    
     // Seleccionar los botones de cookies
     const cookieOverlay = document.getElementById("cookie-overlay");
     const acceptCookies = document.getElementById("accept-cookies");
@@ -12,7 +14,11 @@ document.addEventListener("DOMContentLoaded", function () {
     // Seleccionar las secciones correspondientes
     const seccionIngresar = "SEC_ingresar";
     const seccionRegistro = "SEC_registro";
+    const seccionCafes = "SEC_cafes";
     const seccionPrincipal = document.getElementById("principal");
+
+    // Seleccionar los botones de navegación
+    const btnCafesAventurate = document.getElementById("btn-cafes-aventurate");
 
     acceptCookies.addEventListener("click", () => {
         cookieOverlay.style.display = "none"; // Oculta el overlay
@@ -43,6 +49,13 @@ document.addEventListener("DOMContentLoaded", function () {
     btnRegistrarse.addEventListener("click", function () {
         mostrarSeccion(seccionRegistro);
     });
+
+    
+
+    btnCafes.addEventListener("click", function() {
+        mostrarSeccion(seccionCafes);
+    });
+
 
     // Mostrar la sección principal al inicio
     mostrarSeccion("principal");
