@@ -546,7 +546,7 @@ h2{
     color: #3d1c1a;
 }
 
-.btn-usuario {
+.btn-usuario, #btn-aceptar-registro, #btn-Aceptar-Registro-Admin, #btn-aceptar-cambio-contraseña {
     background-color: #4a2f2b;
     color: #f6e8e3;
     padding: 12px;
@@ -1431,7 +1431,7 @@ h2{
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.nueva-contrasena-form .btn-usuario:hover {
+.nueva-contrasena-form .btn-usuario:hover, #btn-aceptar-registro:hover , #btn-Aceptar-Registro-Admin:hover, #btn-aceptar-cambio-contraseña:hover {
     background-color: #453636;
     transform: scale(1.05);
 }

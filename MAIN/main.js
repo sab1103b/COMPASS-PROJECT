@@ -33,6 +33,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const btnCodigoContra = document.getElementById("btn-cambiar-contrasena");
     const btnVerifCod = document.getElementById("btn-verificar-codigo");
     const btnVerificador = document.getElementById("btn-verificador");
+    const btnAceptarRegistro = document.getElementById("btn-aceptar-registro");
+    const btnAceptarRegistroAdmin = document.getElementById("btn-Aceptar-Registro-Admin");
+    const btnAceptarCambioContra = document.getElementById("btn-aceptar-cambio-contraseña");
 
     // Seleccionar las secciones correspondientes
     const seccionIngresar = "SEC_ingresar";
@@ -152,6 +155,24 @@ document.addEventListener("DOMContentLoaded", function () {
     if (btnVerificador) {
         btnVerificador.addEventListener("click", function () {
             mostrarSeccion(seccionPerfil);
+        });
+    }
+
+    if (btnAceptarRegistro) {
+        btnAceptarRegistro.addEventListener("click", function () {
+            mostrarSeccion(seccionIngresar);
+        });
+    }
+
+    if (btnAceptarRegistroAdmin) {
+        btnAceptarRegistroAdmin.addEventListener("click", function () {
+            mostrarSeccion(seccionIngresarAdmin);
+        });
+    }
+
+    if (btnAceptarCambioContra) {
+        btnAceptarCambioContra.addEventListener("click", function () {
+            mostrarSeccion(seccionIngresar);
         });
     }
 
