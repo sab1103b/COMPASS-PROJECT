@@ -32,40 +32,52 @@ body {
     background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro y opaco */
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     z-index: 9999; /* Asegura que esté por encima de todo */
+    padding-bottom: 20px;
 }
 
 .cookie-message {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 15px;
+    background-color: #cfcec3;
+    padding: 10px 50px;
+    border-radius: 90px;
     text-align: center;
-    max-width: 500px;
+    max-width: 700px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-family: 'Nunito', sans-serif;
+    bottom: 0;
 }
 
 .cookie-message h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
+    font-size: 1.4rem;
+    margin-bottom: 5px;
     color: #3d2c2c;
+    font-weight: bold;
 }
 
 .cookie-message p {
-    font-size: 1rem;
-    margin-bottom: 20px;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
     color: #3d2c2c;
+    line-height: 1.4;
+}
+
+.cookie-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espaciado entre los botones */
 }
 
 .cookie-buttons .btn {
     background-color: #3d2b29;
     color: white;
     border: none;
-    padding: 10px 20px;
-    border-radius: 20px;
-    margin: 0 10px;
+    padding: 0px 10px;
+    border-radius: 30px;
+    font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    font-size: 0.9rem;
 }
 
 .cookie-buttons .btn:hover {
