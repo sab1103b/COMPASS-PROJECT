@@ -160,6 +160,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Asignar eventos a los botones
     const btnCompass = document.getElementById("btn-compass");
+    const btnCafesNav = document.getElementById("btn-cafes");
     const btnLocales = document.getElementById("btn-locales");
     const btnNosotros = document.getElementById("btn-nosotros");
 
@@ -167,8 +168,8 @@ document.addEventListener("DOMContentLoaded", function () {
         btnCompass.addEventListener("click", () => mostrarSeccion("principal"));
     }
 
-    if (btnCafes) {
-        btnCafes.addEventListener("click", () => mostrarSeccion("SEC_cafes"));
+    if (btnCafesNav) {
+        btnCafesNav.addEventListener("click", () => mostrarSeccion("SEC_cafes"));
     }
 
     if (btnLocales) {
