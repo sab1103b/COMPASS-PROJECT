@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const btnIngresarAdmin = document.getElementById("btn-usuario_admin");
     const btnIngresaPerfil = document.getElementById("btn-usuario");
     const btnRegis = document.getElementById("btn-usuario_registro");
-    const btnRegisAdmin = document.getElementById("btn-usuario-registro-admin");
+    const btnsRegistroAdmin = document.querySelectorAll("#btn-usuario-registro-admin");
     const btnIngresaPerfilAdmin = document.getElementById("btn-usuario-admin");
 
     // Seleccionar las secciones correspondientes
@@ -77,14 +77,16 @@ document.addEventListener("DOMContentLoaded", function () {
         mostrarSeccion(seccionRegistro);
     });
 
-    btnRegisAdmin.addEventListener("click", function() {
-        mostrarSeccion(seccionRegistroAdmin);
+    btnsRegistroAdmin.forEach(btn => {
+        btn.addEventListener("click", function () {
+            mostrarSeccion(seccionRegistroAdmin);
+        });
     });
 
     btnIngresaPerfilAdmin.addEventListener("click", function() {
         mostrarSeccion(seccionPerfilAdmin);
     });
-    
+
     // Mostrar la sección principal al inicio
     mostrarSeccion("principal");
 
