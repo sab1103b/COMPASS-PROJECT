@@ -985,7 +985,126 @@ h2{
     margin-right: 0;
 }
 
+/* ----------------------------------------------------------------------------------------------------- Perfil - Información del usuario */
+.perfil-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    margin-bottom: 60px;
+}
 
+.perfil-datos {
+    flex: 1;
+    background-color: #f5f5f5;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.perfil-datos p {
+    margin: 15px 0;
+    font-size: 1.1rem;
+    color: #3d2c2c;
+}
+
+.perfil-datos .btn {
+    margin-top: 10px;
+    background-color: #886F6F;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.perfil-datos .btn:hover {
+    background-color: #6C5353;
+}
+
+.perfil-bienvenida {
+    flex: 2;
+    font-size: 1rem;
+    color: #3d2c2c;
+    line-height: 1.6;
+}
+
+/* Perfil - Sellos */
+.perfil-sellos {
+    margin-bottom: 40px;
+}
+
+.perfil-sellos h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #3d2c2c;
+}
+
+.sellos-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.sellos-container img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Perfil - Premios */
+.perfil-premios {
+    margin-bottom: 40px;
+}
+
+.perfil-premios h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #3d2c2c;
+}
+
+.premios-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.premio {
+    flex: 1;
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.premio p {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #3d2c2c;
+}
+
+.premio .btn {
+    background-color: #886F6F;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.premio .btn:hover {
+    background-color: #6C5353;
+}
+
+.nota-premios {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #3d2c2c;
+    text-align: center;
+}
 
 /* Responsivo */
 @media (max-width: 768px) {
