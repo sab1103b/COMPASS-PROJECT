@@ -909,6 +909,10 @@ h2{
     margin-bottom: 5px; /* Espaciado entre líneas */
 }
 
+.card-content .LocalName {
+    margin-bottom: 5px; /* Espaciado entre líneas */
+}
+
 @media screen and (max-width: 768px) {
     .cards-container {
         grid-template-columns: repeat(2, 1fr); /* Mantiene dos columnas */
