@@ -1191,24 +1191,28 @@ h2{
     flex-direction: row; /* ← Esto pone los hijos en fila, o sea, en columnas si hay dos elementos */
     justify-content: center;
     align-items:center;
-    gap: 80px;
   }
   .perfil-admin {
     display: flex;
     flex-direction: column;
     align-items: center; /* ← esto centra los botones horizontalmente */
-    max-width: 300px;
+    max-width: 400px;
     margin: 0 auto;
   }
   
+
+
   /* Datos de perfil */
   .perfil-datos p {
-    background-color: #4d2c2c;
-    color: #fff;
-    padding: 10px 15px;
-    margin-bottom: 15px;
-    border-radius: 10px;
-  }
+    background-color: #4d2c2c; /* Fondo oscuro */
+    color: #fff; /* Texto blanco */
+    margin: 0; /* Elimina márgenes */
+    border-radius: 10px; /* Bordes redondeados */
+    font-size: 1rem; /* Tamaño del texto */
+    width: 100%; /* Aumenta el ancho de los elementos */
+    max-width: 600px; /* Limita el ancho máximo */
+    text-align: center; /* Centra el texto */
+}
   
   .perfil-datos strong {
     display: block;
@@ -1217,25 +1221,25 @@ h2{
   }
   
   /* Botones */
-  .perfil-admin button {
-    display: block;
-    width: 600px;
-    margin-bottom: 10px;
-    
-    padding: 12px;
-    gap: 100px;
-    background-color: rgba(255, 255, 255, 0.6);
+  .perfil-admin .btn {
+    width: 100%; /* Ajusta el ancho al contenido del texto */
+    background-color: #d9c3c3; /* Color de fondo */
+    color: #3d2c2c; /* Color del texto */
     border: none;
-    border-radius: 10px;
-    color: #4d2c2c;
-    font-size: 1rem;
+    border-radius: 15px; /* Bordes redondeados */
     cursor: pointer;
-    transition: background 0.3s ease;
-  }
-  
-  .perfil-admin button:hover {
-    background-color: rgba(255, 255, 255, 0.8);
-  }
+    font-size: 1rem; /* Tamaño de fuente */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-bottom: 15px; /* Espaciado entre los botones */
+}
+
+.perfil-admin .btn:hover {
+    background-color: #cbb2b2; /* Color de fondo al pasar el mouse */
+    transform: scale(1.05); /* Efecto de escala al pasar el mouse */
+}
+
   @media (max-width: 768px) {
     .perfil-info {
       flex-direction: column;
