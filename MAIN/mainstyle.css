@@ -1097,6 +1097,26 @@ h2{
     transform: scale(1.1); /* Aumenta ligeramente el tamaño al pasar el mouse */
 }
 
+#btn-verificar-codigo {
+    margin: 20px auto; /* Centra el botón horizontalmente */
+    background-color: #6C5353; /* Color de fondo */
+    color: white; /* Color del texto */
+    border: none;
+    padding: 12px 20px; /* Tamaño del botón */
+    border-radius: 20px; /* Bordes redondeados */
+    cursor: pointer;
+    font-size: 1rem; /* Tamaño del texto */
+    display: block; /* Asegura que el botón se comporte como un bloque */
+    text-align: center; /* Centra el texto dentro del botón */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Animación suave */
+}
+
+#btn-verificar-codigo:hover {
+    background-color: #453636; /* Cambia el color al pasar el mouse */
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño al pasar el mouse */
+}
+
 /* Perfil - Premios */
 .perfil-premios {
     margin-bottom: 40px;
@@ -1150,6 +1170,74 @@ h2{
     color: #3d2c2c;
     text-align: center;
 }
+
+
+/* ------------------------------------------------------------------------------------------------- Sección Verificar Código */
+.codigo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #d9c3c3; /* Fondo similar al diseño */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+.codigo-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; /* Espacio entre los elementos */
+    width: 100%;
+    max-width: 400px; /* Limita el ancho máximo */
+}
+
+.cafeteria-select {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 1rem;
+    color: #333;
+    background-color: #fff;
+}
+
+.cafeteria-select:focus {
+    outline: none;
+    border-color: #6C5353;
+}
+
+.codigo-form input {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 1rem;
+    color: #333;
+}
+
+.codigo-form input::placeholder {
+    color: #aaa;
+}
+
+.codigo-form .btn-usuario {
+    background-color: #6C5353;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.codigo-form .btn-usuario:hover {
+    background-color: #453636;
+    transform: scale(1.05);
+}
+
 
 /* --------------------------------------------------------------------------------- Cambio de Contraseña */
 .cambio-contrasena-container {
@@ -1216,7 +1304,7 @@ h2{
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Nueva Contraseña */
+/* --------------------------------------------------------------------------------------------- Nueva Contraseña */
 .nueva-contrasena-container {
     display: flex;
     justify-content: center;
@@ -1273,7 +1361,7 @@ h2{
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-/* Responsivo */
+/*  ------------------------------------------------------------------------------------------------ Responsivo */
 
 @media (max-width: 768px) {
     .cambio-contrasena-container,
