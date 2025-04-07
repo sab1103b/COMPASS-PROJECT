@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-    
     const btnCafes = document.getElementById("btn-cafes-aventurate");
 
     // Seleccionar los botones de cookies
@@ -7,11 +6,24 @@ document.addEventListener("DOMContentLoaded", function () {
     const acceptCookies = document.getElementById("accept-cookies");
     const rejectCookies = document.getElementById("reject-cookies");
 
+    // Verificar si los botones de cookies existen antes de agregar eventos
+    if (acceptCookies) {
+        acceptCookies.addEventListener("click", () => {
+            cookieOverlay.style.display = "none"; // Oculta el overlay
+        });
+    }
+
+    if (rejectCookies) {
+        rejectCookies.addEventListener("click", () => {
+            window.location.href = "https://www.google.com"; // Redirige a Google
+        });
+    }
+
     // Seleccionar los botones de ingresar y registrar
     const btnIngresar = document.querySelector(".auth-buttons .btn:nth-child(1)");
     const btnRegistrarse = document.querySelector(".auth-buttons .btn:nth-child(2)");
 
-// Seleccionar los botones de ingresar y registrar admin y perfil
+    // Seleccionar los botones de ingresar y registrar admin y perfil
     const btnIngresarAdmin = document.getElementById("btn-usuario_admin");
     const btnIngresaPerfil = document.getElementById("btn-usuario");
     const btnRegis = document.getElementById("btn-usuario_registro");
@@ -20,6 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const btnCambioContra = document.querySelectorAll("#CambioContraseña");
     const btnCodigoContra = document.getElementById("btn-cambiar-contrasena");
     const btnVerifCod = document.getElementById("btn-verificar-codigo");
+    const btnVerificador = document.getElementById("btn-verificador");
 
     // Seleccionar las secciones correspondientes
     const seccionIngresar = "SEC_ingresar";
@@ -35,17 +48,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const seccionPrincipal = document.getElementById("principal");
 
-    // Seleccionar los botones de navegación
-    const btnCafesAventurate = document.getElementById("btn-cafes-aventurate");
+    // sellos
+    const sellos = document.querySelectorAll('.sello');
+    const selectCafeteria = document.getElementById('cafeteria-select');
+    const sellarBtn = document.getElementById('sellar-btn');
 
-    acceptCookies.addEventListener("click", () => {
-        cookieOverlay.style.display = "none"; // Oculta el overlay
-    });
+    // Verificar si el botón "SELLAR" existe antes de agregar el evento
+    if (sellarBtn) {
+        sellarBtn.addEventListener('click', () => {
+            const selectedValue = selectCafeteria.value;
 
-    // Al rechazar cookies
-    rejectCookies.addEventListener("click", () => {
-        window.location.href = "https://www.google.com"; // Redirige a Google
-    });
+            if (selectedValue) {
+                // Buscar el sello correspondiente y quitar la opacidad
+                sellos.forEach((sello) => {
+                    if (sello.dataset.cafeteria === selectedValue) {
+                        sello.classList.add('activo');
+                    }
+                });
+            } else {
+                alert('Por favor selecciona una cafetería.');
+            }
+        });
+    }
 
     function mostrarSeccion(seccionId) {
         // Ocultar todas las secciones
@@ -60,29 +84,41 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    btnIngresar.addEventListener("click", function () {
-        mostrarSeccion(seccionIngresar);
-    });
+    if (btnIngresar) {
+        btnIngresar.addEventListener("click", function () {
+            mostrarSeccion(seccionIngresar);
+        });
+    }
 
-    btnRegistrarse.addEventListener("click", function () {
-        mostrarSeccion(seccionRegistro);
-    });
+    if (btnRegistrarse) {
+        btnRegistrarse.addEventListener("click", function () {
+            mostrarSeccion(seccionRegistro);
+        });
+    }
 
-    btnIngresarAdmin.addEventListener("click", function () {
-        mostrarSeccion(seccionIngresarAdmin);
-    });
+    if (btnIngresarAdmin) {
+        btnIngresarAdmin.addEventListener("click", function () {
+            mostrarSeccion(seccionIngresarAdmin);
+        });
+    }
 
-    btnCafes.addEventListener("click", function() {
-        mostrarSeccion(seccionCafes);
-    });
+    if (btnCafes) {
+        btnCafes.addEventListener("click", function () {
+            mostrarSeccion(seccionCafes);
+        });
+    }
 
-    btnIngresaPerfil.addEventListener("click", function() {
-        mostrarSeccion(seccionPerfil);
-    });
+    if (btnIngresaPerfil) {
+        btnIngresaPerfil.addEventListener("click", function () {
+            mostrarSeccion(seccionPerfil);
+        });
+    }
 
-    btnRegis.addEventListener("click", function() {
-        mostrarSeccion(seccionRegistro);
-    });
+    if (btnRegis) {
+        btnRegis.addEventListener("click", function () {
+            mostrarSeccion(seccionRegistro);
+        });
+    }
 
     btnsRegistroAdmin.forEach(btn => {
         btn.addEventListener("click", function () {
@@ -96,24 +132,51 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    btnCodigoContra.addEventListener("click", function() {
-        mostrarSeccion(seccionNuevaContra);
-    });
+    if (btnCodigoContra) {
+        btnCodigoContra.addEventListener("click", function () {
+            mostrarSeccion(seccionNuevaContra);
+        });
+    }
 
-    btnIngresaPerfilAdmin.addEventListener("click", function() {
-        mostrarSeccion(seccionPerfilAdmin);
-    });
+    if (btnIngresaPerfilAdmin) {
+        btnIngresaPerfilAdmin.addEventListener("click", function () {
+            mostrarSeccion(seccionPerfilAdmin);
+        });
+    }
 
-    btnVerifCod.addEventListener("click", function() {
-        mostrarSeccion(seccionVerifCod);
-    });
-    
+    if (btnVerifCod) {
+        btnVerifCod.addEventListener("click", function () {
+            mostrarSeccion(seccionVerifCod);
+        });
+    }
+
+    if (btnVerificador) {
+        btnVerificador.addEventListener("click", function () {
+            mostrarSeccion(seccionPerfil);
+        });
+    }
+
     // Mostrar la sección principal al inicio
     mostrarSeccion("principal");
 
     // Asignar eventos a los botones
-    document.getElementById("btn-compass").addEventListener("click", () => mostrarSeccion("principal"));
-    document.getElementById("btn-cafes").addEventListener("click", () => mostrarSeccion("SEC_cafes"));
-    document.getElementById("btn-locales").addEventListener("click", () => mostrarSeccion("SEC_locales"));
-    document.getElementById("btn-nosotros").addEventListener("click", () => mostrarSeccion("SEC_nosotros"));
+    const btnCompass = document.getElementById("btn-compass");
+    const btnLocales = document.getElementById("btn-locales");
+    const btnNosotros = document.getElementById("btn-nosotros");
+
+    if (btnCompass) {
+        btnCompass.addEventListener("click", () => mostrarSeccion("principal"));
+    }
+
+    if (btnCafes) {
+        btnCafes.addEventListener("click", () => mostrarSeccion("SEC_cafes"));
+    }
+
+    if (btnLocales) {
+        btnLocales.addEventListener("click", () => mostrarSeccion("SEC_locales"));
+    }
+
+    if (btnNosotros) {
+        btnNosotros.addEventListener("click", () => mostrarSeccion("SEC_nosotros"));
+    }
 });

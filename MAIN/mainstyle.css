@@ -1097,6 +1097,15 @@ h2{
     transform: scale(1.1); /* Aumenta ligeramente el tamaño al pasar el mouse */
 }
 
+.sello {
+    opacity: 0.5; /* Opacidad inicial */
+    transition: opacity 0.3s ease; /* Transición suave */
+}
+
+.sello.activo {
+    opacity: 1; /* Opacidad completa cuando está activo */
+}
+
 #btn-verificar-codigo {
     margin: 20px auto; /* Centra el botón horizontalmente */
     background-color: #6C5353; /* Color de fondo */
