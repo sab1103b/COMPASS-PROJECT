@@ -1097,7 +1097,6 @@ h2{
     transform: scale(1.1); /* Aumenta ligeramente el tamaño al pasar el mouse */
 }
 
-<<<<<<< HEAD
 .sello {
     opacity: 0.5; /* Opacidad inicial */
     transition: opacity 0.3s ease; /* Transición suave */
@@ -1127,8 +1126,6 @@ h2{
     transform: scale(1.05); /* Aumenta ligeramente el tamaño al pasar el mouse */
 }
 
-=======
->>>>>>> 698807bea0fe4756e6aa09b21de5634a9672764a
 /* Perfil - Premios */
 .perfil-premios {
     margin-bottom: 40px;
