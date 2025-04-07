@@ -1192,16 +1192,29 @@ h2{
     justify-content: center;
     align-items:center;
   }
+
   .perfil-admin {
     display: flex;
     flex-direction: column;
-    align-items: center; /* ← esto centra los botones horizontalmente */
-    max-width: 400px;
-    margin: 0 auto;
-  }
+    align-items: center; /* Centra los botones horizontalmente */
+    gap: 15px; /* Espacio entre los botones */
+    max-width: 300px; /* Limita el ancho del contenedor */
+    margin: 0 auto; /* Centra el contenedor */
+}
+.perfil-admin button {
+    width: 100%; /* Ajusta el ancho al contenido del texto */
+    background-color: #d9c3c3; /* Color de fondo */
+    color: #3d2c2c; /* Color del texto */
+    border: none;
+    border-radius: 15px; /* Bordes redondeados */
+    cursor: pointer;
+    font-size: 1rem; /* Tamaño de fuente */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-bottom: 15px; /* Espaciado entre los botones */
+}
   
-
-
   /* Datos de perfil */
   .perfil-datos p {
     background-color: #4d2c2c; /* Fondo oscuro */
@@ -1219,26 +1232,12 @@ h2{
     font-size: 0.85rem;
     color: #d4b0b0;
   }
-  
-  /* Botones */
-  .perfil-admin .btn {
-    width: 100%; /* Ajusta el ancho al contenido del texto */
-    background-color: #d9c3c3; /* Color de fondo */
-    color: #3d2c2c; /* Color del texto */
-    border: none;
-    border-radius: 15px; /* Bordes redondeados */
-    cursor: pointer;
-    font-size: 1rem; /* Tamaño de fuente */
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    margin-bottom: 15px; /* Espaciado entre los botones */
-}
 
-.perfil-admin .btn:hover {
+.perfil-admin button:hover {
     background-color: #cbb2b2; /* Color de fondo al pasar el mouse */
     transform: scale(1.05); /* Efecto de escala al pasar el mouse */
 }
+
 
   @media (max-width: 768px) {
     .perfil-info {
@@ -1446,7 +1445,103 @@ h2{
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-/* Responsivo */
+
+/* --------------------------------------------------------------------------------- Crear Cafetería */
+.crear-cafeteria-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra los elementos horizontalmente */
+    justify-content: center; /* Centra los elementos verticalmente */
+    background-color: #d9c3c3; /* Fondo similar al diseño */
+    padding: 30px;
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+    max-width: 500px; /* Limita el ancho máximo */
+    margin: 0 auto; /* Centra el contenedor */
+}
+
+.crear-cafeteria-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espacio entre los elementos */
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+}
+
+.crear-cafeteria-form input {
+    width: 100%; /* Ocupa todo el ancho disponible */
+    padding: 10px 15px; /* Espaciado interno */
+    border: 1px solid #ddd; /* Borde claro */
+    border-radius: 10px; /* Bordes redondeados */
+    font-size: 1rem; /* Tamaño de fuente */
+    color: #333; /* Color del texto */
+    background-color: #fff; /* Fondo blanco */
+}
+
+.crear-cafeteria-form input::placeholder {
+    color: #aaa; /* Color del texto del placeholder */
+}
+
+.crear-cafeteria-form button {
+    background-color: #886F6F; /* Color de fondo del botón */
+    color: white; /* Color del texto */
+    border: none;
+    padding: 12px 20px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+    cursor: pointer;
+    font-size: 1rem; /* Tamaño de fuente */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Animación suave */
+}
+
+.crear-cafeteria-form button:hover {
+    background-color: #6C5353; /* Color de fondo al pasar el mouse */
+    transform: scale(1.05); /* Efecto de escala al pasar el mouse */
+}
+
+.crear-cafeteria-form .imagen-sello {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px; /* Espacio entre la imagen y el botón */
+}
+
+/* Contenedor de la imagen y botón */
+.imagen-sello {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espacio entre los elementos */
+}
+
+/* Estilo del botón de subida de imagen */
+.custom-file-upload {
+    background-color: #cbb2b2; /* Fondo del botón */
+    color: #3d2c2c; /* Color del texto */
+    border: none;
+    padding: 10px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Espacio entre el icono y el texto */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Ocultar el input de tipo file */
+#imagen-sello {
+    display: none;
+}
+
+/* Hover para el botón de subida */
+.custom-file-upload:hover {
+    background-color: #b2968c; /* Fondo al pasar el mouse */
+    transform: scale(1.05); /* Efecto de escala */
+}
+
+/*  -------------------------------------------------------------------------- Responsivo */
 
 @media (max-width: 768px) {
     .cambio-contrasena-container,

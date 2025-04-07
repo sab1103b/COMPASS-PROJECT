@@ -36,6 +36,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const btnAceptarRegistro = document.getElementById("btn-aceptar-registro");
     const btnAceptarRegistroAdmin = document.getElementById("btn-Aceptar-Registro-Admin");
     const btnAceptarCambioContra = document.getElementById("btn-aceptar-cambio-contraseña");
+    const btnCreacionCafeteria = document.getElementById("btn-Creacion-Cafeterias");
+    const btnCreacionPremios = document.getElementById("btn-Creacion-premio");
 
     // Seleccionar las secciones correspondientes
     const seccionIngresar = "SEC_ingresar";
@@ -48,6 +50,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const seccionCambioContra = "SEC_cambio_contrasena";
     const seccionNuevaContra = "SEC_nueva_contrasena";
     const seccionVerifCod = "SEC_codigo";
+    const seccionCrearCafeteria = "SEC_crear_cafeteria";
+    const seccionCrearPremios = "SEC_agregar_premio";
     const seccionPrincipal = document.getElementById("principal");
 
     // sellos
@@ -173,6 +177,18 @@ document.addEventListener("DOMContentLoaded", function () {
     if (btnAceptarCambioContra) {
         btnAceptarCambioContra.addEventListener("click", function () {
             mostrarSeccion(seccionIngresar);
+        });
+    }
+
+    if (btnCreacionCafeteria) {
+        btnCreacionCafeteria.addEventListener("click", function () {
+            mostrarSeccion(seccionCrearCafeteria);
+        });
+    }
+
+    if (btnCreacionPremios) {
+        btnCreacionPremios.addEventListener("click", function () {
+            mostrarSeccion(seccionCrearPremios);
         });
     }
 
