@@ -1,5 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
     
+    // Seleccionar los botones de cookies
+    const cookieOverlay = document.getElementById("cookie-overlay");
+    const acceptCookies = document.getElementById("accept-cookies");
+    const rejectCookies = document.getElementById("reject-cookies");
+
     // Seleccionar los botones de ingresar y registrar
     const btnIngresar = document.querySelector(".auth-buttons .btn:nth-child(1)");
     const btnRegistrarse = document.querySelector(".auth-buttons .btn:nth-child(2)");
@@ -8,6 +13,15 @@ document.addEventListener("DOMContentLoaded", function () {
     const seccionIngresar = "SEC_ingresar";
     const seccionRegistro = "SEC_registro";
     const seccionPrincipal = document.getElementById("principal");
+
+    acceptCookies.addEventListener("click", () => {
+        cookieOverlay.style.display = "none"; // Oculta el overlay
+    });
+
+    // Al rechazar cookies
+    rejectCookies.addEventListener("click", () => {
+        window.location.href = "https://www.google.com"; // Redirige a Google
+    });
 
     function mostrarSeccion(seccionId) {
         // Ocultar todas las secciones

@@ -23,6 +23,57 @@ body {
 }
 
 /* ------------------------------------------------------Barra de navegación */
+.cookie-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro y opaco */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Asegura que esté por encima de todo */
+}
+
+.cookie-message {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cookie-message h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #3d2c2c;
+}
+
+.cookie-message p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    color: #3d2c2c;
+}
+
+.cookie-buttons .btn {
+    background-color: #3d2b29;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cookie-buttons .btn:hover {
+    background-color: #5a3f3c;
+}
+
+
+/* ------------------------------------------------------Barra de navegación */
 .navbar {
     display: flex;
     align-items: center;
