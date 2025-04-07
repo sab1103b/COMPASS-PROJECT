@@ -1069,8 +1069,10 @@ h2{
 }
 
 .perfil-sellos h3 {
+    font-family: 'Inknut Antiqua', 'EB Garamond', 'Lora', 'Cormorant Garamond', serif;
     font-size: 2rem; /* Título más grande */
-    margin-bottom: 20px;
+    margin-top: 40px; /* Espacio encima del título */
+    margin-bottom: 20px; /* Espacio debajo del título */
     color: #3d2c2c;
     text-transform: uppercase; /* Texto en mayúsculas */
 }
