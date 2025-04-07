@@ -179,6 +179,38 @@ document.addEventListener("DOMContentLoaded", function () {
     // Mostrar la sección principal al inicio
     mostrarSeccion("principal");
 
+    const enlacesNavegacion = document.querySelectorAll('a[data-seccion]');
+
+    // Función para mostrar la sección correspondiente
+    function mostrarSeccion(seccionId) {
+        // Ocultar todas las secciones
+        document.querySelectorAll("main section").forEach(seccion => {
+            seccion.style.display = "none";
+        });
+
+        // Mostrar la sección seleccionada
+        const seccionMostrada = document.getElementById(seccionId);
+        if (seccionMostrada) {
+            seccionMostrada.style.display = "block";
+        }
+    }
+
+    // Asignar evento click a cada enlace
+    enlacesNavegacion.forEach(enlace => {
+        enlace.addEventListener("click", function (event) {
+            event.preventDefault(); // Evitar el comportamiento predeterminado del enlace
+            const seccionId = this.getAttribute("data-seccion"); // Obtener el ID de la sección
+            mostrarSeccion(seccionId); // Mostrar la sección correspondiente
+        });
+    });
+
+
+
+
+
+
+
+
     // Asignar eventos a los botones
     const btnCompass = document.getElementById("btn-compass");
     const btnCafesNav = document.getElementById("btn-cafes");
