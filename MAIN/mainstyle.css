@@ -23,6 +23,10 @@ body {
     overflow: visible !important; /* Asegura que el contenido no se esconda */
 }
 
+.oculto {
+    display: none;
+}
+
 /* ------------------------------------------------------Barra de navegación */
 .cookie-overlay {
     position: fixed;

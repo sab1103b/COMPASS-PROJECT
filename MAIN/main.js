@@ -48,24 +48,24 @@ document.addEventListener("DOMContentLoaded", function () {
     const seccionPrincipal = document.getElementById("principal");
 
     // sellos
-    const sellos = document.querySelectorAll('.sello');
-    const selectCafeteria = document.getElementById('cafeteria-select');
-    const sellarBtn = document.getElementById('sellar-btn');
+    const sellos = document.querySelectorAll('.sello'); // Todas las imágenes de sellos
+    const selectCafeteria = document.getElementById('cafeteria-select'); // Menú desplegable
+    const sellarBtn = document.getElementById('btn-verificador'); // Botón "SELLAR"
 
     // Verificar si el botón "SELLAR" existe antes de agregar el evento
     if (sellarBtn) {
         sellarBtn.addEventListener('click', () => {
-            const selectedValue = selectCafeteria.value;
+            const selectedValue = selectCafeteria.value; // Obtener el valor seleccionado del menú desplegable
 
             if (selectedValue) {
                 // Buscar el sello correspondiente y quitar la opacidad
                 sellos.forEach((sello) => {
                     if (sello.dataset.cafeteria === selectedValue) {
-                        sello.classList.add('activo');
+                        sello.classList.add('activo'); // Agregar clase para mostrar el sello con opacidad completa
                     }
                 });
             } else {
-                alert('Por favor selecciona una cafetería.');
+                alert('Por favor selecciona una cafetería.'); // Mostrar alerta si no se selecciona una cafetería
             }
         });
     }
