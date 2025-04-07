@@ -11,6 +11,7 @@ body {
     background-color: #F0EFE8;
     color: #3d2c2c;
     padding-top: 60px;
+    
 }
 
 .contenido-oculto {
@@ -746,17 +747,16 @@ h2{
 /* --------------------------------------------- seccion ingreso */
 .ingreso-container {
     display: flex;
-    flex-wrap: wrap;
-    width: 100vw; /* Ocupa todo el ancho */
-    min-height: 500px; 
-    background-color: #b2968c;
-    border-radius: 0; /* Sin bordes redondeados arriba/abajo */
-    margin: 0;
-    padding: 60px 80px;
     justify-content: center;
     align-items: center;
     gap: 20px;
-    box-sizing: border-box;
+    background-color: #b2968c;
+    padding: 20px 0;
+    border-radius: 0px; /* Sin bordes redondeados arriba/abajo */
+    margin: 0;
+    flex-wrap: wrap;
+    width: 100%; /* Ocupa todo el ancho */
+    min-height: 500px; 
   }
   
   .ingreso-form {
@@ -764,6 +764,7 @@ h2{
     flex-direction: column;
     gap: 15px;
     width: 50%;
+    max-width: 500px;
   }
   
   .ingreso-form input {
@@ -849,6 +850,7 @@ h2{
   
   .ingreso-image {
     width: 40%;
+    max-width: 400px;
     display: flex;
     justify-content: center;
   }
