@@ -17,7 +17,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const btnRegis = document.getElementById("btn-usuario_registro");
     const btnsRegistroAdmin = document.querySelectorAll("#btn-usuario-registro-admin");
     const btnIngresaPerfilAdmin = document.getElementById("btn-usuario-admin");
-
+    const btnCambioContra = document.querySelectorAll("#CambioContraseña");
+    const btnCodigoContra = document.getElementById("btn-cambiar-contrasena");
     // Seleccionar las secciones correspondientes
     const seccionIngresar = "SEC_ingresar";
     const seccionRegistro = "SEC_registro";
@@ -26,6 +27,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const seccionPerfil = "SEC_perfil";
     const seccionPerfilAdmin = "SEC_perfil_admin";
     const seccionRegistroAdmin = "SEC_registro_admin";
+    const seccionCambioContra = "SEC_cambio_contrasena";
+    const seccionNuevaContra = "SEC_nueva_contrasena";
     const seccionPrincipal = document.getElementById("principal");
 
     // Seleccionar los botones de navegación
@@ -81,6 +84,16 @@ document.addEventListener("DOMContentLoaded", function () {
         btn.addEventListener("click", function () {
             mostrarSeccion(seccionRegistroAdmin);
         });
+    });
+
+    btnCambioContra.forEach(btn => {
+        btn.addEventListener("click", function () {
+            mostrarSeccion(seccionCambioContra);
+        });
+    });
+
+    btnCodigoContra.addEventListener("click", function() {
+        mostrarSeccion(seccionNuevaContra);
     });
 
     btnIngresaPerfilAdmin.addEventListener("click", function() {
