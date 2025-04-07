@@ -31,9 +31,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const btnIngresaPerfilAdmin = document.getElementById("btn-usuario-admin");
     const btnCambioContra = document.querySelectorAll("#CambioContraseña");
     const btnCodigoContra = document.getElementById("btn-cambiar-contrasena");
+<<<<<<< HEAD
     const btnVerifCod = document.getElementById("btn-verificar-codigo");
     const btnVerificador = document.getElementById("btn-verificador");
 
+=======
+>>>>>>> 698807bea0fe4756e6aa09b21de5634a9672764a
     // Seleccionar las secciones correspondientes
     const seccionIngresar = "SEC_ingresar";
     const seccionRegistro = "SEC_registro";
@@ -44,8 +47,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const seccionRegistroAdmin = "SEC_registro_admin";
     const seccionCambioContra = "SEC_cambio_contrasena";
     const seccionNuevaContra = "SEC_nueva_contrasena";
-    const seccionVerifCod = "SEC_codigo";
-
     const seccionPrincipal = document.getElementById("principal");
 
     // sellos

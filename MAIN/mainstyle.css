@@ -1097,6 +1097,7 @@ h2{
     transform: scale(1.1); /* Aumenta ligeramente el tamaño al pasar el mouse */
 }
 
+<<<<<<< HEAD
 .sello {
     opacity: 0.5; /* Opacidad inicial */
     transition: opacity 0.3s ease; /* Transición suave */
@@ -1126,6 +1127,8 @@ h2{
     transform: scale(1.05); /* Aumenta ligeramente el tamaño al pasar el mouse */
 }
 
+=======
+>>>>>>> 698807bea0fe4756e6aa09b21de5634a9672764a
 /* Perfil - Premios */
 .perfil-premios {
     margin-bottom: 40px;
@@ -1179,75 +1182,76 @@ h2{
     color: #3d2c2c;
     text-align: center;
 }
+/* --------------------------------------------------------------------------------- perfil administrador */
 
-
-/* ------------------------------------------------------------------------------------------------- Sección Verificar Código */
-.codigo-container {
+/* Layout en dos columnas */
+.perfil-info {
     display: flex;
+    flex-direction: row; /* ← Esto pone los hijos en fila, o sea, en columnas si hay dos elementos */
     justify-content: center;
-    align-items: center;
-    background-color: #d9c3c3; /* Fondo similar al diseño */
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
-}
-
-.codigo-form {
+    align-items:center;
+    gap: 80px;
+  }
+  .perfil-admin {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 15px; /* Espacio entre los elementos */
-    width: 100%;
-    max-width: 400px; /* Limita el ancho máximo */
-}
-
-.cafeteria-select {
-    width: 100%;
+    align-items: center; /* ← esto centra los botones horizontalmente */
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  /* Datos de perfil */
+  .perfil-datos p {
+    background-color: #4d2c2c;
+    color: #fff;
     padding: 10px 15px;
-    border: 1px solid #ddd;
+    margin-bottom: 15px;
     border-radius: 10px;
-    font-size: 1rem;
-    color: #333;
-    background-color: #fff;
-}
-
-.cafeteria-select:focus {
-    outline: none;
-    border-color: #6C5353;
-}
-
-.codigo-form input {
-    width: 100%;
-    padding: 10px 15px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    font-size: 1rem;
-    color: #333;
-}
-
-.codigo-form input::placeholder {
-    color: #aaa;
-}
-
-.codigo-form .btn-usuario {
-    background-color: #6C5353;
-    color: white;
+  }
+  
+  .perfil-datos strong {
+    display: block;
+    font-size: 0.85rem;
+    color: #d4b0b0;
+  }
+  
+  /* Botones */
+  .perfil-admin button {
+    display: block;
+    width: 600px;
+    margin-bottom: 10px;
+    
+    padding: 12px;
+    gap: 100px;
+    background-color: rgba(255, 255, 255, 0.6);
     border: none;
-    padding: 12px 20px;
-    border-radius: 20px;
-    cursor: pointer;
+    border-radius: 10px;
+    color: #4d2c2c;
     font-size: 1rem;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.codigo-form .btn-usuario:hover {
-    background-color: #453636;
-    transform: scale(1.05);
-}
-
-
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .perfil-admin button:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+  @media (max-width: 768px) {
+    .perfil-info {
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+    }
+  
+    .perfil-datos p {
+      width: 100%;
+      max-width: 300px;
+    }
+  
+    .perfil-admin button {
+      width: 100%;
+      max-width: 300px;
+    }
+  }
 /* --------------------------------------------------------------------------------- Cambio de Contraseña */
 .cambio-contrasena-container {
     display: flex;
@@ -1313,7 +1317,7 @@ h2{
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* --------------------------------------------------------------------------------------------- Nueva Contraseña */
+/* Nueva Contraseña */
 .nueva-contrasena-container {
     display: flex;
     justify-content: center;
@@ -1370,7 +1374,7 @@ h2{
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-/*  ------------------------------------------------------------------------------------------------ Responsivo */
+/* Responsivo */
 
 @media (max-width: 768px) {
     .cambio-contrasena-container,
