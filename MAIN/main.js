@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     
     const btnCafes = document.getElementById("btn-cafes-aventurate");
+    const btnIngresarAdmin = document.getElementById("btn-usuario_admin");
     
     // Seleccionar los botones de cookies
     const cookieOverlay = document.getElementById("cookie-overlay");
@@ -15,6 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const seccionIngresar = "SEC_ingresar";
     const seccionRegistro = "SEC_registro";
     const seccionCafes = "SEC_cafes";
+    const seccionIngresarAdmin = "SEC_ingresar_admin";
     const seccionPrincipal = document.getElementById("principal");
 
     // Seleccionar los botones de navegación
@@ -50,7 +52,9 @@ document.addEventListener("DOMContentLoaded", function () {
         mostrarSeccion(seccionRegistro);
     });
 
-    
+    btnIngresarAdmin.addEventListener("click", function () {
+        mostrarSeccion(seccionIngresarAdmin);
+    });
 
     btnCafes.addEventListener("click", function() {
         mostrarSeccion(seccionCafes);
