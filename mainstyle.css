@@ -1541,6 +1541,60 @@ h2{
     transform: scale(1.05); /* Efecto de escala */
 }
 
+/* Contenedor principal de la sección Agregar Premio */
+.agregar-premio-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra los elementos horizontalmente */
+    justify-content: center; /* Centra los elementos verticalmente */
+    background-color: #d9c3c3; /* Fondo similar al diseño */
+    padding: 30px;
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+    max-width: 500px; /* Limita el ancho máximo */
+    margin: 0 auto; /* Centra el contenedor */
+}
+
+/* Formulario de Agregar Premio */
+.agregar-premio-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espacio entre los elementos */
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+}
+
+.agregar-premio-form input {
+    width: 100%; /* Ocupa todo el ancho disponible */
+    padding: 10px 15px; /* Espaciado interno */
+    border: 1px solid #ddd; /* Borde claro */
+    border-radius: 10px; /* Bordes redondeados */
+    font-size: 1rem; /* Tamaño de fuente */
+    color: #333; /* Color del texto */
+    background-color: #fff; /* Fondo blanco */
+}
+
+.agregar-premio-form input::placeholder {
+    color: #aaa; /* Color del texto del placeholder */
+}
+
+/* Botón de Agregar Premio */
+.agregar-premio-form button {
+    background-color: #886F6F; /* Color de fondo del botón */
+    color: white; /* Color del texto */
+    border: none;
+    padding: 12px 20px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+    cursor: pointer;
+    font-size: 1rem; /* Tamaño de fuente */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Animación suave */
+}
+
+.agregar-premio-form button:hover {
+    background-color: #6C5353; /* Color de fondo al pasar el mouse */
+    transform: scale(1.05); /* Efecto de escala al pasar el mouse */
+}
 /*  -------------------------------------------------------------------------- Responsivo */
 
 @media (max-width: 768px) {

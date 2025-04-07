@@ -38,6 +38,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const btnAceptarCambioContra = document.getElementById("btn-aceptar-cambio-contraseña");
     const btnCreacionCafeteria = document.getElementById("btn-Creacion-Cafeterias");
     const btnCreacionPremios = document.getElementById("btn-Creacion-premio");
+    const btnCafeteriaCreada = document.getElementById("btn-crear-cafeteria");
+    const btnPremioCreado = document.getElementById("btn-agregar-premio");
 
     // Seleccionar las secciones correspondientes
     const seccionIngresar = "SEC_ingresar";
@@ -192,6 +194,17 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    if (btnCafeteriaCreada) {
+        btnCafeteriaCreada.addEventListener("click", function () {
+            mostrarSeccion(seccionPerfilAdmin);
+        });
+    }
+
+    if (btnPremioCreado) {
+        btnPremioCreado.addEventListener("click", function () {
+            mostrarSeccion(seccionPerfilAdmin);
+        });
+    }
     // Mostrar la sección principal al inicio
     mostrarSeccion("principal");
 
