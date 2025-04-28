@@ -11,7 +11,9 @@ echo $getJSON;
 
 
 // base de datos
-$mysqli = new mysqli("localhost", "root", "", "prueba");
+$mysqli = new mysqli("localhost", "root", "", "prueba"); // base de datos locales
+// se crea la base de datos para el online
+
 if ($mysqli->connect_error) {
     die("Connection failed: " . $mysqli->connect_error);
 } else {

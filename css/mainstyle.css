@@ -533,17 +533,48 @@ h2{
 .registro-form {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    width: 45%;
+    gap: 10px; /* Espacio entre los elementos */
+    width: 100%; /* Ocupa todo el ancho disponible */
+    max-width: 400px; /* Limita el ancho máximo */
+    margin: 0 auto; /* Centra el formulario */
 }
 
 .registro-form input {
-    padding: 12px;
+    width: 100%; /* Ocupa todo el ancho disponible */
+    padding: 10px 15px; /* Espaciado interno */
+    border: 1px solid #ddd; /* Borde claro */
+    border-radius: 10px; /* Bordes redondeados */
+    font-size: 1rem; /* Tamaño de fuente */
+    color: #333; /* Color del texto */
+    background-color: #fff; /* Fondo blanco */
+}
+
+.registro-form label {
+    font-size: 1rem;
+    color: #3d2c2c; /* Color del texto */
+    font-weight: bold;
+}
+
+.registro-form input::placeholder {
+    color: #aaa; /* Color del texto del placeholder */
+}
+
+.registro-form button {
+    background-color: #886F6F; /* Color de fondo del botón */
+    color: white; /* Color del texto */
     border: none;
-    border-radius: 20px;
-    background-color: #f6e8e3;
-    font-size: 14px;
-    color: #3d1c1a;
+    padding: 12px 20px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+    cursor: pointer;
+    font-size: 1rem; /* Tamaño de fuente */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Animación suave */
+}
+
+.registro-form button:hover {
+    background-color: #6C5353; /* Color de fondo al pasar el mouse */
+    transform: scale(1.05); /* Efecto de escala al pasar el mouse */
 }
 
 .btn-usuario, #btn-aceptar-registro, #btn-Aceptar-Registro-Admin, #btn-aceptar-cambio-contraseña {

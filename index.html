@@ -480,14 +480,24 @@
                 <div class="line"></div>
                 </div>
                 <div class="registro-container">
-                    <div class="registro-form">
-                        <input type="text" placeholder="Nombres / Apellidos">
-                        <input type="email" placeholder="Correo">
-                        <input type="tel" placeholder="Celular">
-                        <input type="password" placeholder="Contraseña">
-                        <input type="password" placeholder="Verificación contraseña">
-                        <button id="btn-aceptar-registro" >NUEVO USUARIO</button>
-                    </div>
+                    <form class="registro-form" id="registro-form">
+                        <label for="nombre">Nombres / Apellidos</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Nombres / Apellidos" required>
+                    
+                        <label for="correo">Correo</label>
+                        <input type="email" id="correo" name="correo" placeholder="Correo" required>
+                    
+                        <label for="celular">Celular</label>
+                        <input type="tel" id="celular" name="celular" placeholder="Celular" required>
+                    
+                        <label for="contrasena">Contraseña</label>
+                        <input type="password" id="contrasena" name="contrasena" placeholder="Contraseña" required>
+                    
+                        <label for="verificacion-contrasena">Verificación contraseña</label>
+                        <input type="password" id="verificacion-contrasena" name="verificacion-contrasena" placeholder="Verificación contraseña" required>
+                    
+                        <button type="submit" id="btn-aceptar-registro">NUEVO USUARIO</button>
+                    </form>
                     <div class="registro-image">
                         <img src="IMAGENES/cafeconarte.png" alt="Café con arte latte">
                         <div class="registro-admin">
