@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Crear cookie con expiración de un año
+    
+    // Función Crear cookie con expiración de un año ---------------------------------------------------------------------------------
     function setCookie(name, value) {
         const date = new Date();
         date.setFullYear(date.getFullYear() + 1); // Sumar 1 año a la fecha actual
@@ -7,14 +8,15 @@ document.addEventListener("DOMContentLoaded", function () {
         document.cookie = name + "=" + value + "; " + expires + "; path=/";
     }
     
+    // Seleccionar los botones de cookies --------------------------------------------------------------
     const btnCafes = document.getElementById("btn-cafes-aventurate");
 
-    // Seleccionar los botones de cookies
+    
     const cookieOverlay = document.getElementById("cookie-overlay");
     const acceptCookies = document.getElementById("accept-cookies");
     const rejectCookies = document.getElementById("reject-cookies");
 
-    // Verificar si los botones de cookies existen antes de agregar eventos
+    // Verificar si los botones de cookies existen antes de agregar eventos 
     if (acceptCookies) {
         acceptCookies.addEventListener("click", () => {
             cookieOverlay.style.display = "none"; // Oculta el overlay
@@ -28,11 +30,11 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Seleccionar los botones de ingresar y registrar
+    // Seleccionar los botones de ingresar y registrar --------------------------------------------------------------
     const btnIngresar = document.querySelector(".auth-buttons .btn:nth-child(1)");
     const btnRegistrarse = document.querySelector(".auth-buttons .btn:nth-child(2)");
 
-    // Seleccionar los botones de ingresar y registrar admin y perfil
+    // Seleccionar los botones de ingresar y registrar admin y perfil --------------------------------------------------------------
     const btnIngresarAdmin = document.getElementById("btn-usuario_admin");
     const btnIngresaPerfil = document.getElementById("btn-usuario");
     const btnRegis = document.getElementById("btn-usuario_registro");
@@ -50,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const btnCafeteriaCreada = document.getElementById("btn-crear-cafeteria");
     const btnPremioCreado = document.getElementById("btn-agregar-premio");
 
-    // Seleccionar las secciones correspondientes
+    // Seleccionar las secciones correspondientes --------------------------------------------------------------
     const seccionIngresar = "SEC_ingresar";
     const seccionRegistro = "SEC_registro";
     const seccionCafes = "SEC_cafes";
@@ -65,12 +67,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const seccionCrearPremios = "SEC_agregar_premio";
     const seccionPrincipal = document.getElementById("principal");
 
-    // sellos
+    // sellos  --------------------------------------------------------------
     const sellos = document.querySelectorAll('.sello'); // Todas las imágenes de sellos
     const selectCafeteria = document.getElementById('cafeteria-select'); // Menú desplegable
     const sellarBtn = document.getElementById('btn-verificador'); // Botón "SELLAR"
 
-    // Verificar si el botón "SELLAR" existe antes de agregar el evento
+    // Verificar si el botón "SELLAR" existe antes de agregar el evento --------------------------------------------------------------
     if (sellarBtn) {
         sellarBtn.addEventListener('click', () => {
             const selectedValue = selectCafeteria.value; // Obtener el valor seleccionado del menú desplegable
@@ -214,12 +216,12 @@ document.addEventListener("DOMContentLoaded", function () {
             mostrarSeccion(seccionPerfilAdmin);
         });
     }
-    // Mostrar la sección principal al inicio
+    // Mostrar la sección principal al inicio --------------------------------------------------------------
     mostrarSeccion("principal");
 
     const enlacesNavegacion = document.querySelectorAll('a[data-seccion]');
 
-    // Función para mostrar la sección correspondiente
+    // Función para mostrar la sección correspondiente --------------------------------------------------------------
     function mostrarSeccion(seccionId) {
         // Ocultar todas las secciones
         document.querySelectorAll("main section").forEach(seccion => {
@@ -233,7 +235,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // Asignar evento click a cada enlace
+    // Asignar evento click a cada enlace --------------------------------------------------------------
     enlacesNavegacion.forEach(enlace => {
         enlace.addEventListener("click", function (event) {
             event.preventDefault(); // Evitar el comportamiento predeterminado del enlace
@@ -242,14 +244,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-
-
-
-
-
-
-
-    // Asignar eventos a los botones
+    // Asignar eventos a los botones --------------------------------------------------------------
     const btnCompass = document.getElementById("btn-compass");
     const btnCafesNav = document.getElementById("btn-cafes");
     const btnLocales = document.getElementById("btn-locales");
