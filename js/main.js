@@ -266,3 +266,30 @@ document.addEventListener("DOMContentLoaded", function () {
         btnNosotros.addEventListener("click", () => mostrarSeccion("SEC_nosotros"));
     }
 });
+
+
+// AJAX Y DATOS COMO OBJETOS --------------------------------------------------------------
+window.onload = function () {
+    let form = document.getElementById("registro-form");
+    form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        let inputData=new FormData(form);
+        let dataObject=Object.fromEntries(inputData.entries());
+        ajaxRequest("php/main.php", "POST", dataObject, function(response){
+            console.log("Server Respone:", response);
+        });
+    });
+
+    function ajaxRequest(url, method, data, callback) {
+        let xhr = new XMLHttpRequest();
+        xhr.open(method, url, true);
+        xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                callback.log(xhr.responseText);
+            }
+        };
+        xhr.send(JSON.stringify(data));
+    }
+
+};
