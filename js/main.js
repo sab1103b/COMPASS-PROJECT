@@ -1,4 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
+    // Crear cookie con expiración de un año
+    function setCookie(name, value) {
+        const date = new Date();
+        date.setFullYear(date.getFullYear() + 1); // Sumar 1 año a la fecha actual
+        const expires = "expires=" + date.toUTCString();
+        document.cookie = name + "=" + value + "; " + expires + "; path=/";
+    }
+    
     const btnCafes = document.getElementById("btn-cafes-aventurate");
 
     // Seleccionar los botones de cookies
@@ -10,6 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (acceptCookies) {
         acceptCookies.addEventListener("click", () => {
             cookieOverlay.style.display = "none"; // Oculta el overlay
+            setCookie("username", "Acept_Cookies");
         });
     }
 
