@@ -860,13 +860,16 @@
                 <div class="line"></div>
             </div>
             <div class="agregar-premio-container">
-                <div class="agregar-premio-form">
-                    <input type="text" placeholder="Nombre Premio">
-                    <input type="text" placeholder="Descripción Premio">
-                    <button id="btn-agregar-premio">AGREGAR PREMIO</button>
-                </div>
-            </div>
-
+        <form class="registro-form" id="agregar-premio-form" autocomplete="off">
+            <label for="nombre-premio">Nombre Premio</label>
+            <input type="text" id="nombre-premio" name="nombre_premio" placeholder="Nombre Premio" required>
+            
+            <label for="descripcion-premio">Descripción Premio</label>
+            <input type="text" id="descripcion-premio" name="descripcion_premio" placeholder="Descripción Premio" required>
+            
+            <button type="submit" id="btn-agregar-premio">AGREGAR PREMIO</button>
+        </form>
+    </div>
 </main>
 
         <!----------------------------------------------- pie de pagina -- cambiar --> 
