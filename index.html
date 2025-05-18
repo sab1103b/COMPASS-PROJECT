@@ -823,21 +823,31 @@
                 <div class="line"></div>
             </div>
             <div class="crear-cafeteria-container">
-                <div class="crear-cafeteria-form">
-                    <input type="text" placeholder="Nombre Cafetería">
-                    <input type="text" placeholder="Dirección Cafetería">
-                    <input type="tel" placeholder="Teléfono Cafetería">
-                    <input type="tel" placeholder="Nombre bebida propuesta">
-                    <div class="imagen-sello">
-                        <label for="imagen-sello" class="custom-file-upload">
-                            <i class="fas fa-upload"></i> Subir Imagen Sello
-                        </label>
-                        <input type="file" id="imagen-sello" accept="image/*">
-                        <button id="btn-crear-cafeteria">PUBLICAR</button>
-                    </div>
-                    
+
+        
+            <form class="registro-form" id="crear-cafeteria-form" enctype="multipart/form-data" autocomplete="off">
+                <label for="caf-nombre">Nombre Cafetería</label>
+                <input type="text" id="caf-nombre" name="nombre" placeholder="Nombre Cafetería" required>
+
+                <label for="caf-direccion">Dirección Cafetería</label>
+                <input type="text" id="caf-direccion" name="direccion" placeholder="Dirección Cafetería" required>
+
+                <label for="caf-telefono">Teléfono Cafetería</label>
+                <input type="tel" id="caf-telefono" name="telefono" placeholder="Teléfono Cafetería" required>
+
+                <label for="caf-bebida">Nombre bebida propuesta</label>
+                <input type="text" id="caf-bebida" name="bebida" placeholder="Nombre bebida propuesta" required>
+
+                <label>Imagen Sello</label>
+                <div class="imagen-sello">
+                    <label for="imagen-sello" class="custom-file-upload">
+                        <i class="fas fa-upload"></i> Subir Imagen Sello
+                    </label>
+                    <input type="file" id="imagen-sello" name="imagen_sello" accept="image/*" required>
                 </div>
-            </div>
+
+                <button type="submit" id="btn-crear-cafeteria">PUBLICAR</button>
+            </form>
         </section>
 
         <!-------------------------------------------- Sección Agregar premio -->
