@@ -742,21 +742,22 @@
                 </h2>
                 <div class="line"></div>
                 <div class="cambio-contrasena-container">
-                    <div class="cambio-contrasena-text">
-                        <p>¿Olvidaste tu contraseña? No hay problema. Danos tu correo o teléfono celular y te enviaremos un email para cambiarlo.
-                        </p>
-                    </div>
-                    <div class="cambio-contrasena-form">
-                        <input type="email" placeholder="Correo" aria-label="Correo">
-                        <input type="tel" placeholder="Celular" aria-label="Celular">
+                   <div class="cambio-contrasena-text">
+                      <p>¿Olvidaste tu contraseña? No hay problema. Danos tu correo o teléfono celular y te enviaremos un email para cambiarlo.</p>
+                   </div>
+                   <form class="cambio-contrasena-form" id="cambio-contrasena-form">
+                        <label for="cambio-correo">Correo</label>
+                        <input type="email" id="cambio-correo" name="correo" placeholder="Correo" aria-label="Correo" required>
+                        <label for="cambio-celular">Celular</label>
+                        <input type="tel" id="cambio-celular" name="celular" placeholder="Celular" aria-label="Celular" required>
                         <hr class="linea-blanca" />
-                        <button id="btn-cambiar-contrasena">MANDAR CÓDIGO</button>
-                    </div>
+                        <button type="submit" id="btn-cambiar-contrasena">MANDAR CÓDIGO</button>
+                    </form>
                     <div class="cambio-contrasena-image">
                         <img src="IMAGENES/cafeconarte.png" alt="Café con arte latte">
                     </div>
                 </div>
-            </div>
+           </div>
         </section>
 
         <!-------------------------------------------- Nueva contraseña Cambio contraseña-->
