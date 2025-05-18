@@ -458,7 +458,7 @@
                 <button type="button" id="btn-usuario_registro">NUEVO USUARIO</button>
                 <button type="button" id="btn-usuario_admin">ADMINISTRADOR</button>
             </form>
-
+            
                 <div class="ingreso-image">
                   <img src="IMAGENES/cafeconarte.png" alt="Café con arte latte">
                 </div>
@@ -487,24 +487,10 @@
                         <input type="tel" id="celular" name="celular" placeholder="Celular" required>
                     
                         <label for="contrasena">Contraseña</label>
-                        <div class="input-container">
-                            <input type="password" id="contrasena" name="contrasena" placeholder="Contraseña" required>
-                            <span class="toggle-password" onclick="togglePasswordField('contrasena', this)">
-                                <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 24 24" fill="#333">
-                                    <path d="M12 5C7 5 2.7 8.1 1 12c1.7 3.9 6 7 11 7s9.3-3.1 11-7c-1.7-3.9-6-7-11-7zm0 12c-2.8 0-5-2.2-5-5s2.2-5 5-5 5 2.2 5 5-2.2 5-5 5zm0-8c-1.6 0-3 1.4-3 3s1.4 3 3 3 3-1.4 3-3-1.4-3-3-3z"/>
-                                </svg>
-                            </span>
-                        </div>
+                        <input type="password" id="contrasena" name="contrasena" placeholder="Contraseña" required>
                     
                         <label for="verificacion-contrasena">Verificación contraseña</label>
-                        <div class="input-container">
-                            <input type="password" id="verificacion-contrasena" name="verificacion-contrasena" placeholder="Verificación contraseña" required>
-                            <span class="toggle-password" onclick="togglePasswordField('verificacion-contrasena', this)">
-                                <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 24 24" fill="#333">
-                                    <path d="M12 5C7 5 2.7 8.1 1 12c1.7 3.9 6 7 11 7s9.3-3.1 11-7c-1.7-3.9-6-7-11-7zm0 12c-2.8 0-5-2.2-5-5s2.2-5 5-5 5 2.2 5 5-2.2 5-5 5zm0-8c-1.6 0-3 1.4-3 3s1.4 3 3 3 3-1.4 3-3-1.4-3-3-3z"/>
-                                </svg>
-                            </span>
-                        </div>
+                        <input type="password" id="verificacion-contrasena" name="verificacion-contrasena" placeholder="Verificación contraseña" required>
                     
                         <button type="submit" id="btn-aceptar-registro">NUEVO USUARIO</button>
                     </form>
@@ -582,48 +568,15 @@
                 <div class="line"></div>
                 </div>
                 <div class="registro-container">
-                    <form class="registro-form" id="registro-admin-form">
-                        <label for="admin-nombre">Nombres / Apellidos</label>
-                        <input type="text" id="admin-nombre" name="nombre" placeholder="Nombres / Apellidos" required>
-                    
-                        <label for="admin-correo">Correo</label>
-                        <input type="email" id="admin-correo" name="correo" placeholder="Correo" required>
-                    
-                        <label for="admin-celular">Celular</label>
-                        <input type="tel" id="admin-celular" name="celular" placeholder="Celular" required>
-                    
-                        <label for="admin-contrasena">Contraseña</label>
-                        <div class="input-container">
-                            <input type="password" id="admin-contrasena" name="contrasena" placeholder="Contraseña" required>
-                            <span class="toggle-password" onclick="togglePasswordField('admin-contrasena', this)">
-                                <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 24 24" fill="#333">
-                                    <path d="M12 5C7 5 2.7 8.1 1 12c1.7 3.9 6 7 11 7s9.3-3.1 11-7c-1.7-3.9-6-7-11-7zm0 12c-2.8 0-5-2.2-5-5s2.2-5 5-5 5 2.2 5 5-2.2 5-5 5zm0-8c-1.6 0-3 1.4-3 3s1.4 3 3 3 3-1.4 3-3-1.4-3-3-3z"/>
-                                </svg>
-                            </span>
-                        </div>
-                    
-                        <label for="admin-verificacion-contrasena">Verificación contraseña</label>
-                        <div class="input-container">
-                            <input type="password" id="admin-verificacion-contrasena" name="verificacion-contrasena" placeholder="Verificación contraseña" required>
-                            <span class="toggle-password" onclick="togglePasswordField('admin-verificacion-contrasena', this)">
-                                <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 24 24" fill="#333">
-                                    <path d="M12 5C7 5 2.7 8.1 1 12c1.7 3.9 6 7 11 7s9.3-3.1 11-7c-1.7-3.9-6-7-11-7zm0 12c-2.8 0-5-2.2-5-5s2.2-5 5-5 5 2.2 5 5-2.2 5-5 5zm0-8c-1.6 0-3 1.4-3 3s1.4 3 3 3 3-1.4 3-3-1.4-3-3-3z"/>
-                                </svg>
-                            </span>
-                        </div>
-                    
-                        <label for="admin-codigo">Código Asignado</label>
-                        <div class="input-container">
-                            <input type="password" id="admin-codigo" name="codigo" placeholder="Código Asignado" required>
-                            <span class="toggle-password" onclick="togglePasswordField('admin-codigo', this)">
-                                <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 24 24" fill="#333">
-                                    <path d="M12 5C7 5 2.7 8.1 1 12c1.7 3.9 6 7 11 7s9.3-3.1 11-7c-1.7-3.9-6-7-11-7zm0 12c-2.8 0-5-2.2-5-5s2.2-5 5-5 5 2.2 5 5-2.2 5-5 5zm0-8c-1.6 0-3 1.4-3 3s1.4 3 3 3 3-1.4 3-3-1.4-3-3-3z"/>
-                                </svg>
-                            </span>
-                        </div>
-                    
-                        <button type="submit" id="btn-Aceptar-Registro-Admin">NUEVO ADMINISTRADOR</button>
-                    </form>
+                    <div class="registro-form">
+                        <input type="text" placeholder="Nombres / Apellidos">
+                        <input type="email" placeholder="Correo">
+                        <input type="tel" placeholder="Celular">
+                        <input type="password" placeholder="Contraseña">
+                        <input type="password" placeholder="Verificación contraseña">
+                        <input type="password" placeholder="Código Asignado">
+                        <button id="btn-Aceptar-Registro-Admin" >NUEVO ADMINISTRADOR</button>
+                    </div>
                     <div class="registro-image">
                         <img src="IMAGENES/cafeconarte.png" alt="Café con arte latte">
                     </div>
@@ -742,22 +695,21 @@
                 </h2>
                 <div class="line"></div>
                 <div class="cambio-contrasena-container">
-                   <div class="cambio-contrasena-text">
-                      <p>¿Olvidaste tu contraseña? No hay problema. Danos tu correo o teléfono celular y te enviaremos un email para cambiarlo.</p>
-                   </div>
-                   <form class="cambio-contrasena-form" id="cambio-contrasena-form">
-                        <label for="cambio-correo">Correo</label>
-                        <input type="email" id="cambio-correo" name="correo" placeholder="Correo" aria-label="Correo" required>
-                        <label for="cambio-celular">Celular</label>
-                        <input type="tel" id="cambio-celular" name="celular" placeholder="Celular" aria-label="Celular" required>
+                    <div class="cambio-contrasena-text">
+                        <p>¿Olvidaste tu contraseña? No hay problema. Danos tu correo o teléfono celular y te enviaremos un email para cambiarlo.
+                        </p>
+                    </div>
+                    <div class="cambio-contrasena-form">
+                        <input type="email" placeholder="Correo" aria-label="Correo">
+                        <input type="tel" placeholder="Celular" aria-label="Celular">
                         <hr class="linea-blanca" />
-                        <button type="submit" id="btn-cambiar-contrasena">MANDAR CÓDIGO</button>
-                    </form>
+                        <button id="btn-cambiar-contrasena">MANDAR CÓDIGO</button>
+                    </div>
                     <div class="cambio-contrasena-image">
                         <img src="IMAGENES/cafeconarte.png" alt="Café con arte latte">
                     </div>
                 </div>
-           </div>
+            </div>
         </section>
 
         <!-------------------------------------------- Nueva contraseña Cambio contraseña-->
@@ -770,11 +722,13 @@
                 <div class="line"></div>
             </div>
             <div class="nueva-contrasena-container">
-                <div class="nueva-contrasena-form">
-                    <input type="password" placeholder="Nueva Contraseña">
-                    <input type="password" placeholder="Verificación contraseña">
-                    <button id="btn-aceptar-cambio-contraseña">CAMBIAR CONTRASEÑA</button>
-                </div>
+                <form class="nueva-contrasena-form" id="nueva-contrasena-form">
+                    <label for="nueva-contrasena">Nueva Contraseña</label>
+                    <input type="password" id="nueva-contrasena" name="nueva-contrasena" placeholder="Nueva Contraseña" required>
+                    <label for="verificacion-nueva-contrasena">Verificación contraseña</label>
+                    <input type="password" id="verificacion-nueva-contrasena" name="verificacion-nueva-contrasena" placeholder="Verificación contraseña" required>
+                    <button type="submit" id="btn-aceptar-cambio-contraseña">CAMBIAR CONTRASEÑA</button>
+                </form>
                 <div class="nueva-contrasena-image">
                     <img src="IMAGENES/cafeconarte.png" alt="Café con arte latte">
                 </div>
@@ -824,31 +778,21 @@
                 <div class="line"></div>
             </div>
             <div class="crear-cafeteria-container">
-
-        
-            <form class="registro-form" id="crear-cafeteria-form" enctype="multipart/form-data" autocomplete="off">
-                <label for="caf-nombre">Nombre Cafetería</label>
-                <input type="text" id="caf-nombre" name="nombre" placeholder="Nombre Cafetería" required>
-
-                <label for="caf-direccion">Dirección Cafetería</label>
-                <input type="text" id="caf-direccion" name="direccion" placeholder="Dirección Cafetería" required>
-
-                <label for="caf-telefono">Teléfono Cafetería</label>
-                <input type="tel" id="caf-telefono" name="telefono" placeholder="Teléfono Cafetería" required>
-
-                <label for="caf-bebida">Nombre bebida propuesta</label>
-                <input type="text" id="caf-bebida" name="bebida" placeholder="Nombre bebida propuesta" required>
-
-                <label>Imagen Sello</label>
-                <div class="imagen-sello">
-                    <label for="imagen-sello" class="custom-file-upload">
-                        <i class="fas fa-upload"></i> Subir Imagen Sello
-                    </label>
-                    <input type="file" id="imagen-sello" name="imagen_sello" accept="image/*" required>
+                <div class="crear-cafeteria-form">
+                    <input type="text" placeholder="Nombre Cafetería">
+                    <input type="text" placeholder="Dirección Cafetería">
+                    <input type="tel" placeholder="Teléfono Cafetería">
+                    <input type="tel" placeholder="Nombre bebida propuesta">
+                    <div class="imagen-sello">
+                        <label for="imagen-sello" class="custom-file-upload">
+                            <i class="fas fa-upload"></i> Subir Imagen Sello
+                        </label>
+                        <input type="file" id="imagen-sello" accept="image/*">
+                        <button id="btn-crear-cafeteria">PUBLICAR</button>
+                    </div>
+                    
                 </div>
-
-                <button type="submit" id="btn-crear-cafeteria">PUBLICAR</button>
-            </form>
+            </div>
         </section>
 
         <!-------------------------------------------- Sección Agregar premio -->
@@ -861,16 +805,13 @@
                 <div class="line"></div>
             </div>
             <div class="agregar-premio-container">
-        <form class="registro-form" id="agregar-premio-form" autocomplete="off">
-            <label for="nombre-premio">Nombre Premio</label>
-            <input type="text" id="nombre-premio" name="nombre_premio" placeholder="Nombre Premio" required>
-            
-            <label for="descripcion-premio">Descripción Premio</label>
-            <input type="text" id="descripcion-premio" name="descripcion_premio" placeholder="Descripción Premio" required>
-            
-            <button type="submit" id="btn-agregar-premio">AGREGAR PREMIO</button>
-        </form>
-    </div>
+                <div class="agregar-premio-form">
+                    <input type="text" placeholder="Nombre Premio">
+                    <input type="text" placeholder="Descripción Premio">
+                    <button id="btn-agregar-premio">AGREGAR PREMIO</button>
+                </div>
+            </div>
+
 </main>
 
         <!----------------------------------------------- pie de pagina -- cambiar --> 
