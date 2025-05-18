@@ -738,21 +738,22 @@
                 </h2>
                 <div class="line"></div>
                 <div class="cambio-contrasena-container">
-                    <div class="cambio-contrasena-text">
-                        <p>¿Olvidaste tu contraseña? No hay problema. Danos tu correo o teléfono celular y te enviaremos un email para cambiarlo.
-                        </p>
-                    </div>
-                    <div class="cambio-contrasena-form">
-                        <input type="email" placeholder="Correo" aria-label="Correo">
-                        <input type="tel" placeholder="Celular" aria-label="Celular">
+                   <div class="cambio-contrasena-text">
+                      <p>¿Olvidaste tu contraseña? No hay problema. Danos tu correo o teléfono celular y te enviaremos un email para cambiarlo.</p>
+                   </div>
+                   <form class="cambio-contrasena-form" id="cambio-contrasena-form">
+                        <label for="cambio-correo">Correo</label>
+                        <input type="email" id="cambio-correo" name="correo" placeholder="Correo" aria-label="Correo" required>
+                        <label for="cambio-celular">Celular</label>
+                        <input type="tel" id="cambio-celular" name="celular" placeholder="Celular" aria-label="Celular" required>
                         <hr class="linea-blanca" />
-                        <button id="btn-cambiar-contrasena">MANDAR CÓDIGO</button>
-                    </div>
+                        <button type="submit" id="btn-cambiar-contrasena">MANDAR CÓDIGO</button>
+                    </form>
                     <div class="cambio-contrasena-image">
                         <img src="IMAGENES/cafeconarte.png" alt="Café con arte latte">
                     </div>
                 </div>
-            </div>
+           </div>
         </section>
 
         <!-------------------------------------------- Nueva contraseña Cambio contraseña-->
@@ -819,21 +820,31 @@
                 <div class="line"></div>
             </div>
             <div class="crear-cafeteria-container">
-                <div class="crear-cafeteria-form">
-                    <input type="text" placeholder="Nombre Cafetería">
-                    <input type="text" placeholder="Dirección Cafetería">
-                    <input type="tel" placeholder="Teléfono Cafetería">
-                    <input type="tel" placeholder="Nombre bebida propuesta">
-                    <div class="imagen-sello">
-                        <label for="imagen-sello" class="custom-file-upload">
-                            <i class="fas fa-upload"></i> Subir Imagen Sello
-                        </label>
-                        <input type="file" id="imagen-sello" accept="image/*">
-                        <button id="btn-crear-cafeteria">PUBLICAR</button>
-                    </div>
-                    
+
+        
+            <form class="registro-form" id="crear-cafeteria-form" enctype="multipart/form-data" autocomplete="off">
+                <label for="caf-nombre">Nombre Cafetería</label>
+                <input type="text" id="caf-nombre" name="nombre" placeholder="Nombre Cafetería" required>
+
+                <label for="caf-direccion">Dirección Cafetería</label>
+                <input type="text" id="caf-direccion" name="direccion" placeholder="Dirección Cafetería" required>
+
+                <label for="caf-telefono">Teléfono Cafetería</label>
+                <input type="tel" id="caf-telefono" name="telefono" placeholder="Teléfono Cafetería" required>
+
+                <label for="caf-bebida">Nombre bebida propuesta</label>
+                <input type="text" id="caf-bebida" name="bebida" placeholder="Nombre bebida propuesta" required>
+
+                <label>Imagen Sello</label>
+                <div class="imagen-sello">
+                    <label for="imagen-sello" class="custom-file-upload">
+                        <i class="fas fa-upload"></i> Subir Imagen Sello
+                    </label>
+                    <input type="file" id="imagen-sello" name="imagen_sello" accept="image/*" required>
                 </div>
-            </div>
+
+                <button type="submit" id="btn-crear-cafeteria">PUBLICAR</button>
+            </form>
         </section>
 
         <!-------------------------------------------- Sección Agregar premio -->
@@ -846,13 +857,16 @@
                 <div class="line"></div>
             </div>
             <div class="agregar-premio-container">
-                <div class="agregar-premio-form">
-                    <input type="text" placeholder="Nombre Premio">
-                    <input type="text" placeholder="Descripción Premio">
-                    <button id="btn-agregar-premio">AGREGAR PREMIO</button>
-                </div>
-            </div>
-
+        <form class="registro-form" id="agregar-premio-form" autocomplete="off">
+            <label for="nombre-premio">Nombre Premio</label>
+            <input type="text" id="nombre-premio" name="nombre_premio" placeholder="Nombre Premio" required>
+            
+            <label for="descripcion-premio">Descripción Premio</label>
+            <input type="text" id="descripcion-premio" name="descripcion_premio" placeholder="Descripción Premio" required>
+            
+            <button type="submit" id="btn-agregar-premio">AGREGAR PREMIO</button>
+        </form>
+    </div>
 </main>
 
         <!----------------------------------------------- pie de pagina -- cambiar --> 
