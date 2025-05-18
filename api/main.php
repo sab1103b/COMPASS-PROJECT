@@ -28,7 +28,4 @@ if ($mysqli->query($sql) === TRUE) {
 }
 
 
-
-
-
 ?>

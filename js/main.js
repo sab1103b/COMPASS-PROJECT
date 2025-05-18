@@ -275,9 +275,11 @@ window.onload = function () {
         event.preventDefault();
         let inputData=new FormData(form);
         let dataObject=Object.fromEntries(inputData.entries());
+        
         ajaxRequest("php/main.php", "POST", dataObject, function(response){
             console.log("Server Respone:", response);
         });
+        
     });
 
     function ajaxRequest(url, method, data, callback) {
