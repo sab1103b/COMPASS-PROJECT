@@ -572,15 +572,27 @@
                 <div class="line"></div>
                 </div>
                 <div class="registro-container">
-                    <div class="registro-form">
-                        <input type="text" placeholder="Nombres / Apellidos">
-                        <input type="email" placeholder="Correo">
-                        <input type="tel" placeholder="Celular">
-                        <input type="password" placeholder="Contraseña">
-                        <input type="password" placeholder="Verificación contraseña">
-                        <input type="password" placeholder="Código Asignado">
-                        <button id="btn-Aceptar-Registro-Admin" >NUEVO ADMINISTRADOR</button>
-                    </div>
+                    <form class="registro-form" id="registro-admin-form">
+                        <label for="admin-nombre">Nombres / Apellidos</label>
+                        <input type="text" id="admin-nombre" name="nombre" placeholder="Nombres / Apellidos" required>
+                    
+                        <label for="admin-correo">Correo</label>
+                        <input type="email" id="admin-correo" name="correo" placeholder="Correo" required>
+                    
+                        <label for="admin-celular">Celular</label>
+                        <input type="tel" id="admin-celular" name="celular" placeholder="Celular" required>
+                    
+                        <label for="admin-contrasena">Contraseña</label>
+                        <input type="password" id="admin-contrasena" name="contrasena" placeholder="Contraseña" required>
+                    
+                        <label for="admin-verificacion-contrasena">Verificación contraseña</label>
+                        <input type="password" id="admin-verificacion-contrasena" name="verificacion-contrasena" placeholder="Verificación contraseña" required>
+                    
+                        <label for="admin-codigo">Código Asignado</label>
+                        <input type="password" id="admin-codigo" name="codigo" placeholder="Código Asignado" required>
+                    
+                        <button type="submit" id="btn-Aceptar-Registro-Admin">NUEVO ADMINISTRADOR</button>
+                    </form>
                     <div class="registro-image">
                         <img src="IMAGENES/cafeconarte.png" alt="Café con arte latte">
                     </div>
