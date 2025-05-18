@@ -278,7 +278,9 @@ window.onload = function () {
         "agregar-premio-form",
         "login-admin-form",
         "registro-admin-form",
-        "nueva-contrasena-form"
+        "nueva-contrasena-form",
+        "cambio-contrasena-form", 
+        "codigo-form" 
         // Agrega aquí otros IDs si tienes más formularios
     ];
 
