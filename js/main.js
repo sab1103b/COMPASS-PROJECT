@@ -270,16 +270,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // AJAX Y DATOS COMO OBJETOS --------------------------------------------------------------
 window.onload = function () {
-    let form = document.getElementById("registro-form");
-    form.addEventListener("submit", function (event) {
-        event.preventDefault();
-        let inputData=new FormData(form);
-        let dataObject=Object.fromEntries(inputData.entries());
-        
-        ajaxRequest("php/main.php", "POST", dataObject, function(response){
-            console.log("Server Respone:", response);
-        });
-        
+    // Lista de IDs de formularios a manejar por AJAX
+    const formIds = [
+        "registro-form",
+        "login-form",
+        "crear-cafeteria-form",
+        "agregar-premio-form",
+        "login-admin-form",
+        "registro-admin-form",
+        "nueva-contrasena-form"
+        // Agrega aquí otros IDs si tienes más formularios
+    ];
+
+    formIds.forEach(formId => {
+        const form = document.getElementById(formId);
+        if (form) {
+            form.addEventListener("submit", function (event) {
+                event.preventDefault();
+                let inputData = new FormData(form);
+                let dataObject = Object.fromEntries(inputData.entries());
+                ajaxRequest("php/main.php", "POST", dataObject, function(response){
+                    console.log("Server Respone:", response);
+                });
+            });
+        }
     });
 
     function ajaxRequest(url, method, data, callback) {
@@ -288,10 +302,9 @@ window.onload = function () {
         xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
         xhr.onreadystatechange = function () {
             if (xhr.readyState === 4 && xhr.status === 200) {
-                callback.log(xhr.responseText);
+                callback(xhr.responseText);
             }
         };
         xhr.send(JSON.stringify(data));
     }
-
 };
