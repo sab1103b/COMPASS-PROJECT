@@ -442,9 +442,9 @@
                     </div>
                     <label for="login-password">Contraseña</label>
                     <div class="input-container" style="position:relative;">
-                        <input type="password" id="login-password" name="password" placeholder="Contraseña" aria-label="Contraseña" required>
-                        <span class="toggle-password" onclick="togglePasswordLogin()" style="position:absolute; right:10px; top:50%; transform:translateY(-50%); cursor:pointer;">
-                            <svg id="eyeIconLogin" xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 24 24" fill="#333">
+                        <input type="password" id="login-password" name="password" placeholder="Contraseña" aria-label="Contraseña" required style="padding-right:40px;">
+                        <span class="toggle-password" onclick="togglePasswordField('login-password', this)" style="position:absolute; right:10px; top:50%; transform:translateY(-50%); cursor:pointer;">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 24 24" fill="#333">
                                 <path d="M12 5C7 5 2.7 8.1 1 12c1.7 3.9 6 7 11 7s9.3-3.1 11-7c-1.7-3.9-6-7-11-7zm0 12c-2.8 0-5-2.2-5-5s2.2-5 5-5 5 2.2 5 5-2.2 5-5 5zm0-8c-1.6 0-3 1.4-3 3s1.4 3 3 3 3-1.4 3-3-1.4-3-3-3z"/>
                             </svg>
                         </span>
@@ -487,10 +487,24 @@
                         <input type="tel" id="celular" name="celular" placeholder="Celular" required>
                     
                         <label for="contrasena">Contraseña</label>
-                        <input type="password" id="contrasena" name="contrasena" placeholder="Contraseña" required>
+                        <div class="input-container" style="position:relative;">
+                            <input type="password" id="contrasena" name="contrasena" placeholder="Contraseña" required style="padding-right:40px;">
+                            <span class="toggle-password" onclick="togglePasswordField('contrasena', this)" style="position:absolute; right:10px; top:50%; transform:translateY(-50%); cursor:pointer;">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" fill="#333" viewBox="0 0 24 24">
+                                    <path d="M12 5C7 5 2.7 8.1 1 12c1.7 3.9 6 7 11 7s9.3-3.1 11-7c-1.7-3.9-6-7-11-7zm0 12c-2.8 0-5-2.2-5-5s2.2-5 5-5 5 2.2 5 5-2.2 5-5 5zm0-8c-1.6 0-3 1.4-3 3s1.4 3 3 3 3-1.4 3-3-1.4-3-3-3z"/>
+                                </svg>
+                            </span>
+                        </div>
                     
                         <label for="verificacion-contrasena">Verificación contraseña</label>
-                        <input type="password" id="verificacion-contrasena" name="verificacion-contrasena" placeholder="Verificación contraseña" required>
+                        <div class="input-container" style="position:relative;">
+                            <input type="password" id="verificacion-contrasena" name="verificacion-contrasena" placeholder="Verificación contraseña" required style="padding-right:40px;">
+                            <span class="toggle-password" onclick="togglePasswordField('verificacion-contrasena', this)" style="position:absolute; right:10px; top:50%; transform:translateY(-50%); cursor:pointer;">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" fill="#333" viewBox="0 0 24 24">
+                                    <path d="M12 5C7 5 2.7 8.1 1 12c1.7 3.9 6 7 11 7s9.3-3.1 11-7c-1.7-3.9-6-7-11-7zm0 12c-2.8 0-5-2.2-5-5s2.2-5 5-5 5 2.2 5 5-2.2 5-5 5zm0-8c-1.6 0-3 1.4-3 3s1.4 3 3 3 3-1.4 3-3-1.4-3-3-3z"/>
+                                </svg>
+                            </span>
+                        </div>
                     
                         <button type="submit" id="btn-aceptar-registro">NUEVO USUARIO</button>
                     </form>
@@ -520,24 +534,24 @@
                     <input type="email" id="admin-login-email" name="correo" placeholder="Correo" required>
 
                     <label for="admin-login-password">Contraseña</label>
-                    <div class="input-container">
-                      <input type="password" id="admin-login-password" name="contraseña" placeholder="Contraseña" required>
-                      <span class="toggle-password" onclick="togglePasswordAdmin('admin-login-password', this)">
-                        <svg id="eyeIconAdmin" xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 24 24" fill="#333">
-                          <path d="M12 5C7 5 2.7 8.1 1 12c1.7 3.9 6 7 11 7s9.3-3.1 11-7c-1.7-3.9-6-7-11-7zm0 12c-2.8 0-5-2.2-5-5s2.2-5 5-5 5 2.2 5 5-2.2 5-5 5zm0-8c-1.6 0-3 1.4-3 3s1.4 3 3 3 3-1.4 3-3-1.4-3-3-3z"/>
-                        </svg>
-                      </span>
+                    <div class="input-container" style="position:relative;">
+                        <input type="password" id="admin-login-password" name="contraseña" placeholder="Contraseña" required style="padding-right:40px;">
+                        <span class="toggle-password" onclick="togglePasswordField('admin-login-password', this)" style="position:absolute; right:10px; top:50%; transform:translateY(-50%); cursor:pointer;">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 24 24" fill="#333">
+                                <path d="M12 5C7 5 2.7 8.1 1 12c1.7 3.9 6 7 11 7s9.3-3.1 11-7c-1.7-3.9-6-7-11-7zm0 12c-2.8 0-5-2.2-5-5s2.2-5 5-5 5 2.2 5 5-2.2 5-5 5zm0-8c-1.6 0-3 1.4-3 3s1.4 3 3 3 3-1.4 3-3-1.4-3-3-3z"/>
+                            </svg>
+                        </span>
                     </div>
 
                     <label for="admin-login-codigo">Código Asignado</label>
-                    <div class="input-container">
-                        <input type="password" id="admin-login-codigo" name="codigo" placeholder="Código Asignado" required>
-                        <span class="toggle-password" onclick="togglePasswordAdmin('admin-login-codigo', this)">
-                          <svg id="eyeIconAdminCodigo" xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 24 24" fill="#333">
-                            <path d="M12 5C7 5 2.7 8.1 1 12c1.7 3.9 6 7 11 7s9.3-3.1 11-7c-1.7-3.9-6-7-11-7zm0 12c-2.8 0-5-2.2-5-5s2.2-5 5-5 5 2.2 5 5-2.2 5-5 5zm0-8c-1.6 0-3 1.4-3 3s1.4 3 3 3 3-1.4 3-3-1.4-3-3-3z"/>
-                          </svg>
+                    <div class="input-container" style="position:relative;">
+                        <input type="password" id="admin-login-codigo" name="codigo" placeholder="Código Asignado" required style="padding-right:40px;">
+                        <span class="toggle-password" onclick="togglePasswordField('admin-login-codigo', this)" style="position:absolute; right:10px; top:50%; transform:translateY(-50%); cursor:pointer;">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 24 24" fill="#333">
+                                <path d="M12 5C7 5 2.7 8.1 1 12c1.7 3.9 6 7 11 7s9.3-3.1 11-7c-1.7-3.9-6-7-11-7zm0 12c-2.8 0-5-2.2-5-5s2.2-5 5-5 5 2.2 5 5-2.2 5-5 5zm0-8c-1.6 0-3 1.4-3 3s1.4 3 3 3 3-1.4 3-3-1.4-3-3-3z"/>
+                            </svg>
                         </span>
-                      </div>
+                    </div>
                     <hr class="linea-blanca" />
                     <div style="text-align: right; font-size: 13px; color: #3d1c1a; margin-top: 5px;">
                         <a id="CambioContraseña" style="color: #3d1c1a; text-decoration: underline; cursor: pointer;">
