@@ -1,50 +1,42 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+header('Content-Type: application/json');
+
+// Obtener datos del cuerpo JSON
 $getJSON = file_get_contents('php://input');
 $dataJson = json_decode($getJSON);
 
-// Mostrar todos los datos recibidos del formulario de registro
-echo "<pre>";
-print_r($dataJson);
-echo "</pre>";
-
-// Ejemplo de toma de datos individuales:
-if (isset($dataJson->correo)) {
-    $correo = $dataJson->correo;
-    echo "Correo: $correo<br>";
-}
-if (isset($dataJson->contrasena)) {
-    $contrasena = $dataJson->contrasena;
-    echo "Contraseña: $contrasena<br>";
-}
-if (isset($dataJson->nombre)) {
-    $nombre = $dataJson->nombre;
-    echo "Nombre: $nombre<br>";
-}
-if (isset($dataJson->celular)) {
-    $celular = $dataJson->celular;
-    echo "Celular: $celular<br>";
-}
-if (isset($dataJson->{'verificacion-contrasena'})) {
-    $verif = $dataJson->{'verificacion-contrasena'};
-    echo "Verificación contraseña: $verif<br>";
+if (!$dataJson) {
+    http_response_code(400);
+    echo json_encode(["error" => "JSON inválido"]);
+    exit;
 }
 
-// base de datos
-$mysqli = new mysqli("localhost", "root", "", "prueba"); // base de datos locales
-// se crea la base de datos para el online
+// Obtener campos
+$correo = $dataJson->correo ?? '';
+$contrasena = $dataJson->contrasena ?? '';
+$nombre = $dataJson->nombre ?? '';
+$celular = $dataJson->celular ?? '';
+$verif = $dataJson->{'verificacion-contrasena'} ?? '';
+
+// Conexión a base de datos (usa tus datos reales del hosting aquí)
+$mysqli = new mysqli("sqlXXX.infinityfree.com", "ep_tuusuario", "tucontraseña", "ep_nombredb");
 
 if ($mysqli->connect_error) {
-    die("Connection failed: " . $mysqli->connect_error);
-} else {
-    echo "Conectado a la base de datos";
+    http_response_code(500);
+    echo json_encode(["error" => "Conexión fallida: " . $mysqli->connect_error]);
+    exit;
 }
 
-$sql = "INSERT INTO 'usuario' ('id', 'correo', 'contrasena') VALUES (NULL, '".$correo."', '".$contrasena."')";
+// Insertar datos
+$sql = "INSERT INTO usuario (correo, contrasena) VALUES ('$correo', '$contrasena')";
 if ($mysqli->query($sql) === TRUE) {
-    echo "Nuevo registro creado correctamente";
+    echo json_encode(["success" => "Registro creado correctamente"]);
 } else {
-    echo "Error: " . $sql . "<br>" . $mysqli->error;
+    http_response_code(500);
+    echo json_encode(["error" => "Error SQL: " . $mysqli->error]);
 }
-
-
 ?>
