@@ -266,8 +266,6 @@ window.onload = function () {
         "crear-cafeteria-form",
         "agregar-premio-form",
         "registro-admin-form",
-        "nueva-contrasena-form",
-        "cambio-contrasena-form", 
         "codigo-form" 
         // Agrega aquí otros IDs si tienes más formularios
     ];
@@ -275,6 +273,12 @@ window.onload = function () {
     const loginFormIds = [
         "login-form",
         "login-admin-form"
+        // Agrega aquí otros IDs si tienes más formularios
+    ];
+
+    const NewContrasena = [
+        "nueva-contrasena-form",
+        "cambio-contrasena-form"
         // Agrega aquí otros IDs si tienes más formularios
     ];
 
@@ -306,31 +310,61 @@ window.onload = function () {
     // Formularios de login (envían a Ingresousu.php)
     loginFormIds.forEach(loginFormIds => {
     const form = document.getElementById(loginFormIds);
+        if (form) {
+            form.addEventListener("submit", function (event) {
+                event.preventDefault(); // Esto evita el submit tradicional
+                let inputData = new FormData(form);
+                let dataObject = Object.fromEntries(inputData.entries());
+                ajaxRequest("php/Ingresousu.php", "POST", dataObject, function(response){
+                    let res;
+                    try {
+                        res = JSON.parse(response);
+                    } catch (e) {
+                        alert("Error en la respuesta del servidor.");
+                        return;
+                    }
+
+                    if (res.success) {
+                        // Solo aquí avanza a la siguiente sección
+                        if (form.id === "login-admin-form") {
+                            mostrarSeccion("SEC_perfil_admin");
+                        } else {
+                            mostrarSeccion("SEC_perfil");
+                        }
+                        alert(res.success);
+                    } else if (res.error) {
+                        // NO avanza, solo muestra el error
+                        alert(res.error);
+                    }
+                });
+            });
+        }
+    });
+
+    NewContrasena.forEach(formId => {
+    const form = document.getElementById(formId);
     if (form) {
         form.addEventListener("submit", function (event) {
-            event.preventDefault(); // Esto evita el submit tradicional
+            event.preventDefault();
             let inputData = new FormData(form);
             let dataObject = Object.fromEntries(inputData.entries());
-            ajaxRequest("php/Ingresousu.php", "POST", dataObject, function(response){
-                let res;
+            ajaxRequest("php/NuevaContra.php", "POST", dataObject, function(response){
+                console.log("Respuesta cruda:", response); // <-- Esto imprime la respuesta tal cual la manda PHP
                 try {
-                    res = JSON.parse(response);
+                    const res = JSON.parse(response);
+                    console.log("Respuesta parseada:", res); // <-- Esto imprime el objeto JS
+                    if (res.success) {
+                        window.usuarioRecuperacion = {
+                            correo: res.usuario.Correo,
+                            celular: res.usuario.Celular,
+                            esAdmin: res.esAdmin
+                        };
+                        mostrarSeccion("SEC_nueva_contrasena");
+                    } else if (res.error) {
+                        alert(res.error);
+                    }
                 } catch (e) {
                     alert("Error en la respuesta del servidor.");
-                    return;
-                }
-
-                if (res.success) {
-                    // Solo aquí avanza a la siguiente sección
-                    if (form.id === "login-admin-form") {
-                        mostrarSeccion("SEC_perfil_admin");
-                    } else {
-                        mostrarSeccion("SEC_perfil");
-                    }
-                    alert(res.success);
-                } else if (res.error) {
-                    // NO avanza, solo muestra el error
-                    alert(res.error);
                 }
             });
         });
