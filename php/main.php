@@ -27,20 +27,20 @@ echo $getJSON;
 
 
 // Conexión a base de datos (usa tus datos reales del hosting aquí)
-$mysqli = new mysqli("sqlXXX.infinityfree.com", "ep_tuusuario", "tucontraseña", "ep_nombredb");
+//$mysqli = new mysqli("sqlXXX.infinityfree.com", "ep_tuusuario", "tucontraseña", "ep_nombredb");
 
-if ($mysqli->connect_error) {
-    http_response_code(500);
-    echo json_encode(["error" => "Conexión fallida: " . $mysqli->connect_error]);
-    exit;
-}
+//if ($mysqli->connect_error) {
+//    http_response_code(500);
+//    echo json_encode(["error" => "Conexión fallida: " . $mysqli->connect_error]);
+//    exit;
+//}
 
 // Insertar datos
-$sql = "INSERT INTO usuario (correo, contrasena) VALUES ('$correo', '$contrasena')";
-if ($mysqli->query($sql) === TRUE) {
-    echo json_encode(["success" => "Registro creado correctamente"]);
-} else {
-    http_response_code(500);
-    echo json_encode(["error" => "Error SQL: " . $mysqli->error]);
-}
+//$sql = "INSERT INTO usuario (correo, contrasena) VALUES ('$correo', '$contrasena')";
+//if ($mysqli->query($sql) === TRUE) {
+//    echo json_encode(["success" => "Registro creado correctamente"]);
+//} else {
+//    http_response_code(500);
+//    echo json_encode(["error" => "Error SQL: " . $mysqli->error]);
+//}
 ?>
