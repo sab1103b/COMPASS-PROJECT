@@ -22,6 +22,14 @@ $nombre = $dataJson->nombre ?? '';
 $celular = $dataJson->celular ?? '';
 $verif = $dataJson->{'verificacion-contrasena'} ?? '';
 
+echo $getJSON;
+echo $correo;
+echo $contrasena;
+echo $nombre;
+echo $celular;
+echo $verif;
+
+
 // Conexión a base de datos (usa tus datos reales del hosting aquí)
 $mysqli = new mysqli("sqlXXX.infinityfree.com", "ep_tuusuario", "tucontraseña", "ep_nombredb");
 
