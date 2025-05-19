@@ -273,10 +273,8 @@ window.onload = function () {
     // Lista de IDs de formularios a manejar por AJAX
     const formIds = [
         "registro-form",
-        "login-form",
         "crear-cafeteria-form",
         "agregar-premio-form",
-        "login-admin-form",
         "registro-admin-form",
         "nueva-contrasena-form",
         "cambio-contrasena-form", 
@@ -284,6 +282,13 @@ window.onload = function () {
         // Agrega aquí otros IDs si tienes más formularios
     ];
 
+    const loginFormIds = [
+        "login-form",
+        "login-admin-form"
+        // Agrega aquí otros IDs si tienes más formularios
+    ];
+
+    //Formularios de registro y otros (envían a registro.php)
     formIds.forEach(formId => {
         const form = document.getElementById(formId);
         if (form) {
@@ -292,7 +297,51 @@ window.onload = function () {
                 let inputData = new FormData(form);
                 let dataObject = Object.fromEntries(inputData.entries());
                 ajaxRequest("php/registro.php", "POST", dataObject, function(response){
-                    console.log("Server Respone:", response);
+                    // Puedes mostrar mensajes aquí si lo deseas
+                    try {
+                        const res = JSON.parse(response);
+                        if (res.success) {
+                            alert(res.success);
+                        } else if (res.error) {
+                            alert(res.error);
+                        }
+                    } catch (e) {
+                        alert("Error en la respuesta del servidor.");
+                    }
+                });
+            });
+        }
+    });
+
+    // Formularios de login (envían a Ingresousu.php)
+    loginFormIds.forEach(formId => {
+        const form = document.getElementById(formId);
+        if (form) {
+            form.addEventListener("submit", function (event) {
+                event.preventDefault();
+                let inputData = new FormData(form);
+                let dataObject = Object.fromEntries(inputData.entries());
+                ajaxRequest("php/Ingresousu.php", "POST", dataObject, function(response){
+                    let res;
+                    try {
+                        res = JSON.parse(response);
+                    } catch (e) {
+                        alert("Error en la respuesta del servidor.");
+                        return;
+                    }
+
+                    if (res.success) {
+                        // Avanza solo si login correcto
+                        // Puedes personalizar la sección a mostrar según el tipo de usuario
+                        if (form.id === "login-admin-form") {
+                            mostrarSeccion("SEC_perfil_admin");
+                        } else {
+                            mostrarSeccion("SEC_perfil");
+                        }
+                        alert(res.success);
+                    } else if (res.error) {
+                        alert(res.error);
+                    }
                 });
             });
         }
