@@ -291,7 +291,7 @@ window.onload = function () {
                 event.preventDefault();
                 let inputData = new FormData(form);
                 let dataObject = Object.fromEntries(inputData.entries());
-                ajaxRequest("php/main.php", "POST", dataObject, function(response){
+                ajaxRequest("php/registro.php", "POST", dataObject, function(response){
                     console.log("Server Respone:", response);
                 });
             });
