@@ -127,12 +127,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    if (btnIngresaPerfil) {
-        btnIngresaPerfil.addEventListener("click", function () {
-            mostrarSeccion(seccionPerfil);
-        });
-    }
-
     if (btnRegis) {
         btnRegis.addEventListener("click", function () {
             mostrarSeccion(seccionRegistro);
@@ -157,11 +151,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    if (btnIngresaPerfilAdmin) {
-        btnIngresaPerfilAdmin.addEventListener("click", function () {
-            mostrarSeccion(seccionPerfilAdmin);
-        });
-    }
 
     if (btnVerifCod) {
         btnVerifCod.addEventListener("click", function () {
@@ -234,6 +223,7 @@ document.addEventListener("DOMContentLoaded", function () {
             seccionMostrada.style.display = "block";
         }
     }
+    window.mostrarSeccion = mostrarSeccion;
 
     // Asignar evento click a cada enlace --------------------------------------------------------------
     enlacesNavegacion.forEach(enlace => {
@@ -314,38 +304,38 @@ window.onload = function () {
     });
 
     // Formularios de login (envían a Ingresousu.php)
-    loginFormIds.forEach(formId => {
-        const form = document.getElementById(formId);
-        if (form) {
-            form.addEventListener("submit", function (event) {
-                event.preventDefault();
-                let inputData = new FormData(form);
-                let dataObject = Object.fromEntries(inputData.entries());
-                ajaxRequest("php/Ingresousu.php", "POST", dataObject, function(response){
-                    let res;
-                    try {
-                        res = JSON.parse(response);
-                    } catch (e) {
-                        alert("Error en la respuesta del servidor.");
-                        return;
-                    }
+    loginFormIds.forEach(loginFormIds => {
+    const form = document.getElementById(loginFormIds);
+    if (form) {
+        form.addEventListener("submit", function (event) {
+            event.preventDefault(); // Esto evita el submit tradicional
+            let inputData = new FormData(form);
+            let dataObject = Object.fromEntries(inputData.entries());
+            ajaxRequest("php/Ingresousu.php", "POST", dataObject, function(response){
+                let res;
+                try {
+                    res = JSON.parse(response);
+                } catch (e) {
+                    alert("Error en la respuesta del servidor.");
+                    return;
+                }
 
-                    if (res.success) {
-                        // Avanza solo si login correcto
-                        // Puedes personalizar la sección a mostrar según el tipo de usuario
-                        if (form.id === "login-admin-form") {
-                            mostrarSeccion("SEC_perfil_admin");
-                        } else {
-                            mostrarSeccion("SEC_perfil");
-                        }
-                        alert(res.success);
-                    } else if (res.error) {
-                        alert(res.error);
+                if (res.success) {
+                    // Solo aquí avanza a la siguiente sección
+                    if (form.id === "login-admin-form") {
+                        mostrarSeccion("SEC_perfil_admin");
+                    } else {
+                        mostrarSeccion("SEC_perfil");
                     }
-                });
+                    alert(res.success);
+                } else if (res.error) {
+                    // NO avanza, solo muestra el error
+                    alert(res.error);
+                }
             });
-        }
-    });
+        });
+    }
+});
 
     function ajaxRequest(url, method, data, callback) {
         let xhr = new XMLHttpRequest();

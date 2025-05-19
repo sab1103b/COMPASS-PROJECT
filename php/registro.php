@@ -65,7 +65,7 @@ if ($contrasena !== $verif) {
 }
 
 // Cifrar la contraseña
-$hashedPassword = password_hash($contrasena, PASSWORD_DEFAULT);
+$hashedPassword = $contrasena;
 
 // Lista de códigos válidos para administradores (puedes cambiarlos si quieres)
 $codigosAdmin = [

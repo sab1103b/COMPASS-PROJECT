@@ -1,5 +1,6 @@
 <?php
 // filepath: d:\COMPASS\php\Ingresousu.php
+file_put_contents('debug_login.txt', $getJSON . PHP_EOL, FILE_APPEND);
 
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -63,7 +64,8 @@ if (!empty($codigo)) {
     if ($stmt->num_rows === 1) {
         $stmt->bind_result($hashedPassword);
         $stmt->fetch();
-        if (password_verify($contrasena, $hashedPassword)) {
+        // Comparación directa
+        if ($contrasena === $hashedPassword) {
             echo json_encode(["success" => "Administrador autenticado correctamente"]);
         } else {
             http_response_code(401);
@@ -89,7 +91,8 @@ if (!empty($codigo)) {
     if ($stmt->num_rows === 1) {
         $stmt->bind_result($hashedPassword);
         $stmt->fetch();
-        if (password_verify($contrasena, $hashedPassword)) {
+        // Comparación directa
+        if ($contrasena === $hashedPassword) {
             echo json_encode(["success" => "Usuario autenticado correctamente"]);
         } else {
             http_response_code(401);
