@@ -263,7 +263,7 @@ window.onload = function () {
     // Lista de IDs de formularios a manejar por AJAX
     const formIds = [
         "registro-form",
-        "crear-cafeteria-form",
+        "crear-cafeteria-form", // Este formulario ahora enviará a CreafCafeteria.php
         "agregar-premio-form",
         "registro-admin-form",
         "codigo-form" 
@@ -282,7 +282,7 @@ window.onload = function () {
         // Agrega aquí otros IDs si tienes más formularios
     ];
 
-    //Formularios de registro y otros (envían a registro.php)
+    //Formularios de registro y otros (envían a registro.php, excepto crear-cafeteria-form)
     formIds.forEach(formId => {
         const form = document.getElementById(formId);
         if (form) {
@@ -290,8 +290,9 @@ window.onload = function () {
                 event.preventDefault();
                 let inputData = new FormData(form);
                 let dataObject = Object.fromEntries(inputData.entries());
-                ajaxRequest("php/registro.php", "POST", dataObject, function(response){
-                    // Puedes mostrar mensajes aquí si lo deseas
+                // Redirigir el submit de crear-cafeteria-form a su PHP específico
+                let url = (formId === "crear-cafeteria-form") ? "php/CreafCafeteria.php" : "php/registro.php";
+                ajaxRequest(url, "POST", dataObject, function(response){
                     try {
                         const res = JSON.parse(response);
                         if (res.success) {
@@ -300,7 +301,13 @@ window.onload = function () {
                             alert(res.error);
                         }
                     } catch (e) {
-                        alert("Error en la respuesta del servidor.");
+                        // Si la respuesta no es JSON, mostrar el HTML (caso de CreafCafeteria.php)
+                        if (formId === "crear-cafeteria-form") {
+                            // Mostrar el mensaje de éxito o error en el formulario
+                            form.insertAdjacentHTML('beforebegin', response);
+                        } else {
+                            alert("Error en la respuesta del servidor.");
+                        }
                     }
                 });
             });
@@ -393,12 +400,19 @@ window.onload = function () {
     function ajaxRequest(url, method, data, callback) {
         let xhr = new XMLHttpRequest();
         xhr.open(method, url, true);
-        xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+        // Si es FormData, no establecer Content-Type (el navegador lo hace)
+        if (!(data instanceof FormData)) {
+            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+        }
         xhr.onreadystatechange = function () {
             if (xhr.readyState === 4 && xhr.status === 200) {
                 callback(xhr.responseText);
             }
         };
-        xhr.send(JSON.stringify(data));
+        if (data instanceof FormData) {
+            xhr.send(data);
+        } else {
+            xhr.send(JSON.stringify(data));
+        }
     }
 };

@@ -832,31 +832,30 @@
         </section>
 
         <!-------------------------------------------- Sección Crear Cafeteria -->
-        <section id="SEC_crear_cafeteria" class="contenido oculto">
-            <div class="container">
-                <h1 class="title">COMPASS</h1>
-                <h2 class="subtitle"> CREAR CAFETERÍA
-                    <img width="40" height="40" src="IMAGENES/cafe.png" alt="Cafe">
-                </h2>
-                <div class="line"></div>
+<section id="SEC_crear_cafeteria" class="contenido oculto">
+    <div class="container">
+        <h1 class="title">COMPASS</h1>
+        <h2 class="subtitle"> CREAR CAFETERÍA
+            <img width="40" height="40" src="IMAGENES/cafe.png" alt="Cafe">
+        </h2>
+        <div class="line"></div>
+    </div>
+    <div class="crear-cafeteria-container">
+        <form class="crear-cafeteria-form" id="crear-cafeteria-form" method="POST" action="php/CreafCafeteria.php" enctype="multipart/form-data">
+            <input type="text" name="nombre_cafeteria" placeholder="Nombre Cafetería" required>
+            <input type="text" name="direccion_cafeteria" placeholder="Dirección Cafetería" required>
+            <input type="tel" name="telefono_cafeteria" placeholder="Teléfono Cafetería" required>
+            <input type="text" name="bebida_propuesta" placeholder="Nombre bebida propuesta" required>
+            <div class="imagen-sello">
+                <label for="imagen-sello" class="custom-file-upload">
+                    <i class="fas fa-upload"></i> Subir Imagen Sello
+                </label>
+                <input type="file" id="imagen-sello" name="imagen_sello" accept="image/*" required>
+                <button type="submit" id="btn-crear-cafeteria">PUBLICAR</button>
             </div>
-            <div class="crear-cafeteria-container">
-                <div class="crear-cafeteria-form">
-                    <input type="text" placeholder="Nombre Cafetería">
-                    <input type="text" placeholder="Dirección Cafetería">
-                    <input type="tel" placeholder="Teléfono Cafetería">
-                    <input type="tel" placeholder="Nombre bebida propuesta">
-                    <div class="imagen-sello">
-                        <label for="imagen-sello" class="custom-file-upload">
-                            <i class="fas fa-upload"></i> Subir Imagen Sello
-                        </label>
-                        <input type="file" id="imagen-sello" accept="image/*">
-                        <button id="btn-crear-cafeteria">PUBLICAR</button>
-                    </div>
-                    
-                </div>
-            </div>
-        </section>
+        </form>
+    </div>
+</section>
 
         <!-------------------------------------------- Sección Agregar premio -->
         <section id="SEC_agregar_premio" class="contenido oculto">
