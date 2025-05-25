@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 </head>
-<body>
+    <body>
         <!-------------------------------------------- OVERLAY USO DE COOKIES -->
     <div id="cookie-overlay" class="cookie-overlay">
         <div class="cookie-message">
@@ -847,10 +847,10 @@
             <input type="tel" name="telefono_cafeteria" placeholder="Teléfono Cafetería" required>
             <input type="text" name="bebida_propuesta" placeholder="Nombre bebida propuesta" required>
             <div class="imagen-sello">
-                <label for="imagen-sello" class="custom-file-upload">
+                <label for="imagen_sello" class="custom-file-upload">
                     <i class="fas fa-upload"></i> Subir Imagen Sello
                 </label>
-                <input type="file" id="imagen-sello" name="imagen_sello" accept="image/*" required>
+                <input type="file" id="imagen_sello" name="imagen_sello" accept="image/*" required>
                 <button type="submit" id="btn-crear-cafeteria">PUBLICAR</button>
             </div>
         </form>
@@ -866,14 +866,13 @@
                 </h2>
                 <div class="line"></div>
             </div>
-            <div class="agregar-premio-container">
-                <div class="agregar-premio-form">
-                    <input type="text" placeholder="Nombre Premio">
-                    <input type="text" placeholder="Descripción Premio">
-                    <button id="btn-agregar-premio">AGREGAR PREMIO</button>
-                </div>
-            </div>
-
+            <form id="agregar-premio-form">
+                <input type="text" name="nombre_premio" placeholder="Nombre Premio">
+                <input type="text" name="descripcion_premio" placeholder="Descripción Premio">
+                <button type="submit" id="btn-agregar-premio">AGREGAR PREMIO</button>
+            </form>
+        </section>
+    </body>
 </main>
 
         <!----------------------------------------------- pie de pagina -- cambiar --> 

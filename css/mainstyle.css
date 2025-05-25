@@ -1646,6 +1646,62 @@ h2{
 #SEC_nueva_contrasena .nueva-contrasena-form button:hover {
     background: #6d4c41;
 }
+
+/* Estilos para el formulario de agregar premio */
+#SEC_agregar_premio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#agregar-premio-form {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+    padding: 32px 24px;
+    max-width: 400px;
+    margin: 32px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+#agregar-premio-form input[type="text"] {
+    padding: 12px;
+    border: 1px solid #cfcfcf;
+    border-radius: 6px;
+    font-size: 16px;
+    outline: none;
+    transition: border 0.2s;
+}
+
+#agregar-premio-form input[type="text"]:focus {
+    border: 1.5px solid #a87c4f;
+}
+
+#agregar-premio-form button[type="submit"] {
+    background: #a87c4f;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 10px;
+}
+
+#agregar-premio-form button[type="submit"]:hover {
+    background: #7a5836;
+}
+
+@media (max-width: 500px) {
+    #agregar-premio-form {
+        padding: 18px 8px;
+        max-width: 95vw;
+    }
+}
 /*  -------------------------------------------------------------------------- Responsivo */
 
 @media (max-width: 768px) {

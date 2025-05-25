@@ -263,8 +263,6 @@ window.onload = function () {
     // Lista de IDs de formularios a manejar por AJAX
     const formIds = [
         "registro-form",
-        "crear-cafeteria-form", // Este formulario ahora enviará a CreafCafeteria.php
-        "agregar-premio-form",
         "registro-admin-form",
         "codigo-form" 
         // Agrega aquí otros IDs si tienes más formularios
@@ -290,9 +288,7 @@ window.onload = function () {
                 event.preventDefault();
                 let inputData = new FormData(form);
                 let dataObject = Object.fromEntries(inputData.entries());
-                // Redirigir el submit de crear-cafeteria-form a su PHP específico
-                let url = (formId === "crear-cafeteria-form") ? "php/CreafCafeteria.php" : "php/registro.php";
-                ajaxRequest(url, "POST", dataObject, function(response){
+                ajaxRequest("php/registro.php", "POST", dataObject, function(response){
                     try {
                         const res = JSON.parse(response);
                         if (res.success) {
@@ -301,13 +297,7 @@ window.onload = function () {
                             alert(res.error);
                         }
                     } catch (e) {
-                        // Si la respuesta no es JSON, mostrar el HTML (caso de CreafCafeteria.php)
-                        if (formId === "crear-cafeteria-form") {
-                            // Mostrar el mensaje de éxito o error en el formulario
-                            form.insertAdjacentHTML('beforebegin', response);
-                        } else {
-                            alert("Error en la respuesta del servidor.");
-                        }
+                        alert("Error en la respuesta del servidor.");
                     }
                 });
             });
@@ -397,22 +387,62 @@ window.onload = function () {
     }
 });
 
-    function ajaxRequest(url, method, data, callback) {
-        let xhr = new XMLHttpRequest();
-        xhr.open(method, url, true);
-        // Si es FormData, no establecer Content-Type (el navegador lo hace)
-        if (!(data instanceof FormData)) {
-            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-        }
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState === 4 && xhr.status === 200) {
-                callback(xhr.responseText);
+const crearCafeteriaForm = document.getElementById("crear-cafeteria-form");
+if (crearCafeteriaForm) {
+    crearCafeteriaForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+        let inputData = new FormData(crearCafeteriaForm);
+        ajaxRequest("php/CreafCafeteria.php", "POST", inputData, function(response, status){
+            try {
+                const res = JSON.parse(response);
+                if (res.success) {
+                    alert(res.success);
+                } else if (res.error) {
+                    alert(res.error);
+                }
+            } catch (e) {
+                alert("Respuesta cruda del servidor: " + response + " (status: " + status + ")");
             }
-        };
-        if (data instanceof FormData) {
-            xhr.send(data);
-        } else {
-            xhr.send(JSON.stringify(data));
-        }
+        });
+    });
+}
+
+const agregarPremioForm = document.getElementById("agregar-premio-form");
+if (agregarPremioForm) {
+    agregarPremioForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+        let inputData = new FormData(agregarPremioForm);
+        ajaxRequest("php/CrearPremio.php", "POST", inputData, function(response, status){
+            try {
+                const res = JSON.parse(response);
+                if (res.success) {
+                    alert(res.success);
+                    agregarPremioForm.reset();
+                } else if (res.error) {
+                    alert(res.error);
+                }
+            } catch (e) {
+                alert("Respuesta cruda del servidor: " + response + " (status: " + status + ")");
+            }
+        });
+    });
+}
+
+    function ajaxRequest(url, method, data, callback) {
+    let xhr = new XMLHttpRequest();
+    xhr.open(method, url, true);
+    if (!(data instanceof FormData)) {
+        xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
     }
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+            callback(xhr.responseText, xhr.status);
+        }
+    };
+    if (data instanceof FormData) {
+        xhr.send(data);
+    } else {
+        xhr.send(JSON.stringify(data));
+    }
+}
 };
