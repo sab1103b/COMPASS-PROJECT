@@ -348,20 +348,39 @@ window.onload = function () {
             event.preventDefault();
             let inputData = new FormData(form);
             let dataObject = Object.fromEntries(inputData.entries());
+
+            // Si estamos en el segundo paso (nueva contraseña), añade correo/celular del usuario recuperado
+            if (formId === "nueva-contrasena-form" && window.usuarioRecuperacion) {
+                dataObject.correo = window.usuarioRecuperacion.correo;
+                dataObject.celular = window.usuarioRecuperacion.celular;
+            }
+
             ajaxRequest("php/NuevaContra.php", "POST", dataObject, function(response){
-                console.log("Respuesta cruda:", response); // <-- Esto imprime la respuesta tal cual la manda PHP
                 try {
                     const res = JSON.parse(response);
-                    console.log("Respuesta parseada:", res); // <-- Esto imprime el objeto JS
-                    if (res.success) {
-                        window.usuarioRecuperacion = {
-                            correo: res.usuario.Correo,
-                            celular: res.usuario.Celular,
-                            esAdmin: res.esAdmin
-                        };
-                        mostrarSeccion("SEC_nueva_contrasena");
-                    } else if (res.error) {
-                        alert(res.error);
+
+                    // Primer paso: verificación de usuario
+                    if (formId === "cambio-contrasena-form") {
+                        if (res.usuario) {
+                            // Guarda datos para el segundo paso
+                            window.usuarioRecuperacion = {
+                                correo: res.usuario.Correo,
+                                celular: res.usuario.Celular,
+                                esAdmin: res.esAdmin
+                            };
+                            mostrarSeccion("SEC_nueva_contrasena");
+                        } else if (res.error) {
+                            alert(res.error);
+                        }
+                    }
+                    // Segundo paso: cambio de contraseña
+                    else if (formId === "nueva-contrasena-form") {
+                        if (res.success) {
+                            alert(res.success);
+                            mostrarSeccion("SEC_ingresar"); // O la sección que quieras mostrar tras el cambio
+                        } else if (res.error) {
+                            alert(res.error);
+                        }
                     }
                 } catch (e) {
                     alert("Error en la respuesta del servidor.");

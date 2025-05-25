@@ -1627,6 +1627,25 @@ h2{
     background-color: #6C5353; /* Color de fondo al pasar el mouse */
     transform: scale(1.05); /* Efecto de escala al pasar el mouse */
 }
+
+#SEC_nueva_contrasena .nueva-contrasena-form button {
+    width: 100%;
+    padding: 10px 0;
+    margin-top: 15px;
+    background: #3d1c1a;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+    letter-spacing: 1px;
+}
+
+#SEC_nueva_contrasena .nueva-contrasena-form button:hover {
+    background: #6d4c41;
+}
 /*  -------------------------------------------------------------------------- Responsivo */
 
 @media (max-width: 768px) {
