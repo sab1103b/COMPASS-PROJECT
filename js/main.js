@@ -30,6 +30,24 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+     /**
+     * Oculta los botones de INGRESAR y REGISTRARSE del navbar.*/
+    function ocultarBotonesAuth() {
+    const authButtons = document.getElementById('auth-buttons');
+    if (authButtons) {
+        authButtons.style.display = 'none';
+    }
+    }
+
+    /**
+ * Muestra los botones de INGRESAR y REGISTRARSE del navbar.*/
+    function mostrarBotonesAuth() {
+    const authButtons = document.getElementById('auth-buttons');
+    if (authButtons) {
+        authButtons.style.display = '';
+    }
+   }
+
     // Seleccionar los botones de ingresar y registrar --------------------------------------------------------------
     const btnIngresar = document.querySelector(".auth-buttons .btn:nth-child(1)");
     const btnRegistrarse = document.querySelector(".auth-buttons .btn:nth-child(2)");
@@ -51,6 +69,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const btnCreacionPremios = document.getElementById("btn-Creacion-premio");
     const btnCafeteriaCreada = document.getElementById("btn-crear-cafeteria");
     const btnPremioCreado = document.getElementById("btn-agregar-premio");
+
+    // Mostrar los botones al volver a login
+if (btnIngresar) {
+    btnIngresar.addEventListener("click", function () {
+        mostrarSeccion(seccionIngresar);
+        mostrarBotonesAuth(); // <-- aquí
+    });
+}
 
     // Seleccionar las secciones correspondientes --------------------------------------------------------------
     const seccionIngresar = "SEC_ingresar";
@@ -211,19 +237,26 @@ document.addEventListener("DOMContentLoaded", function () {
     const enlacesNavegacion = document.querySelectorAll('a[data-seccion]');
 
     // Función para mostrar la sección correspondiente --------------------------------------------------------------
-    function mostrarSeccion(seccionId) {
-        // Ocultar todas las secciones
-        document.querySelectorAll("main section").forEach(seccion => {
-            seccion.style.display = "none";
-        });
+function mostrarSeccion(seccionId) {
+    // Ocultar todas las secciones
+    document.querySelectorAll("main section").forEach(seccion => {
+        seccion.style.display = "none";
+    });
 
-        // Mostrar la sección seleccionada
-        const seccionMostrada = document.getElementById(seccionId);
-        if (seccionMostrada) {
-            seccionMostrada.style.display = "block";
-        }
+    // Mostrar la sección seleccionada
+    const seccionMostrada = document.getElementById(seccionId);
+    if (seccionMostrada) {
+        seccionMostrada.style.display = "block";
     }
-    window.mostrarSeccion = mostrarSeccion;
+
+    // Ocultar botones de ingresar/registrar si es perfil usuario o admin
+    if (seccionId === "SEC_perfil" || seccionId === "SEC_perfil_admin") {
+        ocultarBotonesAuth();
+    } else {
+        mostrarBotonesAuth();
+    }
+}
+window.mostrarSeccion = mostrarSeccion;
 
     // Asignar evento click a cada enlace --------------------------------------------------------------
     enlacesNavegacion.forEach(enlace => {
