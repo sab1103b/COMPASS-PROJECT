@@ -478,4 +478,32 @@ if (agregarPremioForm) {
         xhr.send(JSON.stringify(data));
     }
 }
+
+// Validación de premio al hacer clic en botones "CANJEAR"
+document.querySelectorAll(".perfil-premios .btn").forEach(btn => {
+    btn.addEventListener("click", function () {
+        fetch("php/ValidarPremio.php")
+            .then(res => res.json())
+            .then(data => {
+                if (data.success) {
+                    alert(data.success);
+
+                    // Reiniciar visualmente los sellos
+                    document.querySelectorAll(".perfil-sellos .sello.activo").forEach(sello => {
+                        sello.classList.remove("activo");
+                    });
+
+                } else if (data.info) {
+                    alert(data.info);
+                } else if (data.error) {
+                    alert(data.error);
+                }
+            })
+            .catch(error => {
+                alert("Error al conectar con el servidor.");
+                console.error(error);
+            });
+    });
+});
+
 };
