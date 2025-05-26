@@ -11,6 +11,8 @@ header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: Content-Type");
 header("Access-Control-Allow-Methods: POST, OPTIONS");
 
+session_start(); // Inicia la sesión
+
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     http_response_code(200);
     exit();
@@ -51,7 +53,7 @@ if (empty($correo) || empty($contrasena)) {
 // Si hay código, es intento de ingreso de administrador
 if (!empty($codigo)) {
     // Buscar en tabla de administradores
-    $stmt = $mysqli->prepare("SELECT Contrasena FROM Administradores WHERE Correo = ? AND Codigo = ?");
+    $stmt = $mysqli->prepare("SELECT ID, Contrasena FROM Administradores WHERE Correo = ? AND Codigo = ?");
     if (!$stmt) {
         http_response_code(500);
         echo json_encode(["error" => "Error al preparar la consulta: " . $mysqli->error]);
@@ -62,11 +64,14 @@ if (!empty($codigo)) {
     $stmt->store_result();
 
     if ($stmt->num_rows === 1) {
-        $stmt->bind_result($hashedPassword);
+        $stmt->bind_result($id_usuario, $hashedPassword);
         $stmt->fetch();
         // Comparación directa
         if ($contrasena === $hashedPassword) {
-            echo json_encode(["success" => "Administrador autenticado correctamente"]);
+            // Guardar el ID del administrador en la sesión
+            $_SESSION['id_usuario'] = $id_usuario;
+
+            echo json_encode(["success" => "Administrador autenticado correctamente", "id_usuario" => $id_usuario]);
         } else {
             http_response_code(401);
             echo json_encode(["error" => "Contraseña incorrecta"]);
@@ -78,7 +83,7 @@ if (!empty($codigo)) {
     $stmt->close();
 } else {
     // Buscar en tabla de usuarios normales
-    $stmt = $mysqli->prepare("SELECT Contrasena FROM Registro WHERE Correo = ?");
+    $stmt = $mysqli->prepare("SELECT ID, Contrasena FROM Registro WHERE Correo = ?");
     if (!$stmt) {
         http_response_code(500);
         echo json_encode(["error" => "Error al preparar la consulta: " . $mysqli->error]);
@@ -89,11 +94,14 @@ if (!empty($codigo)) {
     $stmt->store_result();
 
     if ($stmt->num_rows === 1) {
-        $stmt->bind_result($hashedPassword);
+        $stmt->bind_result($id_usuario, $hashedPassword);
         $stmt->fetch();
         // Comparación directa
         if ($contrasena === $hashedPassword) {
-            echo json_encode(["success" => "Usuario autenticado correctamente"]);
+            // Guardar el ID del usuario en la sesión
+            $_SESSION['id_usuario'] = $id_usuario;
+
+            echo json_encode(["success" => "Usuario autenticado correctamente", "id_usuario" => $id_usuario]);
         } else {
             http_response_code(401);
             echo json_encode(["error" => "Contraseña incorrecta"]);

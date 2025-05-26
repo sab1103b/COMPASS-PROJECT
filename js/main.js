@@ -340,36 +340,38 @@ window.onload = function () {
     // Formularios de login (envían a Ingresousu.php)
     loginFormIds.forEach(loginFormIds => {
     const form = document.getElementById(loginFormIds);
-        if (form) {
-            form.addEventListener("submit", function (event) {
-                event.preventDefault(); // Esto evita el submit tradicional
-                let inputData = new FormData(form);
-                let dataObject = Object.fromEntries(inputData.entries());
-                ajaxRequest("php/Ingresousu.php", "POST", dataObject, function(response){
-                    let res;
-                    try {
-                        res = JSON.parse(response);
-                    } catch (e) {
-                        alert("Error en la respuesta del servidor.");
-                        return;
-                    }
+    if (form) {
+        form.addEventListener("submit", function (event) {
+            event.preventDefault(); // Evita el envío tradicional del formulario
+            let inputData = new FormData(form);
+            let dataObject = Object.fromEntries(inputData.entries());
+            ajaxRequest("php/Ingresousu.php", "POST", dataObject, function(response) {
+                let res;
+                try {
+                    res = JSON.parse(response);
+                } catch (e) {
+                    alert("Error en la respuesta del servidor.");
+                    return;
+                }
 
-                    if (res.success) {
-                        // Solo aquí avanza a la siguiente sección
-                        if (form.id === "login-admin-form") {
-                            mostrarSeccion("SEC_perfil_admin");
-                        } else {
-                            mostrarSeccion("SEC_perfil");
-                        }
-                        alert(res.success);
-                    } else if (res.error) {
-                        // NO avanza, solo muestra el error
-                        alert(res.error);
+                if (res.success) {
+                    // Guardar el ID del usuario en localStorage
+                    localStorage.setItem("id_usuario", res.id_usuario);
+
+                    // Avanzar a la siguiente sección
+                    if (form.id === "login-admin-form") {
+                        mostrarSeccion("SEC_perfil_admin");
+                    } else {
+                        mostrarSeccion("SEC_perfil");
                     }
-                });
+                    alert(res.success);
+                } else if (res.error) {
+                    alert(res.error);
+                }
             });
-        }
-    });
+        });
+    }
+});
 
     NewContrasena.forEach(formId => {
     const form = document.getElementById(formId);
@@ -461,24 +463,6 @@ if (agregarPremioForm) {
     });
 }
 
-    function ajaxRequest(url, method, data, callback) {
-    let xhr = new XMLHttpRequest();
-    xhr.open(method, url, true);
-    if (!(data instanceof FormData)) {
-        xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-    }
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4) {
-            callback(xhr.responseText, xhr.status);
-        }
-    };
-    if (data instanceof FormData) {
-        xhr.send(data);
-    } else {
-        xhr.send(JSON.stringify(data));
-    }
-}
-
 // Validación de premio al hacer clic en botones "CANJEAR"
 document.querySelectorAll(".perfil-premios .btn").forEach(btn => {
     btn.addEventListener("click", function () {
@@ -505,5 +489,23 @@ document.querySelectorAll(".perfil-premios .btn").forEach(btn => {
             });
     });
 });
+
+    function ajaxRequest(url, method, data, callback) {
+    let xhr = new XMLHttpRequest();
+    xhr.open(method, url, true);
+    if (!(data instanceof FormData)) {
+        xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    }
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+            callback(xhr.responseText, xhr.status);
+        }
+    };
+    if (data instanceof FormData) {
+        xhr.send(data);
+    } else {
+        xhr.send(JSON.stringify(data));
+    }
+}
 
 };
