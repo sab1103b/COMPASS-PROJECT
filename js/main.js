@@ -531,6 +531,54 @@ if (codigoForm) {
     });
 }
 
+// Función para cargar los datos del perfil
+function cargarDatosPerfil() {
+    const idUsuario = localStorage.getItem("id_usuario"); // Obtener el ID del usuario desde localStorage
+
+    if (!idUsuario) {
+        console.error("No se encontró el ID del usuario. Por favor, inicia sesión nuevamente.");
+        return;
+    }
+
+    // Enviar el ID del usuario al servidor para obtener los datos del perfil
+    fetch("php/VisualPerfil.php", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ id: idUsuario }),
+    })
+        .then(res => res.json())
+        .then(data => {
+            console.log("Respuesta del servidor:", data); // Depuración: Verifica la respuesta del servidor
+
+            if (data.error) {
+                console.error(data.error);
+                return;
+            }
+
+            // Actualizar los datos en la sección de perfil
+            const perfilNombre = document.querySelector("#SEC_perfil .perfil-datos p:nth-child(1)");
+            const perfilCorreo = document.querySelector("#SEC_perfil .perfil-datos p:nth-child(2)");
+            const perfilCelular = document.querySelector("#SEC_perfil .perfil-datos p:nth-child(3)");
+
+            if (perfilNombre) perfilNombre.innerHTML = `<strong>Nombre:</strong> ${data.nombre}`;
+            if (perfilCorreo) perfilCorreo.innerHTML = `<strong>Correo:</strong> ${data.correo}`;
+            if (perfilCelular) perfilCelular.innerHTML = `<strong>Celular:</strong> ${data.celular}`;
+        })
+        .catch(error => {
+            console.error("Error al cargar los datos del perfil:", error);
+        });
+}
+
+// Llamar a la función cuando se cargue la página o se muestre la sección de perfil
+document.addEventListener("DOMContentLoaded", function () {
+    cargarDatosPerfil();
+});
+
+
+
+
     function ajaxRequest(url, method, data, callback) {
     let xhr = new XMLHttpRequest();
     xhr.open(method, url, true);
