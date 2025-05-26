@@ -1,44 +1,81 @@
 <?php
-session_start();
-require_once "conexion.php"; // Asegúrate de tener este archivo con la conexión a tu base de datos
 
-// Verificar que haya sesión activa
-if (!isset($_SESSION['correo'])) {
-    echo json_encode(["error" => "Usuario no autenticado."]);
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+header('Content-Type: application/json'); // Cambiar a JSON
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Headers: Content-Type");
+header("Access-Control-Allow-Methods: POST, OPTIONS");
+
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    http_response_code(200);
+    exit();
+}
+
+// Conexión a la base de datos
+$mysqli = new mysqli("sql213.infinityfree.com", "if0_39018712", "NRS1qInNPpD", "if0_39018712_cafe_compass");
+if ($mysqli->connect_errno) {
+    http_response_code(500);
+    echo json_encode(["error" => "Error de conexión: " . $mysqli->connect_error]);
+    exit;
+}
+$mysqli->set_charset("utf8");
+
+// Leer el ID del usuario desde la solicitud
+$id_usuario = $_POST['id_usuario'] ?? '';
+
+if (empty($id_usuario)) {
+    http_response_code(400);
+    echo json_encode(["error" => "ID de usuario no proporcionado"]);
     exit;
 }
 
-$correo = $_SESSION['correo'];
-
-// Consultar la variable de sellos del usuario
-$query = "SELECT cafes_validados FROM usuarios WHERE correo = ?";
-$stmt = $conexion->prepare($query);
-$stmt->bind_param("s", $correo);
+// Consultar la variable de cafés validados del usuario
+$query = "SELECT CafesValidados FROM Registro WHERE ID = ?";
+$stmt = $mysqli->prepare($query);
+if (!$stmt) {
+    http_response_code(500);
+    echo json_encode(["error" => "Error al preparar la consulta: " . $mysqli->error]);
+    exit;
+}
+$stmt->bind_param("i", $id_usuario);
 $stmt->execute();
 $resultado = $stmt->get_result();
 
 if ($resultado->num_rows === 0) {
-    echo json_encode(["error" => "Usuario no encontrado."]);
+    http_response_code(404);
+    echo json_encode(["error" => "Usuario no encontrado"]);
     exit;
 }
 
 $fila = $resultado->fetch_assoc();
-$cafes_validados = $fila['cafes_validados'];
+$cafes_validados = $fila['CafesValidados'];
 
-// Verificar si tiene los 13 sellos (todos en 1)
-if ($cafes_validados === str_repeat('1', 13)) {
-    // Aquí puedes ejecutar un webhook, redireccionar, o realizar una acción
-    file_get_contents("https://cafecompass.free.nf/?i=3");
+// Convertir la cadena de CafesValidados en un array
+$cafes_array = str_split($cafes_validados);
 
-    // Reiniciar los sellos a 0
-    $nuevoEstado = str_repeat('0', 13);
-    $update = "UPDATE usuarios SET cafes_validados = ? WHERE correo = ?";
-    $stmt2 = $conexion->prepare($update);
-    $stmt2->bind_param("ss", $nuevoEstado, $correo);
+// Verificar si todos los valores son '1'
+if (in_array('0', $cafes_array)) {
+    $cafeterias_restantes = array_count_values($cafes_array)['0'];
+    echo json_encode(["info" => "Te faltan $cafeterias_restantes cafeterías por visitar"]);
+} else {
+    // Reiniciar a todos ceros
+    $nuevoEstado = str_repeat('0', count($cafes_array));
+    $update = "UPDATE Registro SET CafesValidados = ? WHERE ID = ?";
+    $stmt2 = $mysqli->prepare($update);
+    if (!$stmt2) {
+        http_response_code(500);
+        echo json_encode(["error" => "Error al preparar la actualización: " . $mysqli->error]);
+        exit;
+    }
+    $stmt2->bind_param("si", $nuevoEstado, $id_usuario);
     $stmt2->execute();
 
-    echo json_encode(["success" => "Premio validado y sellos reiniciados."]);
-} else {
-    echo json_encode(["info" => "Aún no has completado los 13 sellos."]);
+    echo json_encode(["success" => "¡Premio validado! Tu pasaporte se reinició."]);
 }
+
+$stmt->close();
+$mysqli->close();
 ?>

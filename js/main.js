@@ -465,26 +465,41 @@ if (agregarPremioForm) {
 // Validación de premio al hacer clic en botones "CANJEAR"
 document.querySelectorAll(".perfil-premios .btn").forEach(btn => {
     btn.addEventListener("click", function () {
-        fetch("php/ValidarPremio.php")
-            .then(res => res.json())
+        const idUsuario = localStorage.getItem("id_usuario"); // Obtener el ID del usuario desde localStorage
+
+        if (!idUsuario) {
+            alert("No se encontró el ID del usuario. Por favor, inicia sesión nuevamente.");
+            return;
+        }
+
+        // Enviar el ID del usuario al servidor
+        fetch("php/ValidarPremio.php", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded",
+            },
+            body: `id_usuario=${idUsuario}`,
+        })
+            .then(res => res.text()) // Cambia a .text() para ver la respuesta cruda
             .then(data => {
-                if (data.success) {
-                    alert(data.success);
-
-                    // Reiniciar visualmente los sellos
-                    document.querySelectorAll(".perfil-sellos .sello.activo").forEach(sello => {
-                        sello.classList.remove("activo");
-                    });
-
-                } else if (data.info) {
-                    alert(data.info);
-                } else if (data.error) {
-                    alert(data.error);
+                console.log(data); // Muestra la respuesta cruda del servidor
+                try {
+                    const json = JSON.parse(data); // Intenta convertir a JSON
+                    if (json.success) {
+                        alert(json.success);
+                    } else if (json.info) {
+                        alert(json.info);
+                    } else if (json.error) {
+                        alert(json.error);
+                    }
+                } catch (error) {
+                    console.error("Error al analizar JSON:", error);
+                    alert("El servidor devolvió una respuesta no válida.");
                 }
             })
             .catch(error => {
+                console.error("Error:", error); // Muestra el error en la consola
                 alert("Error al conectar con el servidor.");
-                console.error(error);
             });
     });
 });
