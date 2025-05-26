@@ -1,6 +1,9 @@
 <?php
-// Procesa el formulario de creación de cafetería (solo lógica, sin HTML)
 
+file_put_contents('debug_crear_cafeteria.txt', print_r($_FILES, true), FILE_APPEND);
+
+
+// Procesa el formulario de creación de cafetería (solo lógica, sin HTML)
 $mysqli = new mysqli("sql213.infinityfree.com", "if0_39018712", "NRS1qInNPpD", "if0_39018712_cafe_compass");
 header('Content-Type: application/json');
 if ($mysqli->connect_errno) {
@@ -29,42 +32,38 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Procesar imagen si no hay errores
     if (!$errores && $imagen) {
-        $extensionesPermitidas = ['jpg', 'jpeg', 'png', 'gif'];
-        $nombreArchivo = basename($imagen['name']);
-        $extension = strtolower(pathinfo($nombreArchivo, PATHINFO_EXTENSION));
+    $extensionesPermitidas = ['jpg', 'jpeg', 'png', 'gif'];
+    $nombreArchivo = basename($imagen['name']);
+    $extension = strtolower(pathinfo($nombreArchivo, PATHINFO_EXTENSION));
 
-        if (!in_array($extension, $extensionesPermitidas)) {
-            $errores[] = 'La imagen debe ser JPG, JPEG, PNG o GIF.';
-        } else {
-            // Leer el contenido binario de la imagen
-            $contenidoImagen = file_get_contents($imagen['tmp_name']);
-            if ($contenidoImagen === false) {
-                $errores[] = 'Error al leer la imagen.';
-            }
+    if (!in_array($extension, $extensionesPermitidas)) {
+        $errores[] = 'La imagen debe ser JPG, JPEG, PNG o GIF.';
+    } else {
+        // Leer el contenido binario de la imagen
+        $contenidoImagen = file_get_contents($imagen['tmp_name']);
+        if ($contenidoImagen === false) {
+            $errores[] = 'Error al leer la imagen.';
         }
     }
+}
 
     // Insertar en la base de datos si no hay errores
     if (!$errores) {
-        $stmt = $mysqli->prepare("INSERT INTO cafeterias (nombre, direccion, telefono, bebida, imagen) VALUES (?, ?, ?, ?, ?)");
-        $stmt->bind_param("sssss", $nombre, $direccion, $telefono, $bebida, $null);
-        // Usar send_long_data para el BLOB
-        $null = null;
-        $stmt->send_long_data(4, $contenidoImagen);
+    $stmt = $mysqli->prepare("INSERT INTO cafeterias (nombre, direccion, telefono, bebida, imagen) VALUES (?, ?, ?, ?, ?)");
+    $stmt->bind_param("sssss", $nombre, $direccion, $telefono, $bebida, $contenidoImagen);
 
-        if ($stmt->execute()) {
-            echo json_encode(["success" => "Cafetería creada exitosamente."]);
-        } else {
-            http_response_code(500);
-            echo json_encode(["error" => "Error al guardar la cafetería en la base de datos."]);
-        }
-        $stmt->close();
+    if ($stmt->execute()) {
+        echo json_encode(["success" => "Cafetería creada exitosamente."]);
+    } else {
+        http_response_code(500);
+        echo json_encode(["error" => "Error al guardar la cafetería en la base de datos."]);
+    }
+    $stmt->close();
     } else {
         http_response_code(400);
         echo json_encode(["error" => implode(" ", $errores)]);
     }
-    exit;
-}
+} 
 
 // Si no es POST, no hace nada
 http_response_code(405);

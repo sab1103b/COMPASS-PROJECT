@@ -1696,6 +1696,26 @@ h2{
     background: #7a5836;
 }
 
+.custom-file-upload {
+    display: inline-block;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #a87c4f;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 14px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.custom-file-upload:hover {
+    background-color: #7a5836;
+}
+
+.custom-file-upload i {
+    margin-right: 8px;
+}
+
 @media (max-width: 500px) {
     #agregar-premio-form {
         padding: 18px 8px;
