@@ -30,24 +30,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-     /**
-     * Oculta los botones de INGRESAR y REGISTRARSE del navbar.*/
-    function ocultarBotonesAuth() {
-    const authButtons = document.getElementById('auth-buttons');
-    if (authButtons) {
-        authButtons.style.display = 'none';
-    }
-    }
-
-    /**
- * Muestra los botones de INGRESAR y REGISTRARSE del navbar.*/
-    function mostrarBotonesAuth() {
-    const authButtons = document.getElementById('auth-buttons');
-    if (authButtons) {
-        authButtons.style.display = '';
-    }
-   }
-
     // Seleccionar los botones de ingresar y registrar --------------------------------------------------------------
     const btnIngresar = document.querySelector(".auth-buttons .btn:nth-child(1)");
     const btnRegistrarse = document.querySelector(".auth-buttons .btn:nth-child(2)");
@@ -69,14 +51,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const btnCreacionPremios = document.getElementById("btn-Creacion-premio");
     const btnCafeteriaCreada = document.getElementById("btn-crear-cafeteria");
     const btnPremioCreado = document.getElementById("btn-agregar-premio");
-
-    // Mostrar los botones al volver a login
-if (btnIngresar) {
-    btnIngresar.addEventListener("click", function () {
-        mostrarSeccion(seccionIngresar);
-        mostrarBotonesAuth(); // <-- aquí
-    });
-}
 
     // Seleccionar las secciones correspondientes --------------------------------------------------------------
     const seccionIngresar = "SEC_ingresar";
@@ -237,26 +211,19 @@ if (btnIngresar) {
     const enlacesNavegacion = document.querySelectorAll('a[data-seccion]');
 
     // Función para mostrar la sección correspondiente --------------------------------------------------------------
-function mostrarSeccion(seccionId) {
-    // Ocultar todas las secciones
-    document.querySelectorAll("main section").forEach(seccion => {
-        seccion.style.display = "none";
-    });
+    function mostrarSeccion(seccionId) {
+        // Ocultar todas las secciones
+        document.querySelectorAll("main section").forEach(seccion => {
+            seccion.style.display = "none";
+        });
 
-    // Mostrar la sección seleccionada
-    const seccionMostrada = document.getElementById(seccionId);
-    if (seccionMostrada) {
-        seccionMostrada.style.display = "block";
+        // Mostrar la sección seleccionada
+        const seccionMostrada = document.getElementById(seccionId);
+        if (seccionMostrada) {
+            seccionMostrada.style.display = "block";
+        }
     }
-
-    // Ocultar botones de ingresar/registrar si es perfil usuario o admin
-    if (seccionId === "SEC_perfil" || seccionId === "SEC_perfil_admin") {
-        ocultarBotonesAuth();
-    } else {
-        mostrarBotonesAuth();
-    }
-}
-window.mostrarSeccion = mostrarSeccion;
+    window.mostrarSeccion = mostrarSeccion;
 
     // Asignar evento click a cada enlace --------------------------------------------------------------
     enlacesNavegacion.forEach(enlace => {
@@ -296,6 +263,8 @@ window.onload = function () {
     // Lista de IDs de formularios a manejar por AJAX
     const formIds = [
         "registro-form",
+        "crear-cafeteria-form", // Este formulario ahora enviará a CreafCafeteria.php
+        "agregar-premio-form",
         "registro-admin-form",
         "codigo-form" 
         // Agrega aquí otros IDs si tienes más formularios
@@ -321,7 +290,9 @@ window.onload = function () {
                 event.preventDefault();
                 let inputData = new FormData(form);
                 let dataObject = Object.fromEntries(inputData.entries());
-                ajaxRequest("php/registro.php", "POST", dataObject, function(response){
+                // Redirigir el submit de crear-cafeteria-form a su PHP específico
+                let url = (formId === "crear-cafeteria-form") ? "php/CreafCafeteria.php" : "php/registro.php";
+                ajaxRequest(url, "POST", dataObject, function(response){
                     try {
                         const res = JSON.parse(response);
                         if (res.success) {
@@ -330,7 +301,13 @@ window.onload = function () {
                             alert(res.error);
                         }
                     } catch (e) {
-                        alert("Error en la respuesta del servidor.");
+                        // Si la respuesta no es JSON, mostrar el HTML (caso de CreafCafeteria.php)
+                        if (formId === "crear-cafeteria-form") {
+                            // Mostrar el mensaje de éxito o error en el formulario
+                            form.insertAdjacentHTML('beforebegin', response);
+                        } else {
+                            alert("Error en la respuesta del servidor.");
+                        }
                     }
                 });
             });
@@ -420,62 +397,49 @@ window.onload = function () {
     }
 });
 
-const crearCafeteriaForm = document.getElementById("crear-cafeteria-form");
-if (crearCafeteriaForm) {
-    crearCafeteriaForm.addEventListener("submit", function (event) {
-        event.preventDefault();
-        let inputData = new FormData(crearCafeteriaForm);
-        ajaxRequest("php/CreafCafeteria.php", "POST", inputData, function(response, status){
-            try {
-                const res = JSON.parse(response);
-                if (res.success) {
-                    alert(res.success);
-                } else if (res.error) {
-                    alert(res.error);
-                }
-            } catch (e) {
-                alert("Respuesta cruda del servidor: " + response + " (status: " + status + ")");
-            }
-        });
-    });
-}
-
-const agregarPremioForm = document.getElementById("agregar-premio-form");
-if (agregarPremioForm) {
-    agregarPremioForm.addEventListener("submit", function (event) {
-        event.preventDefault();
-        let inputData = new FormData(agregarPremioForm);
-        ajaxRequest("php/CrearPremio.php", "POST", inputData, function(response, status){
-            try {
-                const res = JSON.parse(response);
-                if (res.success) {
-                    alert(res.success);
-                    agregarPremioForm.reset();
-                } else if (res.error) {
-                    alert(res.error);
-                }
-            } catch (e) {
-                alert("Respuesta cruda del servidor: " + response + " (status: " + status + ")");
-            }
-        });
-    });
-}
-
     function ajaxRequest(url, method, data, callback) {
-    let xhr = new XMLHttpRequest();
-    xhr.open(method, url, true);
-    if (!(data instanceof FormData)) {
-        xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-    }
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4) {
-            callback(xhr.responseText, xhr.status);
+        let xhr = new XMLHttpRequest();
+        xhr.open(method, url, true);
+        // Si es FormData, no establecer Content-Type (el navegador lo hace)
+        if (!(data instanceof FormData)) {
+            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
         }
-    };
-    if (data instanceof FormData) {
-        xhr.send(data);
-    } else {
-        xhr.send(JSON.stringify(data));
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                callback(xhr.responseText);
+            }
+        };
+        if (data instanceof FormData) {
+            xhr.send(data);
+        } else {
+            xhr.send(JSON.stringify(data));
+        }
     }
-}
+    // Validación de premio al hacer clic en botones "CANJEAR"
+document.querySelectorAll(".perfil-premios .btn").forEach(btn => {
+    btn.addEventListener("click", function () {
+        fetch("php/ValidarPremio.php")
+            .then(res => res.json())
+            .then(data => {
+                if (data.success) {
+                    alert(data.success);
+
+                    // Reiniciar visualmente los sellos
+                    document.querySelectorAll(".perfil-sellos .sello.activo").forEach(sello => {
+                        sello.classList.remove("activo");
+                    });
+
+                } else if (data.info) {
+                    alert(data.info);
+                } else if (data.error) {
+                    alert(data.error);
+                }
+            })
+            .catch(error => {
+                alert("Error al conectar con el servidor.");
+                console.error(error);
+            });
+    });
+});
+ 
 };
