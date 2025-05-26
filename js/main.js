@@ -297,7 +297,6 @@ window.onload = function () {
     const formIds = [
         "registro-form",
         "registro-admin-form",
-        "codigo-form" 
         // Agrega aquí otros IDs si tienes más formularios
     ];
 
@@ -489,6 +488,33 @@ document.querySelectorAll(".perfil-premios .btn").forEach(btn => {
             });
     });
 });
+
+// Seleccionar el formulario "codigo-form"
+const codigoForm = document.getElementById("codigo-form");
+
+if (codigoForm) {
+    codigoForm.addEventListener("submit", function (event) {
+        event.preventDefault(); // Evita el envío tradicional del formulario
+
+        // Crear un objeto FormData con los datos del formulario
+        const formData = new FormData(codigoForm);
+
+        // Enviar los datos al servidor usando AJAX
+        fetch("php/CodigoCafe.php", {
+            method: "POST",
+            body: formData,
+        })
+            .then(response => response.text()) // Obtener la respuesta como texto
+            .then(data => {
+                console.log(data); // Mostrar la respuesta en la consola
+                alert(data); // Mostrar la respuesta al usuario
+            })
+            .catch(error => {
+                console.error("Error:", error); // Mostrar errores en la consola
+                alert("Error al conectar con el servidor.");
+            });
+    });
+}
 
     function ajaxRequest(url, method, data, callback) {
     let xhr = new XMLHttpRequest();
